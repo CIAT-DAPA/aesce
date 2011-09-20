@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:scrollbarAlwaysDrawHorizontalTrack="true" android:orientation="vertical" android:layout_height="wrap_content" android:background="#FFFFFF">
+	<LinearLayout android:layout_width="match_parent"
+		android:layout_height="wrap_content" android:id="@+id/linearLayout1"
+		android:layout_marginTop="20sp">
+		<ImageView android:id="@+id/imageView1"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:src="@drawable/title"></ImageView>
+		<TextView android:textColor="#000000" android:id="@+id/textView1"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:text="@string/TextMainTitulo" android:textSize="20sp"
+			android:gravity="center" android:width="500sp"></TextView>
+	</LinearLayout>
+	<LinearLayout android:id="@+id/linearLayout5"
+		android:layout_height="wrap_content" android:layout_marginTop="20sp"
+		android:layout_width="match_parent" android:layout_marginLeft="5sp">
+		<Button android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:text="@string/TextProductorBtnRegresar" android:textSize="20sp" android:id="@+id/IdInsertarNuevoLoteBtnRegresar" android:onClick="OnInsertarNuevoLoteBtnRegresar_Click"></Button>
+		<Button android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/TEXTproductorBtnSalir"
+			android:textSize="20sp" android:id="@+id/IdTicBtnSalir"></Button>
+	</LinearLayout>
+	<LinearLayout android:layout_height="wrap_content"
+		android:id="@+id/linearLayout2" android:layout_width="match_parent"
+		android:layout_marginTop="20sp" android:layout_marginLeft="5sp" android:layout_marginRight="10sp" android:orientation="horizontal">
+		<TextView android:id="@+id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:textSize="15sp" android:layout_marginRight="5sp" android:text="Nº Lote:"></TextView>
+		<Spinner android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/IdInsertarNuevoLoteSpnNroLote"></Spinner>
+	</LinearLayout>
+	<LinearLayout android:layout_marginRight="10sp" android:layout_width="wrap_content" android:orientation="vertical" android:id="@+id/linearLayout9" android:layout_marginTop="5sp" android:layout_marginLeft="5sp" android:layout_height="wrap_content">
+		<Button android:textSize="20sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/TEXTTICBtnIngresar" android:id="@+id/IdInsertarNuevoLoteBtnInsertar" android:onClick="OnInsertarNuevoLoteBtnInsertar_Click"></Button>
+	</LinearLayout>
+	<LinearLayout android:layout_marginBottom="10sp" android:layout_marginRight="10sp" android:layout_width="match_parent" android:id="@+id/LinearLayout42" android:layout_marginTop="20sp" android:layout_marginLeft="5sp" android:layout_height="wrap_content">
+		<ImageView android:layout_marginLeft="10sp" android:id="@+id/imageView2" android:layout_width="wrap_content" android:src="@drawable/asohofrucol" android:layout_height="wrap_content"></ImageView>
+		<ImageView android:layout_marginLeft="10sp" android:id="@+id/imageView3" android:layout_width="wrap_content" android:src="@drawable/um" android:layout_height="wrap_content"></ImageView>
+		<ImageView android:layout_marginLeft="10sp" android:id="@+id/imageView4" android:layout_width="wrap_content" android:src="@drawable/fondo" android:layout_height="wrap_content"></ImageView>
+	</LinearLayout>
+</LinearLayout>
