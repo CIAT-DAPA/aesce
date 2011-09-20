@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:scrollbarAlwaysDrawHorizontalTrack="true" android:background="#FFFFFF"
+	android:orientation="vertical">
+	<LinearLayout android:id="@+id/linearLayout5"
+		android:layout_height="wrap_content" android:layout_marginTop="20sp"
+		android:layout_width="match_parent" android:layout_marginLeft="5sp">
+		<Button android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:text="@string/TextProductorBtnRegresar"
+			android:textSize="20sp" android:id="@+id/IdContactosBtnRegresar" android:onClick="OnModCitricosBtnRegresar_Click"></Button>
+		<Button android:id="@+id/button2" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/TEXTproductorBtnSalir"
+			android:textSize="20sp"></Button>
+	</LinearLayout>
+	<LinearLayout android:layout_height="wrap_content"
+		android:id="@+id/linearLayout2" android:layout_width="match_parent"
+		android:layout_marginTop="20sp">
+	</LinearLayout>
+	<ScrollView android:layout_height="wrap_content" android:id="@+id/scrollView1"
+		android:layout_width="match_parent" android:layout_marginTop="10sp">
+		<TableLayout android:layout_width="match_parent"
+			android:id="@+id/tableLayout1" android:layout_height="match_parent"
+			android:layout_marginTop="20sp">
+			<TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+				<LinearLayout android:id="@+id/linearLayout4"
+					android:layout_height="wrap_content" android:layout_width="wrap_content"
+					android:layout_marginLeft="5sp" android:layout_marginRight="10sp">
+					<TextView android:id="@+id/textView2"
+						android:layout_height="wrap_content" android:textSize="20sp"
+						android:background="#1E3C7B" android:textColor="#FFFFFF"
+						android:textStyle="bold" android:layout_width="wrap_content"
+						android:width="310sp" android:text="@string/TEXTmodCitricosTxvFechaAESCE"></TextView>
+				</LinearLayout>
+			</TableRow>
+			<TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+				<LinearLayout android:id="@+id/linearLayout6"
+					android:layout_height="wrap_content" android:layout_marginTop="10sp"
+					android:layout_width="match_parent" android:layout_marginLeft="5sp">
+					<Button android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:text="@string/TEXTproductorNuevoFechaRegis"
+						android:textSize="15sp" android:id="@+id/IdModCitricosBtnFechaRegis"
+						android:onClick="OnModCitricosBtnFechaRegis_Click"></Button>
+					<TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:textColor="#000000"
+						android:textSize="20sp" android:id="@+id/IdModCitricosTxvFecha"></TextView>
+				</LinearLayout>
+			</TableRow>
+			<TableRow android:id="@+id/tableRow5"
+				android:layout_marginTop="10sp" android:layout_height="wrap_content"
+				android:layout_width="wrap_content">
+				<LinearLayout android:id="@+id/linearLayout8"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_marginLeft="5sp" android:layout_marginRight="10sp">
+					<TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:id="@+id/TextView01"
+						android:textSize="20sp" android:background="#1E3C7B"
+						android:textColor="#FFFFFF" android:textStyle="bold"
+						android:width="310sp" android:text="@string/TEXTmodCitricosTxvDatosUnidadManejoLote"></TextView>
+				</LinearLayout>
+			</TableRow>
+			<TableRow android:id="@+id/tableRow6" android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:layout_marginTop="10sp">
+				<LinearLayout android:id="@+id/linearLayout10"
+					android:layout_height="wrap_content" android:layout_width="match_parent"
+					android:orientation="vertical" android:layout_marginLeft="5sp"
+					android:layout_marginRight="10sp">
+					<LinearLayout android:id="@+id/linearLayout7"
+						android:background="#FFFFFF" android:layout_height="fill_parent"
+						android:layout_width="match_parent" android:layout_marginTop="5sp"
+						android:orientation="vertical">
+						<LinearLayout android:layout_height="wrap_content"
+							android:id="@+id/LinearLayout02" android:layout_width="match_parent">
+							<TextView android:layout_height="wrap_content"
+								android:layout_marginTop="5sp" android:layout_width="wrap_content"
+								android:textSize="15sp" android:id="@+id/textView3"
+								android:textColor="#000000" android:gravity="right"
+								android:text="@string/TEXTmodCitricosTxvLoteNo" android:width="140sp"></TextView>
+							<EditText android:layout_height="wrap_content"
+								android:inputType="number" android:layout_width="wrap_content"
+								android:layout_marginLeft="5sp" android:id="@+id/IdModCitricosEdtLoteNo"
+								android:layout_marginRight="10sp" android:width="160sp"></EditText>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:id="@+id/LinearLayout06" android:layout_width="match_parent">
+							<TextView android:layout_height="wrap_content"
+								android:layout_marginTop="5sp" android:layout_width="wrap_content"
+								android:textSize="15sp" android:id="@+id/TextView07"
+								android:textColor="#000000" android:text="@string/TEXTmodCitricosTxvNArboles"
+								android:width="140sp" android:gravity="right"></TextView>
+							<EditText android:layout_height="wrap_content"
+								android:layout_width="wrap_content" android:layout_marginLeft="5sp"
+								android:layout_marginRight="10sp" android:width="160sp"
+								android:id="@+id/IdModCitricosEdtNArboles" android:inputType="number"></EditText>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout01">
+							<TextView android:id="@+id/TextView02" android:textSize="15sp"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:text="Area del lote en hectareas"
+								android:layout_marginTop="5sp" android:layout_width="wrap_content"
+								android:gravity="right" android:width="180sp"></TextView>
+							<EditText android:width="160sp"
+								android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
+								android:layout_height="wrap_content" android:layout_width="wrap_content"
+								android:id="@+id/IdModCitricosEdtAreaLote" android:inputType="numberDecimal"></EditText>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout03">
+							<TextView android:id="@+id/TextView03" android:textSize="15sp"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:text="Datos GPS:" android:layout_marginTop="5sp"
+								android:layout_width="wrap_content" android:gravity="left"
+								android:width="180sp"></TextView>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout04">
+							<TextView android:id="@+id/TextView04" android:textSize="15sp"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:text="Altitud" android:layout_marginTop="5sp"
+								android:layout_width="wrap_content" android:gravity="right"
+								android:width="140sp"></TextView>
+							<EditText android:width="160sp"
+								android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
+								android:layout_height="wrap_content" android:layout_width="wrap_content"
+								android:editable="false" android:id="@+id/IdModCitricosEdtAltitud"></EditText>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout05">
+							<TextView android:id="@+id/TextView05" android:textSize="15sp"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:text="Latitud" android:layout_marginTop="5sp"
+								android:layout_width="wrap_content" android:gravity="right"
+								android:width="140sp"></TextView>
+							<EditText android:width="160sp"
+								android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
+								android:layout_height="wrap_content" android:layout_width="wrap_content"
+								android:editable="false" android:id="@+id/IdModCitricosEdtLatitud"></EditText>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout07">
+							<TextView android:id="@+id/TextView06" android:textSize="15sp"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:text="Longitud" android:layout_marginTop="5sp"
+								android:layout_width="wrap_content" android:gravity="right"
+								android:width="140sp"></TextView>
+							<EditText android:width="160sp"
+								android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
+								android:layout_height="wrap_content" android:layout_width="wrap_content"
+								android:editable="false" android:id="@+id/IdModCitricosEdtLongitud"></EditText>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout08">
+							<TextView android:id="@+id/TextView08" android:textSize="15sp"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:text="Distancia de siembra (m)"
+								android:layout_marginTop="5sp" android:layout_width="wrap_content"
+								android:gravity="right" android:width="170sp"></TextView>
+							<EditText android:width="160sp"
+								android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
+								android:layout_height="wrap_content" android:layout_width="wrap_content"
+								android:id="@+id/IdModCitricosEdtDistSiembra" android:inputType="numberDecimal"></EditText>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout09">
+							<RadioGroup android:layout_height="wrap_content"
+								android:orientation="horizontal" android:layout_width="wrap_content"
+								android:id="@+id/IdModCitricosRdgLoteDefinido">
+								<RadioButton android:id="@+id/IdModCitricosRdbCuaReg"
+									android:text="Cuadro/rectangulo" android:layout_width="wrap_content"
+									android:layout_height="wrap_content" android:checked="true"
+									android:textColor="#000000"></RadioButton>
+								<RadioButton android:id="@+id/IdModCitricosRdbTresbolillo"
+									android:text="Tresbolillo" android:layout_marginLeft="5sp"
+									android:layout_width="wrap_content" android:layout_height="wrap_content"
+									android:textColor="#000000"></RadioButton>
+							</RadioGroup>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout11"
+							android:orientation="vertical">
+							<TextView android:id="@+id/TextView09" android:textSize="15sp"
+								android:layout_marginRight="10sp" android:textColor="#000000"
+								android:layout_marginLeft="5sp" android:layout_height="wrap_content"
+								android:text="Si los citricos esan en asocio con otros cultivos, diga cuales"
+								android:layout_marginTop="5sp" android:layout_width="wrap_content"
+								android:gravity="left|right" android:width="300sp"></TextView>
+							<LinearLayout android:layout_height="wrap_content"
+								android:layout_width="match_parent" android:id="@+id/LinearLayout10"
+								android:orientation="horizontal">
+								<EditText android:id="@+id/IdModCitricosEdtCulAso"
+									android:layout_height="wrap_content" android:width="500sp"
+									android:layout_width="wrap_content" android:inputType="textMultiLine"></EditText>
+							</LinearLayout>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout13"
+							android:orientation="vertical">
+							<TextView android:id="@+id/TextView10" android:textSize="15sp"
+								android:layout_marginRight="10sp" android:textColor="#000000"
+								android:layout_marginLeft="5sp" android:layout_height="wrap_content"
+								android:text="Tiene analisis quimico del suelo de esta UM o lote"
+								android:layout_marginTop="5sp" android:layout_width="wrap_content"
+								android:gravity="left|right" android:width="300sp"></TextView>
+							<LinearLayout android:layout_height="wrap_content"
+								android:layout_width="match_parent" android:id="@+id/LinearLayout12"
+								android:orientation="horizontal">
+								<RadioGroup android:layout_height="wrap_content"
+									android:orientation="horizontal" android:layout_width="wrap_content"
+									android:id="@+id/IdModCitricosRdgAnaQuimico">
+									<RadioButton android:id="@+id/IdModCitricosRdbAnaQuimicoSI"
+										android:text="Si" android:layout_width="wrap_content"
+										android:layout_height="wrap_content" android:checked="true"
+										android:textColor="#000000"></RadioButton>
+									<RadioButton android:id="@+id/IdModCitricosRdbAnaQuimicosNO"
+										android:text="No" android:layout_marginLeft="10sp"
+										android:layout_width="wrap_content" android:layout_height="wrap_content"
+										android:textColor="#000000"></RadioButton>
+								</RadioGroup>
+								<Button android:id="@+id/IdModCitricosBtnAnaQuimicos"
+									android:layout_marginLeft="10sp" android:layout_height="wrap_content"
+									android:enabled="false" android:layout_width="wrap_content"
+									android:text="..." android:onClick="OnModCitricosBtnAnaQuimicos_Click"></Button>
+							</LinearLayout>
+						</LinearLayout>
+					</LinearLayout>
+				</LinearLayout>
+			</TableRow>
+			<TableRow android:id="@+id/TableRow01"
+				android:layout_marginTop="10sp" android:layout_height="wrap_content"
+				android:layout_width="wrap_content">
+				<LinearLayout android:layout_marginLeft="5sp"
+					android:id="@+id/LinearLayout14" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:layout_marginRight="10sp">
+					<TextView android:background="#1E3C7B" android:id="@+id/TextView11"
+						android:textSize="20sp" android:textColor="#FFFFFF"
+						android:layout_height="wrap_content" android:layout_width="wrap_content"
+						android:textStyle="bold" android:width="310sp"
+						android:text="@string/TEXTmodCitricosDatosMaterialVegetal"></TextView>
+				</LinearLayout>
+			</TableRow>
+			<TableRow android:id="@+id/TableRow02"
+				android:layout_marginTop="10sp" android:layout_height="wrap_content"
+				android:layout_width="wrap_content">
+				<LinearLayout android:id="@+id/LinearLayout15"
+					android:orientation="vertical" android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+					<LinearLayout android:layout_height="fill_parent"
+						android:background="#FFFFFF" android:layout_marginTop="5sp"
+						android:layout_width="match_parent" android:layout_marginRight="10sp"
+						android:id="@+id/LinearLayout16" android:orientation="vertical"
+						android:layout_marginLeft="5sp">
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout18"
+							android:orientation="vertical">
+							<TextView android:id="@+id/TextView15" android:textSize="15sp"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:text="Los arboles de esta UM o lote son injertados"
+								android:layout_marginTop="5sp" android:layout_width="wrap_content"
+								android:gravity="left|right" android:width="300sp"></TextView>
+							<LinearLayout android:layout_height="match_parent"
+								android:layout_width="wrap_content" android:id="@+id/LinearLayout17">
+								<RadioGroup android:layout_height="wrap_content"
+									android:orientation="horizontal" android:layout_width="wrap_content"
+									android:id="@+id/IdModCitricosRdgUInjerto">
+									<RadioButton android:id="@+id/IdModCitricosRdbUInjertoSI"
+										android:text="Si" android:layout_width="wrap_content"
+										android:layout_height="wrap_content" android:checked="true"
+										android:textColor="#000000"></RadioButton>
+									<RadioButton android:id="@+id/IdModCitricosRdbUInjertoNO"
+										android:text="No" android:layout_marginLeft="10sp"
+										android:layout_width="wrap_content" android:layout_height="wrap_content"
+										android:textColor="#000000"></RadioButton>
+								</RadioGroup>
+							</LinearLayout>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout20"
+							android:orientation="vertical">
+							<TextView android:id="@+id/TextView12" android:textSize="15sp"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:text="Tipo o nombre del patron usado en esta UM o lote"
+								android:layout_marginTop="5sp" android:layout_width="wrap_content"
+								android:gravity="left|right" android:width="300sp"></TextView>
+							<EditText android:width="160sp"
+								android:layout_marginRight="10sp" android:layout_height="wrap_content"
+								android:layout_width="wrap_content" android:id="@+id/IdModCitricosEdtNPatron"
+								android:inputType="numberDecimal"></EditText>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout19"
+							android:orientation="vertical">
+							<TextView android:id="@+id/TextView14" android:textSize="15sp"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:text="Variedad sembrada como copa o semilla sexual"
+								android:layout_marginTop="5sp" android:layout_width="wrap_content"
+								android:gravity="left|right" android:width="300sp"></TextView>
+							<EditText android:width="160sp"
+								android:layout_marginRight="10sp" android:layout_height="wrap_content"
+								android:layout_width="wrap_content" android:id="@+id/IdModCitricosEdtVariedad"
+								android:inputType="numberDecimal"></EditText>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout22"
+							android:orientation="vertical">
+							<TextView android:id="@+id/TextView16" android:textSize="15sp"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:text="Edad de la UM o lote en años"
+								android:layout_marginTop="5sp" android:layout_width="wrap_content"
+								android:gravity="left|right" android:width="300sp"></TextView>
+							<EditText android:width="160sp"
+								android:layout_marginRight="10sp" android:layout_height="wrap_content"
+								android:layout_width="wrap_content" android:id="@+id/IdModCitricosEdtEdad"
+								android:inputType="numberDecimal"></EditText>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout21"
+							android:orientation="vertical">
+							<TextView android:id="@+id/TextView13" android:textSize="15sp"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:text="% de resiembra" android:layout_marginTop="5sp"
+								android:layout_width="wrap_content" android:gravity="left|right"
+								android:width="140sp"></TextView>
+							<EditText android:width="160sp"
+								android:layout_marginRight="10sp" android:layout_height="wrap_content"
+								android:layout_width="wrap_content" android:id="@+id/IdModCitricosEdtResiembra"
+								android:inputType="numberDecimal"></EditText>
+						</LinearLayout>
+						<LinearLayout android:layout_height="wrap_content"
+							android:layout_width="match_parent" android:id="@+id/LinearLayout23"
+							android:orientation="vertical">
+							<TextView android:id="@+id/TextView17" android:textSize="15sp"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:text="Produccion del ultimo año en kilogramos"
+								android:layout_marginTop="5sp" android:layout_width="wrap_content"
+								android:gravity="left|right" android:width="300sp"></TextView>
+							<LinearLayout android:layout_height="match_parent"
+								android:layout_width="wrap_content" android:id="@+id/LinearLayout24">
+								<EditText android:layout_height="wrap_content"
+									android:layout_width="wrap_content" android:id="@+id/IdModCitricosEdtProAnio"
+									android:inputType="numberDecimal"></EditText>
+								<Spinner android:layout_height="wrap_content"
+									android:id="@+id/IdModCitricosSpnProAnioUnidades"
+									android:layout_width="wrap_content"></Spinner>
+							</LinearLayout>
+						</LinearLayout>
+					</LinearLayout>
+				</LinearLayout>
+			</TableRow>
+			<TableRow android:id="@+id/tableRow4" android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:layout_marginTop="10sp">
+				<LinearLayout android:id="@+id/linearLayout9"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_marginTop="10sp">
+					<Button android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:textSize="20sp"
+						android:text="@string/TEXTcontactosBtnRegistrar" android:id="@+id/IdModCitricosBtnRegistrar"
+						android:onClick="OnModCitricosBtnRegistrar_Click"></Button>
+				</LinearLayout>
+			</TableRow>
+			<TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+				<LinearLayout android:id="@+id/linearLayout3"
+					android:layout_height="wrap_content" android:layout_marginTop="30sp"
+					android:layout_width="match_parent">
+					<ImageView android:layout_marginLeft="10sp" android:id="@+id/imageView2"
+						android:layout_height="wrap_content" android:src="@drawable/asohofrucol"
+						android:layout_width="wrap_content"></ImageView>
+					<ImageView android:layout_marginLeft="10sp" android:id="@+id/imageView3"
+						android:layout_height="wrap_content" android:src="@drawable/um"
+						android:layout_width="wrap_content"></ImageView>
+					<ImageView android:layout_marginLeft="10sp" android:id="@+id/imageView4"
+						android:layout_height="wrap_content" android:src="@drawable/fondo"
+						android:layout_width="wrap_content"></ImageView>
+				</LinearLayout>
+			</TableRow>
+		</TableLayout>
+	</ScrollView>
+</LinearLayout>

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:scrollbarAlwaysDrawHorizontalTrack="true" android:background="#FFFFFF"
+	android:orientation="vertical">
+	<LinearLayout android:layout_width="match_parent"
+		android:layout_height="wrap_content" android:id="@+id/linearLayout1"
+		android:layout_marginTop="20sp">
+		<ImageView android:id="@+id/imageView1"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:src="@drawable/title"></ImageView>
+		<TextView android:textColor="#000000" android:id="@+id/textView1"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:text="@string/TextMainTitulo" android:textSize="20sp"
+			android:gravity="center" android:width="500sp"></TextView>
+	</LinearLayout>
+	<LinearLayout android:id="@+id/linearLayout5"
+		android:layout_height="wrap_content" android:layout_marginTop="20sp"
+		android:layout_width="match_parent" android:layout_marginLeft="5sp">
+		<Button android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:text="@string/TextProductorBtnRegresar"
+			android:textSize="20sp" android:onClick="OnProductorBtnRegresar_Click"
+			android:id="@+id/IdFincaNuevoBtnRegresar"></Button>
+		<Button android:id="@+id/button2" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/TEXTproductorBtnSalir"
+			android:textSize="20sp"></Button>
+	</LinearLayout>
+	<LinearLayout android:layout_height="wrap_content"
+		android:id="@+id/linearLayout2" android:layout_width="match_parent"
+		android:layout_marginTop="20sp">
+	</LinearLayout>
+	<ScrollView android:layout_height="wrap_content" android:id="@+id/scrollView1"
+		android:layout_width="match_parent" android:layout_marginTop="10sp">
+		<TableLayout android:layout_width="match_parent"
+			android:id="@+id/tableLayout1" android:layout_height="match_parent"
+			android:layout_marginTop="20sp">
+			<TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+				<LinearLayout android:orientation="vertical"
+					android:layout_width="match_parent" android:layout_height="wrap_content"
+					android:id="@+id/linearLayout10" android:layout_marginLeft="5sp"
+					android:layout_marginRight="10sp">
+					<LinearLayout android:layout_width="match_parent"
+						android:orientation="vertical" android:id="@+id/LinearLayout02"
+						android:layout_height="wrap_content">
+						<TextView android:layout_width="wrap_content" android:id="@+id/textView3"
+							android:textSize="15sp" android:textColor="#000000"
+							android:gravity="right" android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoTxvNombreFinca"></TextView>
+						<EditText android:width="200sp" android:id="@+id/IdFincaNuevoEdtNombreFinca"
+							android:layout_height="wrap_content" android:layout_width="wrap_content"></EditText>
+					</LinearLayout>
+					<LinearLayout android:layout_width="match_parent"
+						android:orientation="vertical" android:layout_marginTop="5sp"
+						android:id="@+id/LinearLayout03" android:layout_height="wrap_content">
+						<TextView android:layout_width="wrap_content" android:id="@+id/TextView04"
+							android:textSize="15sp" android:textColor="#000000"
+							android:gravity="right" android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoTxvProId"></TextView>
+						<EditText android:width="200sp" android:editable="false"
+							android:id="@+id/IdFincaNuevoEdtCedProd" android:layout_height="wrap_content"
+							android:layout_width="wrap_content"></EditText>
+					</LinearLayout>
+					<LinearLayout android:layout_width="match_parent"
+						android:orientation="vertical" android:layout_marginTop="5sp"
+						android:id="@+id/LinearLayout06" android:layout_height="wrap_content">
+						<TextView android:layout_width="wrap_content" android:id="@+id/TextView07"
+							android:textSize="15sp" android:textColor="#000000"
+							android:gravity="right" android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoGeoreferencia"></TextView>
+						<RadioGroup android:layout_width="wrap_content"
+							android:id="@+id/IdFincaNuevoRdgGeoreferencia"
+							android:layout_height="wrap_content" android:orientation="horizontal">
+							<RadioButton android:text="Si" android:textColor="#000000"
+								android:layout_height="wrap_content" android:layout_width="wrap_content"
+								android:id="@+id/IdFincaNuevoRdbGeoreferenciaSI"
+								android:checked="true"></RadioButton>
+							<RadioButton android:text="No" android:textColor="#000000"
+								android:layout_height="wrap_content" android:layout_width="wrap_content"
+								android:layout_marginLeft="10sp" android:id="@+id/IdFincaNuevoRdbGeoreferenciaNO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+					<LinearLayout android:layout_width="match_parent"
+						android:layout_marginTop="5sp" android:id="@+id/LinearLayout01"
+						android:layout_height="wrap_content" android:orientation="vertical">
+						<TextView android:layout_width="wrap_content" android:id="@+id/TextView02"
+							android:textSize="15sp" android:textColor="#000000"
+							android:gravity="right" android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoTxvAso"></TextView>
+						<RadioGroup android:layout_width="wrap_content"
+							android:id="@+id/IdFincaNuevoRdgAso" android:layout_height="wrap_content"
+							android:orientation="horizontal">
+							<RadioButton android:text="Si" android:textColor="#000000"
+								android:layout_height="wrap_content" android:layout_width="wrap_content"
+								android:id="@+id/IdFincaNuevoRdbAsoSI" android:checked="true"></RadioButton>
+							<RadioButton android:text="No" android:textColor="#000000"
+								android:layout_height="wrap_content" android:layout_width="wrap_content"
+								android:layout_marginLeft="10sp" android:id="@+id/IdFincaNuevoRdbAsoNO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+					<LinearLayout android:layout_width="match_parent"
+						android:orientation="vertical" android:layout_marginTop="5sp"
+						android:id="@+id/LinearLayout04" android:layout_height="wrap_content">
+						<TextView android:layout_width="wrap_content" android:id="@+id/TextView01"
+							android:textSize="15sp" android:layout_marginTop="5sp"
+							android:textColor="#000000" android:gravity="right"
+							android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
+							android:layout_height="wrap_content" android:text="@string/TEXTfincaNuevoTxvNomAso"></TextView>
+						<EditText android:width="200sp"
+							android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
+							android:id="@+id/IdFincaNuevoEdtNomAso" android:layout_height="wrap_content"
+							android:layout_width="wrap_content"></EditText>
+					</LinearLayout>
+					<LinearLayout android:layout_marginTop="5sp"
+						android:layout_height="wrap_content" android:id="@+id/LinearLayout05"
+						android:layout_width="match_parent" android:orientation="horizontal">
+						<TextView android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoAreaTotal"
+							android:layout_width="wrap_content" android:gravity="right"
+							android:layout_marginLeft="5sp" android:layout_marginTop="5sp"
+							android:textColor="#000000" android:textSize="15sp"
+							android:layout_marginRight="10sp" android:id="@+id/TextView03"></TextView>
+						<EditText android:width="200sp" android:layout_height="wrap_content"
+							android:layout_width="150sp" android:inputType="numberDecimal"
+							android:id="@+id/IdFincaNuevoEdtAreaTotal"></EditText>
+					</LinearLayout>
+					<LinearLayout android:layout_height="wrap_content"
+						android:id="@+id/LinearLayout07" android:layout_width="match_parent"
+						android:orientation="horizontal" android:layout_marginTop="5sp">
+						<TextView android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoUnidadFinca"
+							android:layout_width="wrap_content" android:gravity="right"
+							android:layout_marginLeft="5sp" android:layout_marginTop="5sp"
+							android:textColor="#000000" android:textSize="15sp"
+							android:layout_marginRight="10sp" android:id="@+id/TextView05"></TextView>
+						<Spinner android:id="@+id/IdFincaNuevoSpnUnidadesFinca"
+							android:layout_height="wrap_content" android:layout_width="wrap_content"></Spinner>
+					</LinearLayout>
+					<LinearLayout android:layout_marginTop="5sp"
+						android:layout_height="wrap_content" android:id="@+id/LinearLayout08"
+						android:layout_width="match_parent" android:orientation="vertical">
+						<TextView android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoRegProd"
+							android:layout_width="wrap_content" android:gravity="right"
+							android:layout_marginLeft="5sp" android:layout_marginTop="5sp"
+							android:textColor="#000000" android:textSize="15sp"
+							android:layout_marginRight="10sp" android:id="@+id/TextView06"></TextView>
+						<RadioGroup android:id="@+id/IdFincaNuevoRdgRegProd"
+							android:layout_height="wrap_content" android:layout_width="wrap_content"
+							android:orientation="horizontal">
+							<RadioButton android:id="@+id/IdFincaNuevoRdbRegProdSI"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:layout_width="wrap_content" android:text="Si"
+								android:checked="true"></RadioButton>
+							<RadioButton android:layout_marginLeft="10sp" android:textColor="#000000"
+								android:layout_height="wrap_content" android:layout_width="wrap_content"
+								android:text="No" android:id="@+id/IdFincaNuevoRdbRegProdNO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+					<LinearLayout android:layout_marginTop="5sp"
+						android:layout_height="wrap_content" android:id="@+id/LinearLayout09"
+						android:layout_width="match_parent" android:orientation="vertical">
+						<TextView android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoTxvRegManejo"
+							android:layout_width="wrap_content" android:gravity="right"
+							android:layout_marginLeft="5sp" android:layout_marginTop="5sp"
+							android:textColor="#000000" android:textSize="15sp"
+							android:layout_marginRight="10sp" android:id="@+id/TextView08"></TextView>
+						<RadioGroup android:id="@+id/IdFincaNuevoRdgRegManejo"
+							android:layout_height="wrap_content" android:layout_width="wrap_content"
+							android:orientation="horizontal">
+							<RadioButton android:id="@+id/IdFincaNuevoRdbRegManejoSI"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:layout_width="wrap_content" android:text="Si"
+								android:checked="true"></RadioButton>
+							<RadioButton android:layout_marginLeft="10sp" android:textColor="#000000"
+								android:layout_height="wrap_content" android:layout_width="wrap_content"
+								android:text="No" android:id="@+id/IdFincaNuevoRdbRegManejoNO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+					<LinearLayout android:layout_marginTop="5sp"
+						android:layout_height="wrap_content" android:id="@+id/LinearLayout10"
+						android:layout_width="match_parent" android:orientation="vertical">
+						<TextView android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoTxvRegClima"
+							android:layout_width="wrap_content" android:gravity="right"
+							android:layout_marginLeft="5sp" android:layout_marginTop="5sp"
+							android:textColor="#000000" android:textSize="15sp"
+							android:layout_marginRight="10sp" android:id="@+id/TextView09"></TextView>
+						<RadioGroup android:id="@+id/IdFincaNuevoRdgRegClima"
+							android:layout_height="wrap_content" android:layout_width="wrap_content"
+							android:orientation="horizontal">
+							<RadioButton android:id="@+id/IdFincaNuevoRdbRegClimaSI"
+								android:textColor="#000000" android:layout_height="wrap_content"
+								android:layout_width="wrap_content" android:text="Si"
+								android:checked="true"></RadioButton>
+							<RadioButton android:layout_marginLeft="10sp" android:textColor="#000000"
+								android:layout_height="wrap_content" android:layout_width="wrap_content"
+								android:text="No" android:id="@+id/IdFincaNuevoRdbRegClimaNO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+				</LinearLayout>
+			</TableRow>
+			<TableRow android:layout_height="wrap_content" android:id="@+id/tableRow2"
+				android:layout_width="wrap_content">
+				<LinearLayout android:background="#FFFFFF" android:id="@+id/linearLayout4"
+					android:layout_marginTop="5sp" android:layout_marginRight="10sp"
+					android:layout_marginLeft="5sp" android:layout_height="wrap_content"
+					android:orientation="vertical" android:layout_width="match_parent">
+					<LinearLayout android:layout_marginTop="5sp"
+						android:layout_height="wrap_content" android:id="@+id/linearLayout4"
+						android:layout_width="match_parent">
+						<TextView android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoTxvUbicacionFinca"
+							android:background="#1E3C7B" android:layout_width="wrap_content"
+							android:width="330sp" android:textColor="#FFFFFF"
+							android:textStyle="bold" android:textSize="20sp"
+							android:layout_marginRight="20sp" android:id="@+id/textView2"></TextView>
+					</LinearLayout>
+					<LinearLayout android:layout_marginTop="5sp"
+						android:layout_height="wrap_content" android:id="@+id/LinearLayout12"
+						android:layout_width="match_parent" android:orientation="horizontal">
+						<TextView android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoTxvDepartamento"
+							android:layout_width="wrap_content" android:gravity="right"
+							android:textColor="#000000" android:textSize="15sp" android:id="@+id/TextView10"></TextView>
+						<Spinner android:id="@+id/IdFincaNuevoSpnDepId"
+							android:layout_height="wrap_content" android:layout_width="wrap_content"
+							android:layout_marginLeft="5sp"></Spinner>
+					</LinearLayout>
+					<LinearLayout android:layout_marginTop="5sp"
+						android:layout_height="wrap_content" android:id="@+id/LinearLayout13"
+						android:layout_width="match_parent" android:orientation="horizontal">
+						<TextView android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoTxvMunId"
+							android:layout_width="wrap_content" android:gravity="right"
+							android:textColor="#000000" android:textSize="15sp" android:id="@+id/TextView12"></TextView>
+						<Spinner android:id="@+id/IdFincaNuevoSpnMunId"
+							android:layout_height="wrap_content" android:layout_width="wrap_content"
+							android:layout_marginLeft="5sp"></Spinner>
+					</LinearLayout>
+					<LinearLayout android:layout_marginTop="5sp"
+						android:layout_height="wrap_content" android:id="@+id/LinearLayout11"
+						android:layout_width="match_parent" android:orientation="horizontal">
+						<TextView android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoTxvCorregimiento"
+							android:layout_width="wrap_content" android:gravity="right"
+							android:textColor="#000000" android:textSize="15sp" android:id="@+id/TextView11"></TextView>
+						<EditText android:width="200sp" android:layout_height="wrap_content"
+							android:layout_width="wrap_content" android:layout_marginLeft="5sp"
+							android:id="@+id/IdFincaNuevoEdtCorregimiento"></EditText>
+					</LinearLayout>
+					<LinearLayout android:layout_marginTop="5sp"
+						android:layout_height="wrap_content" android:id="@+id/LinearLayout15"
+						android:layout_width="match_parent" android:orientation="horizontal">
+						<TextView android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoTxvVereda"
+							android:layout_width="wrap_content" android:gravity="right"
+							android:textColor="#000000" android:textSize="15sp" android:id="@+id/TextView14"></TextView>
+						<EditText android:width="200sp" android:layout_height="wrap_content"
+							android:layout_marginLeft="5sp" android:id="@+id/IdFincaNuevoEdtVereda"
+							android:layout_width="wrap_content"></EditText>
+					</LinearLayout>
+					<LinearLayout android:layout_marginTop="5sp"
+						android:layout_height="wrap_content" android:id="@+id/LinearLayout14"
+						android:layout_width="match_parent" android:orientation="horizontal">
+						<TextView android:layout_height="wrap_content"
+							android:text="@string/TEXTfincaNuevoTxvUsuId"
+							android:layout_width="wrap_content" android:gravity="right"
+							android:textColor="#000000" android:textSize="15sp" android:id="@+id/TextView13"></TextView>
+						<EditText android:width="200sp" android:layout_height="wrap_content"
+							android:editable="false" android:layout_marginLeft="5sp"
+							android:id="@+id/IdFincaNuevoEdtUsuId" android:layout_width="wrap_content"></EditText>
+					</LinearLayout>
+				</LinearLayout>
+			</TableRow>
+			<TableRow android:id="@+id/tableRow4" android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:layout_marginTop="10sp">
+				<LinearLayout android:id="@+id/linearLayout9"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_marginTop="10sp">
+					<Button android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:textSize="20sp"
+						android:id="@+id/IdFincaNuevoBtnRegistrar" android:text="@string/TEXTfincaNuevoBtnRegistrar"
+						android:onClick="OnFincaNuevoBtnRegistrar_Click"></Button>
+				</LinearLayout>
+			</TableRow>
+			<TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+				<LinearLayout android:id="@+id/linearLayout3"
+					android:layout_height="wrap_content" android:layout_marginTop="30sp"
+					android:layout_width="match_parent" android:layout_marginBottom="10sp">
+					<ImageView android:layout_marginLeft="10sp" android:id="@+id/imageView2"
+						android:layout_height="wrap_content" android:src="@drawable/asohofrucol"
+						android:layout_width="wrap_content"></ImageView>
+					<ImageView android:layout_marginLeft="10sp" android:id="@+id/imageView3"
+						android:layout_height="wrap_content" android:src="@drawable/um"
+						android:layout_width="wrap_content"></ImageView>
+					<ImageView android:layout_marginLeft="10sp" android:id="@+id/imageView4"
+						android:layout_height="wrap_content" android:src="@drawable/fondo"
+						android:layout_width="wrap_content"></ImageView>
+				</LinearLayout>
+			</TableRow>
+		</TableLayout>
+	</ScrollView>
+</LinearLayout>
