@@ -36,7 +36,7 @@ public class modRasta extends Activity {
 		RAS_ID = "" + bundle.getString("RAS_ID");
 		RAS_UMAID = "" + bundle.getString("RAS_UMAID");
 		
-		Mensaje("RAS_ID",RAS_ID);
+		//Mensaje("RAS_ID",RAS_ID);
 
 	}
 

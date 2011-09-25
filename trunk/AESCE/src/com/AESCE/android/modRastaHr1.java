@@ -36,7 +36,7 @@ public class modRastaHr1 extends Activity {
 		RAS_ID = "" + bundle.getString("RAS_ID");
 		RAS_UMAID = "" + bundle.getString("RAS_UMAID");
 		
-		Mensaje("RAS_ID",RAS_ID);
+		//Mensaje("RAS_ID",RAS_ID);
 	}
 
 	/**************************************************************
@@ -94,6 +94,18 @@ public class modRastaHr1 extends Activity {
 		imodrastahr1caryobserv789.putExtra("RAS_ID", RAS_ID);
 		imodrastahr1caryobserv789.putExtra("RAS_UMAID", RAS_UMAID);
 		startActivity(imodrastahr1caryobserv789);
+	}
+	
+	//--Boton preguntas de campo--//
+	public void OnModRastaHr1BtnCarYObservPregCampo_Click(View button){
+		Intent imodrastahr1PregCampo = new Intent();
+		imodrastahr1PregCampo.setClass(this, modRastaHr1PregCampo.class);
+		imodrastahr1PregCampo.putExtra("PRO_ID", PRO_ID);
+		imodrastahr1PregCampo.putExtra("FIN_ID", FIN_ID);
+		imodrastahr1PregCampo.putExtra("USU_ID", USU_ID);
+		imodrastahr1PregCampo.putExtra("RAS_ID", RAS_ID);
+		imodrastahr1PregCampo.putExtra("RAS_UMAID", RAS_UMAID);
+		startActivity(imodrastahr1PregCampo);
 	}
 	
 	

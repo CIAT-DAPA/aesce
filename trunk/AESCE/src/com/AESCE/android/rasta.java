@@ -56,7 +56,7 @@ public class rasta extends Activity implements AdapterView.OnItemClickListener {
 		PRO_ID = "" + bundle.getString("PRO_ID");
 		FIN_ID = "" + bundle.getString("FIN_ID");
 		
-		Mensaje("USU_ID",USU_ID);
+		//Mensaje("USU_ID",USU_ID);
 
 		// -Componentes que estan en el formulairo-//
 		gdvRasta = (GridView) findViewById(R.id.IdRastaGdvRasta);
