@@ -29,7 +29,7 @@
 	android:id="@+id/IdModRastaHr1BtnCaractObserv4_5_6" android:text="@string/TEXTModRastaHr1BtnCaractObserv4_5_6"
 	android:onClick="OnModRastaHr1BtnCarYObserv456_Click"></Button>
 						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="15sp" android:id="@+id/IdModRastaHr1BtnCaractObserv7_8_9" android:text="@string/TEXTModRastaHr1BtnCaractObserv7_8_9" android:onClick="OnModRastaHr1BtnCarYObserv789_Click"></Button>
-						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="15sp" android:id="@+id/IdModRastaHr1BtnPreguntasCampo" android:text="@string/TEXTModRastaHr1BtnPreguntasCampo"></Button>
+						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="15sp" android:id="@+id/IdModRastaHr1BtnPreguntasCampo" android:text="@string/TEXTModRastaHr1BtnPreguntasCampo" android:onClick="OnModRastaHr1BtnCarYObservPregCampo_Click"></Button>
 						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="15sp" android:id="@+id/IdModRastaHr1BtnAnotacionesEspeciales" android:text="@string/TEXTModRastaHr1BtnAnotacionesEspeciales"></Button>
 					</LinearLayout>
 				</TableRow>
