@@ -13,13 +13,15 @@
 			android:text="@string/TextMainTitulo" android:textSize="20sp"
 			android:gravity="center" android:width="500sp"></TextView>
 	</LinearLayout>
-	<LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="20sp" android:id="@+id/linearLayout5" android:layout_marginLeft="5sp">
-		<Button android:text="@string/TextProductorBtnRegresar" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:id="@+id/IdModRastaBtnRegresar" android:onClick="OnModRastaBtnRegresar_Click"></Button>
-		<Button android:text="@string/TEXTproductorBtnSalir" android:layout_height="wrap_content" android:id="@+id/button2" android:layout_width="wrap_content" android:textSize="20sp"></Button>
-	</LinearLayout>
 	<ScrollView android:layout_height="match_parent" android:id="@+id/scrollView1" android:layout_width="match_parent">
 		<LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/linearLayout4">
 			<TableLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/tableLayout1">
+				<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tableRow3">
+					<LinearLayout android:layout_marginTop="20sp" android:id="@+id/linearLayout5" android:layout_width="match_parent" android:layout_marginLeft="5sp" android:layout_height="wrap_content">
+						<Button android:onClick="OnModRastaBtnRegresar_Click" android:layout_width="wrap_content" android:id="@+id/IdModRastaBtnRegresar" android:layout_height="wrap_content" android:textSize="20sp" android:text="@string/TextProductorBtnRegresar"></Button>
+						<Button android:layout_width="wrap_content" android:id="@+id/button2" android:layout_height="wrap_content" android:textSize="20sp" android:text="@string/TEXTproductorBtnSalir"></Button>
+					</LinearLayout>
+				</TableRow>
 				<TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
 					<LinearLayout android:layout_marginTop="20sp" android:layout_marginLeft="5sp" android:orientation="vertical" android:layout_width="fill_parent" android:layout_marginRight="10sp" android:layout_height="wrap_content" android:id="@+id/linearLayout3">
 						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:id="@+id/IdModRastaBtnHojaRespuestasNo1" android:text="@string/TEXTmodRastaBtnHojaRespuestasNo1" android:onClick="OnModRastaBtnHr1_Click"></Button>

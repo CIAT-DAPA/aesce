@@ -13,24 +13,22 @@
 			android:text="@string/TextMainTitulo" android:textSize="20sp"
 			android:gravity="center" android:width="500sp"></TextView>
 	</LinearLayout>
-	<LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="20sp" android:id="@+id/linearLayout5" android:layout_marginLeft="5sp">
-		<Button android:text="@string/TextProductorBtnRegresar" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/IdModRastaHr1BtnRegresar" android:textSize="20sp" android:onClick="OnModRastaHr1BtnRegresar_Click"></Button>
-		<Button android:text="@string/TEXTproductorBtnSalir" android:layout_height="wrap_content" android:id="@+id/button2" android:layout_width="wrap_content" android:textSize="20sp"></Button>
-	</LinearLayout>
 	<ScrollView android:layout_height="match_parent" android:id="@+id/scrollView1" android:layout_width="match_parent">
 		<LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/linearLayout4">
 			<TableLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/tableLayout1">
+				<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tableRow3">
+					<LinearLayout android:layout_marginTop="20sp" android:id="@+id/linearLayout5" android:layout_width="match_parent" android:layout_marginLeft="5sp" android:layout_height="wrap_content">
+						<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp" android:text="@string/TextProductorBtnRegresar" android:id="@+id/IdModRastaHrProcedimientosBtnRegresar" android:onClick="OnModRastaHrProcedimientosBtnRegresar_Click"></Button>
+						<Button android:layout_width="wrap_content" android:id="@+id/button2" android:layout_height="wrap_content" android:textSize="20sp" android:text="@string/TEXTproductorBtnSalir"></Button>
+					</LinearLayout>
+				</TableRow>
 				<TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
 					<LinearLayout android:layout_marginTop="20sp" android:layout_marginLeft="5sp" android:orientation="vertical" android:layout_width="fill_parent" android:layout_marginRight="10sp" android:layout_height="wrap_content" android:id="@+id/linearLayout3">
-						<Button android:text="@string/TEXTModRastaHr1BtnCaractObserv1_2" android:layout_height="wrap_content" android:id="@+id/IdModRastaHr1BtnCaractObserv1_2" android:layout_width="wrap_content" android:textSize="15sp" android:onClick="OnModRastaHr1BtnCaryObserv12_Click"></Button>
-						<Button android:text="@string/TEXTModRastaHr1BtnCaractObserv3" android:layout_height="wrap_content" android:id="@+id/IdModRastaHr1BtnCaractObserv3" android:layout_width="wrap_content" android:textSize="15sp" android:onClick="OnModRastaHr1BtnCarYObserv3_Click"></Button>
-						<Button android:layout_height="wrap_content"
-	android:layout_width="wrap_content" android:textSize="15sp"
-	android:id="@+id/IdModRastaHr1BtnCaractObserv4_5_6" android:text="@string/TEXTModRastaHr1BtnCaractObserv4_5_6"
-	android:onClick="OnModRastaHr1BtnCarYObserv456_Click"></Button>
-						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="15sp" android:id="@+id/IdModRastaHr1BtnCaractObserv7_8_9" android:text="@string/TEXTModRastaHr1BtnCaractObserv7_8_9" android:onClick="OnModRastaHr1BtnCarYObserv789_Click"></Button>
-						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="15sp" android:id="@+id/IdModRastaHr1BtnPreguntasCampo" android:text="@string/TEXTModRastaHr1BtnPreguntasCampo" android:onClick="OnModRastaHr1BtnCarYObservPregCampo_Click"></Button>
-						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="15sp" android:id="@+id/IdModRastaHr1BtnAnotacionesEspeciales" android:text="@string/TEXTModRastaHr1BtnAnotacionesEspeciales" android:onClick="OnModRastaHr1BtnAnotacionEspecial_Click"></Button>
+						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:text="@string/TEXTmodRastaHrProcedimientosBtnPresMoteados" android:id="@+id/IdModRastaHrProcedimientosBtnPresMoteados" android:onClick="OnModRastaHrProcedimientosBtnPresMoteados_Click"></Button>
+						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:text="@string/TEXTmodRastaHrProcedimientosBtnProfEfectiva" android:id="@+id/IdModRastaHrProcedimientosBtnProfEfectiva" android:onClick="OnModRastaHrProcedimientosBtnProfEfectiva_Click"></Button>
+						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:text="@string/TEXTmodRastaHrProcedimientosBtnMatOrganica" android:id="@+id/IdModRastaHrProcedimientosBtnMatOrganica" android:onClick="OnModRastaHrProcedimientosBtnMatOrganica_Click"></Button>
+						<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp" android:text="@string/TEXTmodRastaHrProcedimientosBtnSalinidad" android:id="@+id/IdModRastaHrProcedimientosBtnSalinidad" android:onClick="OnModRastaHrProcedimientosBtnSalinidad"></Button>
+						<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp" android:text="@string/TEXTmodRastaHrProcedimientosBtnSodicidad" android:id="@+id/IdModRastaHrProcedimientosBtnSodicidad" android:onClick="OnModRastaHrProcedimientosBtnSodicidad_Click"></Button>
 					</LinearLayout>
 				</TableRow>
 				<TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content" android:layout_height="wrap_content">

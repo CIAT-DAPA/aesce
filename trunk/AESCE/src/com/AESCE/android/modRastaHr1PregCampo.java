@@ -50,5 +50,17 @@ public class modRastaHr1PregCampo extends Activity {
 		imodrastahr1Preg10to15.putExtra("RAS_UMAID", RAS_UMAID);
 		startActivity(imodrastahr1Preg10to15);
 	}
+	
+	//--Boton preguntas 16 - 23--//
+	public void OnModRastaHr1PreguntasBtnPreg16to23_Click(View button){
+		Intent imodrastahr1Preg16to23 = new Intent();
+		imodrastahr1Preg16to23.setClass(this, modrastahr1preg16to23.class);
+		imodrastahr1Preg16to23.putExtra("PRO_ID", PRO_ID);
+		imodrastahr1Preg16to23.putExtra("FIN_ID", FIN_ID);
+		imodrastahr1Preg16to23.putExtra("USU_ID", USU_ID);
+		imodrastahr1Preg16to23.putExtra("RAS_ID", RAS_ID);
+		imodrastahr1Preg16to23.putExtra("RAS_UMAID", RAS_UMAID);
+		startActivity(imodrastahr1Preg16to23);
+	}
 
 }

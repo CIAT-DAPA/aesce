@@ -108,6 +108,19 @@ public class modRastaHr1 extends Activity {
 		startActivity(imodrastahr1PregCampo);
 	}
 	
+	//--Boton anotacion especial--//
+	public void OnModRastaHr1BtnAnotacionEspecial_Click(View button){
+		Intent imodrastahr1AnotacionEspecial = new Intent();
+		imodrastahr1AnotacionEspecial.setClass(this, modRastaHr1AnotacionesEspeciales.class);
+		imodrastahr1AnotacionEspecial.putExtra("PRO_ID", PRO_ID);
+		imodrastahr1AnotacionEspecial.putExtra("FIN_ID", FIN_ID);
+		imodrastahr1AnotacionEspecial.putExtra("USU_ID", USU_ID);
+		imodrastahr1AnotacionEspecial.putExtra("RAS_ID", RAS_ID);
+		imodrastahr1AnotacionEspecial.putExtra("RAS_UMAID", RAS_UMAID);
+		startActivity(imodrastahr1AnotacionEspecial);
+	}
+
+	
 	
 	/**********************************************************************************
 	 *******************************METODOS DE LA CLASE******************************** 

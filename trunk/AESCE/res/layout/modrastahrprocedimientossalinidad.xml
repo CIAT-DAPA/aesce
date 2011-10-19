@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:background="#FFFFFF">
+	<LinearLayout android:id="@+id/linearLayout1"
+		android:layout_width="match_parent" android:layout_height="wrap_content">
+		<TextView android:id="@+id/textView1" android:layout_height="wrap_content"
+			android:background="#7D4312" android:textColor="#FFFFFF" android:layout_width="match_parent"
+			android:gravity="center" android:height="40sp" android:textSize="15sp" android:text="Hoja de Procedimientos (Salinidad)"></TextView>
+	</LinearLayout>
+	<ScrollView android:id="@+id/scrollView1"
+		android:layout_marginTop="10sp" android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<LinearLayout android:id="@+id/linearLayout4"
+			android:layout_width="match_parent" android:layout_height="match_parent">
+			<TableLayout android:layout_width="match_parent"
+				android:id="@+id/tableLayout1" android:layout_height="match_parent"
+				android:layout_marginLeft="5sp" android:layout_marginRight="10sp">
+				<TableRow android:layout_width="wrap_content" android:id="@+id/tableRow3"
+					android:layout_height="wrap_content">
+					<LinearLayout android:layout_height="wrap_content"
+						android:id="@+id/linearLayout5" android:layout_width="match_parent">
+						<Button android:textSize="20sp" android:layout_width="wrap_content"
+							android:text="@string/TextProductorBtnRegresar"
+							android:layout_height="wrap_content" android:id="@+id/IdModRastaHrProcedimientosSalinidadBtnRegresar" android:onClick="OnModRastaHrProcedimientosSalinidadBtnRegresar_Click"></Button>
+						<Button android:id="@+id/button2" android:textSize="20sp"
+							android:layout_width="wrap_content" android:text="@string/TEXTproductorBtnSalir"
+							android:layout_height="wrap_content"></Button>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_width="wrap_content" android:id="@+id/tableRow1"
+					android:layout_height="wrap_content">
+					<LinearLayout android:layout_height="wrap_content"
+						android:id="@+id/linearLayout3" android:layout_marginTop="20sp"
+						android:orientation="vertical" android:layout_width="fill_parent">
+						<TextView android:width="300sp" android:gravity="center" android:background="#dca76d" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/textView2" android:textColor="#704312" android:height="30sp" android:text="Salinidad"></TextView>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_width="wrap_content" android:id="@+id/TableRow01" android:layout_height="wrap_content" android:layout_marginTop="10sp">
+					<LinearLayout android:layout_width="wrap_content" android:orientation="vertical" android:id="@+id/LinearLayout01" android:layout_height="wrap_content">
+						<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TextView01" android:layout_marginRight="5sp" android:textColor="#000000" android:textSize="12sp" android:text="La posició topográfica del perfil es plana o plana con ondulaciones leves y la pendiente varía entre 0-2% (Ver numerales 1 y 2)"></TextView>
+						<RadioGroup android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdgPreg1">
+							<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:textColor="#000000" android:text="Si" android:layout_marginRight="10sp" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg1SI"></RadioButton>
+							<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:text="No" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg1NO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_marginTop="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TableRow02">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/LinearLayout02" android:orientation="vertical" android:layout_width="wrap_content">
+						<TextView android:layout_marginRight="5sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:textSize="12sp" android:id="@+id/TextView02" android:text="Observa costras blancas o peladeros (Ver numeral 14)"></TextView>
+						<RadioGroup android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdgPreg2">
+							<RadioButton android:layout_marginRight="10sp" android:checked="true" android:layout_width="wrap_content" android:text="Si" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg2SI"></RadioButton>
+							<RadioButton android:layout_width="wrap_content" android:text="No" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg2NO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_marginTop="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TableRow03">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/LinearLayout05" android:orientation="vertical" android:layout_width="wrap_content">
+						<TextView android:layout_marginRight="5sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:textSize="12sp" android:id="@+id/TextView03" android:text="Tiene un PH entre 7 y 8 (Ver numeral 4)"></TextView>
+						<RadioGroup android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdgPreg3">
+							<RadioButton android:layout_marginRight="10sp" android:checked="true" android:layout_width="wrap_content" android:text="Si" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg3SI"></RadioButton>
+							<RadioButton android:layout_width="wrap_content" android:text="No" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg3NO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_marginTop="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TableRow04">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/LinearLayout06" android:orientation="vertical" android:layout_width="wrap_content">
+						<TextView android:layout_marginRight="5sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:textSize="12sp" android:id="@+id/TextView04" android:text="Se encuentra en una zona seca (árida), o húmeda cerca al mar o lagos salados, donde casi no llueve (Ver numeral 16)"></TextView>
+						<RadioGroup android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdgPreg4">
+							<RadioButton android:layout_marginRight="10sp" android:checked="true" android:layout_width="wrap_content" android:text="Si" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg4SI"></RadioButton>
+							<RadioButton android:layout_width="wrap_content" android:text="No" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg4NO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_marginTop="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TableRow05">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/LinearLayout07" android:orientation="vertical" android:layout_width="wrap_content">
+						<TextView android:layout_marginRight="5sp" android:text="...Y además coincide con 2 o mas de las siguientes condiciones su suelo es salino" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#704312" android:textSize="12sp" android:id="@+id/TextView05"></TextView>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_marginTop="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TableRow06">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/LinearLayout08" android:orientation="vertical" android:layout_width="wrap_content">
+						<TextView android:layout_marginRight="5sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:textSize="12sp" android:id="@+id/TextView06" android:text="Observa en el suelo costras duras o crujientes (Ver numeral 12)"></TextView>
+						<RadioGroup android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdgPreg6">
+							<RadioButton android:layout_marginRight="10sp" android:checked="true" android:layout_width="wrap_content" android:text="Si" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg6SI"></RadioButton>
+							<RadioButton android:layout_width="wrap_content" android:text="No" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg6NO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_marginTop="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TableRow07">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/LinearLayout09" android:orientation="vertical" android:layout_width="wrap_content">
+						<TextView android:layout_marginRight="5sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:textSize="12sp" android:id="@+id/TextView07" android:text="Observa en el cultivo plantas pequeñas, secas o de baja produccion (Ver numeral 18)"></TextView>
+						<RadioGroup android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdgPreg7">
+							<RadioButton android:layout_marginRight="10sp" android:checked="true" android:layout_width="wrap_content" android:text="Si" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg7SI"></RadioButton>
+							<RadioButton android:layout_width="wrap_content" android:text="No" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg7NO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_marginTop="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TableRow09">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/LinearLayout10" android:orientation="vertical" android:layout_width="wrap_content">
+						<TextView android:layout_marginRight="5sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:textSize="12sp" android:id="@+id/TextView08" android:text="El drenaje es bueno o excesivo (Hoja de Respuestas 2)"></TextView>
+						<RadioGroup android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdgPreg8">
+							<RadioButton android:layout_marginRight="10sp" android:checked="true" android:layout_width="wrap_content" android:text="Si" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg8SI"></RadioButton>
+							<RadioButton android:layout_width="wrap_content" android:text="No" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg8NO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_marginTop="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TableRow10">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/LinearLayout11" android:orientation="vertical" android:layout_width="wrap_content">
+						<TextView android:layout_marginRight="5sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:textSize="12sp" android:id="@+id/TextView09" android:text="El suelo es extremadamente duro o firme (Ver numeral 3)"></TextView>
+						<RadioGroup android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdgPreg9">
+							<RadioButton android:layout_marginRight="10sp" android:checked="true" android:layout_width="wrap_content" android:text="Si" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg9SI"></RadioButton>
+							<RadioButton android:layout_width="wrap_content" android:text="No" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg9NO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_marginTop="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TableRow11">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/LinearLayout12" android:orientation="vertical" android:layout_width="wrap_content">
+						<TextView android:layout_marginRight="5sp" android:text="Nivel de salinidad" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#7D4312" android:textSize="15sp" android:id="@+id/TextView10"></TextView>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_marginTop="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TableRow12">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/LinearLayout13" android:orientation="vertical" android:layout_width="wrap_content">
+						<TextView android:layout_marginRight="5sp" android:text="Encuentra usted costras blancas o peladeros (Ver numeral 14)" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:textSize="12sp" android:id="@+id/TextView11"></TextView>
+						<RadioGroup android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdgPreg11">
+							<RadioButton android:layout_marginRight="10sp" android:checked="true" android:layout_width="wrap_content" android:text="Mucho" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg11MUCHO"></RadioButton>
+							<RadioButton android:layout_width="wrap_content" android:text="Poco" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg11POCO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_marginTop="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TableRow13">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/LinearLayout14" android:orientation="vertical" android:layout_width="wrap_content">
+						<TextView android:layout_marginRight="5sp" android:text="Observa en el cultivo plantas pequeñas, secas o de baja producción. (Ver numeral 18)" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:textSize="12sp" android:id="@+id/TextView12"></TextView>
+						<RadioGroup android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdgPreg12">
+							<RadioButton android:layout_marginRight="10sp" android:checked="true" android:layout_width="wrap_content" android:text="Mucho" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg12MUCHO"></RadioButton>
+							<RadioButton android:layout_width="wrap_content" android:text="Poco" android:layout_height="wrap_content" android:textColor="#000000" android:id="@+id/IdModRastaHrProcedimientosSalinidadRdoPreg12POCO"></RadioButton>
+						</RadioGroup>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_width="wrap_content" android:id="@+id/TableRow08" android:layout_marginTop="10sp" android:layout_height="wrap_content">
+					<LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/LinearLayout03" android:orientation="vertical">
+						<Button android:layout_width="wrap_content" android:textSize="20sp" android:layout_height="wrap_content" android:text="Registrar" android:id="@+id/IdModRastaHrProcedimientosSalinidadBtnRegistrar" android:onClick="OnModRastaHrProcedimientosSalinidadBtnRegistrar_Click"></Button>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_width="wrap_content" android:id="@+id/tableRow2" android:layout_marginRight="10sp" android:layout_height="wrap_content">
+					<LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/LinearLayout04" android:layout_marginTop="30sp" android:layout_marginLeft="5sp" android:layout_marginBottom="10sp" android:layout_marginRight="10sp">
+						<ImageView android:layout_width="wrap_content" android:layout_marginLeft="10sp" android:id="@+id/imageView2" android:src="@drawable/asohofrucol" android:layout_height="wrap_content"></ImageView>
+						<ImageView android:layout_width="wrap_content" android:layout_marginLeft="10sp" android:id="@+id/imageView3" android:src="@drawable/um" android:layout_height="wrap_content"></ImageView>
+						<ImageView android:layout_width="wrap_content" android:layout_marginLeft="10sp" android:id="@+id/imageView4" android:src="@drawable/fondo" android:layout_height="wrap_content"></ImageView>
+					</LinearLayout>
+				</TableRow>
+			</TableLayout>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

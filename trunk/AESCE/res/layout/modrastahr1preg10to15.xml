@@ -99,7 +99,8 @@
 							android:text="12. ¿Observa en la superficie, costras dras o crujientes?"
 							android:textColor="#000000" android:textSize="15sp"
 							android:layout_marginRight="5sp" android:layout_height="wrap_content"></TextView>
-						<Spinner android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/Idmodrastahr1preg10to15spn12"></Spinner>
+						<Spinner android:layout_width="match_parent"
+							android:layout_height="wrap_content" android:id="@+id/Idmodrastahr1preg10to15spn12"></Spinner>
 					</LinearLayout>
 				</TableRow>
 				<TableRow android:layout_width="wrap_content" android:id="@+id/TableRow09"
@@ -107,8 +108,12 @@
 					<LinearLayout android:layout_height="wrap_content"
 						android:layout_width="wrap_content" android:id="@+id/LinearLayout09"
 						android:orientation="vertical">
-						<TextView android:textSize="15sp" android:textColor="#000000" android:id="@+id/TextView03" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5sp" android:text="13. El sitio de muestreo se encuentra expuesto al sol durante:"></TextView>
-						<Spinner android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/Idmodrastahr1preg10to15spn13"></Spinner>
+						<TextView android:textSize="15sp" android:textColor="#000000"
+							android:id="@+id/TextView03" android:layout_width="wrap_content"
+							android:layout_height="wrap_content" android:layout_marginRight="5sp"
+							android:text="13. El sitio de muestreo se encuentra expuesto al sol durante:"></TextView>
+						<Spinner android:layout_width="match_parent"
+							android:layout_height="wrap_content" android:id="@+id/Idmodrastahr1preg10to15spn13"></Spinner>
 					</LinearLayout>
 				</TableRow>
 				<TableRow android:layout_width="wrap_content" android:id="@+id/TableRow04"
@@ -116,8 +121,13 @@
 					<LinearLayout android:layout_height="wrap_content"
 						android:layout_width="wrap_content" android:id="@+id/LinearLayout08"
 						android:orientation="vertical">
-						<TextView android:textColor="#000000" android:id="@+id/TextView06" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5sp" android:text="14. ¿Observa used costras blancas o peladeros?" android:textSize="15sp"></TextView>
-						<Spinner android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/Idmodrastahr1preg10to15spn14"></Spinner>
+						<TextView android:textColor="#000000" android:id="@+id/TextView06"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_marginRight="5sp"
+							android:text="14. ¿Observa used costras blancas o peladeros?"
+							android:textSize="15sp"></TextView>
+						<Spinner android:layout_width="match_parent"
+							android:layout_height="wrap_content" android:id="@+id/Idmodrastahr1preg10to15spn14"></Spinner>
 					</LinearLayout>
 				</TableRow>
 				<TableRow android:layout_width="wrap_content" android:id="@+id/TableRow03"
@@ -125,8 +135,13 @@
 					<LinearLayout android:layout_height="wrap_content"
 						android:layout_width="wrap_content" android:id="@+id/LinearLayout05"
 						android:orientation="vertical">
-						<TextView android:textColor="#000000" android:id="@+id/TextView04" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5sp" android:text="15. ¿Observa costras de color negro en el suelo?" android:textSize="15sp"></TextView>
-						<Spinner android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/Idmodrastahr1preg10to15spn15"></Spinner>
+						<TextView android:textColor="#000000" android:id="@+id/TextView04"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_marginRight="5sp"
+							android:text="15. ¿Observa costras de color negro en el suelo?"
+							android:textSize="15sp"></TextView>
+						<Spinner android:layout_width="match_parent"
+							android:layout_height="wrap_content" android:id="@+id/Idmodrastahr1preg10to15spn15"></Spinner>
 					</LinearLayout>
 				</TableRow>
 				<TableRow android:layout_width="wrap_content" android:id="@+id/TableRow08"
