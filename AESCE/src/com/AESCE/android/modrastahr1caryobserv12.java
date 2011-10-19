@@ -18,6 +18,7 @@ import android.widget.Spinner;
 public class modrastahr1caryobserv12 extends Activity implements
 		AdapterView.OnItemSelectedListener {
 
+	//Elementos del bundle
 	String USU_ID = "";
 	String USU_NOMBRE = "";
 	String PRO_ID = "";

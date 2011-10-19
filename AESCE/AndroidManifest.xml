@@ -43,6 +43,18 @@
 		<activity android:name="modrastahr1preg10to15"></activity>
 		<activity android:name="modrastahr1preg10to15"></activity>
 		<activity android:name="modRastaHr1PregCampo"></activity>
+		<activity android:name="modrastahr1preg16to23"></activity>
+		<activity android:name="modRastaHr1AnotacionesEspeciales"></activity>
+		<activity android:name="modRastaHr2"></activity>
+		<activity android:name="modRastaHr2PropInferidas"></activity>
+		<activity android:name="modrastahr2propinferidas1234"></activity>
+		<activity android:name="modRastaHrProcedimientos"></activity>
+		<activity android:name="modRastaHrProcedimientosPresMoteados"></activity>
+		<activity android:name="modrastahrprocedimientosprofefectiva"></activity>
+		<activity android:name="modrastahrprocedimientosmatorganica"></activity>
+		<activity android:name="modrastahrprocedimientosmatorganica"></activity>
+		<activity android:name="modrastahrprocedimientossalinidad"></activity>
+		<activity android:name="modrastahrprocedimientossodicidad"></activity>
 		
 	</application>
 </manifest>

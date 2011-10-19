@@ -127,4 +127,67 @@
 		<item>La tarde</item>
 	</string-array>
 
+	<string-array name="rastaHr1Preg16to123preg18">
+		<item>Plantas poco afectadas</item>
+		<item>Plantas muy afectadas</item>
+		<item>Plantas normales</item>
+		<item>No hay cultivo</item>
+	</string-array>
+
+	<string-array name="rastaHr1Preg16to123preg23">
+		<item>Muy bueno (Abundante)</item>
+		<item>Bueno (Normal)</item>
+		<item>Regular (Cubre casi la mitad del lote)</item>
+		<item>Espaciado (Parches)</item>
+		<item>Sin cobertura</item>
+	</string-array>
+
+	<string-array name="rastaHr2PropInferidasCapas">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+	</string-array>
+
+	<string-array name="rastaHr2PropInferidasMatOrganica">
+		<item>Muy Alta</item>
+		<item>Alta</item>
+		<item>Media</item>
+		<item>Baja</item>
+	</string-array>
+
+	<string-array name="rastaHr2PropInferidasDrenInterno">
+		<item>Lento o Muy lento</item>
+		<item>Bueno</item>
+		<item>Excesivo</item>
+	</string-array>
+
+	<string-array name="rastaHr2PropInferidasDrenExterno">
+		<item>Ninguno</item>
+		<item>Lento</item>
+		<item>Moderado</item>
+		<item>Excesivo</item>
+	</string-array>
+
+	<string-array name="rastaHr2PropInferidasSaliSodi">
+		<item>Alta</item>
+		<item>Baja</item>
+		<item>Suelo Normal</item>
+	</string-array>
+
+	<string name="TEXTmodrastahr1btnPropiedadesInferidas">Propiedades Inferidas</string>
+
+	<string name="TEXTmodrastahr1btnPropiedadesInferidas1234">Propiedades Inferidas (1,2,3,4)</string>
+
+	<string name="TEXTmodRastaHrProcedimientosBtnPresMoteados">Presencia de moteados</string>
+
+	<string name="TEXTmodRastaHrProcedimientosBtnProfEfectiva">Profundidad efectiva</string>
+
+	<string name="TEXTmodRastaHrProcedimientosBtnMatOrganica">Materia Orgánica</string>
+
+	<string name="TEXTmodRastaHrProcedimientosBtnSalinidad">Salinidad</string>
+
+	<string name="TEXTmodRastaHrProcedimientosBtnSodicidad">Sodicidad</string>
+
 </resources>

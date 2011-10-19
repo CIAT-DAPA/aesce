@@ -64,10 +64,28 @@ public class modRasta extends Activity {
 
 	// --Boton Hoja de respuestas No 2--//
 	public void OnModRastaBtnHr2_Click(View button) {
+		Intent iModRastaHr2 = new Intent();
+		iModRastaHr2.setClass(this, modRastaHr2.class);
+		iModRastaHr2.putExtra("PRO_ID", PRO_ID);
+		iModRastaHr2.putExtra("FIN_ID", FIN_ID);
+		iModRastaHr2.putExtra("USU_ID", USU_ID);
+		iModRastaHr2.putExtra("USU_NOMBRE", USU_NOMBRE);
+		iModRastaHr2.putExtra("RAS_ID", RAS_ID);
+		iModRastaHr2.putExtra("RAS_UMAID", RAS_UMAID);
+		startActivity(iModRastaHr2);
 	}
 
 	// --Boton Hoja de procedimientos--//
 	public void OnModRastaBtnHojaProc_Click(View button) {
+		Intent iModRastaHrProcedimientos = new Intent();
+		iModRastaHrProcedimientos.setClass(this, modRastaHrProcedimientos.class);
+		iModRastaHrProcedimientos.putExtra("PRO_ID", PRO_ID);
+		iModRastaHrProcedimientos.putExtra("FIN_ID", FIN_ID);
+		iModRastaHrProcedimientos.putExtra("USU_ID", USU_ID);
+		iModRastaHrProcedimientos.putExtra("USU_NOMBRE", USU_NOMBRE);
+		iModRastaHrProcedimientos.putExtra("RAS_ID", RAS_ID);
+		iModRastaHrProcedimientos.putExtra("RAS_UMAID", RAS_UMAID);
+		startActivity(iModRastaHrProcedimientos);
 	}
 	
 	/**********************************************************************************

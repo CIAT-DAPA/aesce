@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:background="#FFFFFF">
+	<LinearLayout android:id="@+id/linearLayout1" android:layout_width="match_parent" android:layout_height="wrap_content">
+		<TextView android:id="@+id/textView1" android:layout_height="wrap_content" android:background="#7D4312" android:textColor="#FFFFFF" android:layout_width="match_parent" android:gravity="center" android:textSize="20sp" android:height="40sp" android:text="Hoja de Respuestas No. 2"></TextView>
+	</LinearLayout>
+	<ScrollView android:id="@+id/scrollView1" android:layout_marginTop="10sp" android:layout_width="match_parent" android:layout_height="match_parent">
+		<LinearLayout android:id="@+id/linearLayout4" android:layout_width="match_parent" android:layout_height="match_parent">
+			<TableLayout android:layout_width="match_parent" android:id="@+id/tableLayout1" android:layout_height="match_parent" android:layout_marginLeft="5sp" android:layout_marginRight="10sp">
+				<TableRow android:layout_width="wrap_content" android:id="@+id/tableRow3" android:layout_height="wrap_content">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout5" android:layout_width="match_parent">
+						<Button android:textSize="20sp" android:layout_width="wrap_content" android:text="@string/TextProductorBtnRegresar" android:layout_height="wrap_content" android:id="@+id/Idmodrastahr2PropInferidasBtnRegresar" android:onClick="OnModRastaHr2PropInferidasBtnRegresar_Click"></Button>
+						<Button android:id="@+id/button2" android:textSize="20sp" android:layout_width="wrap_content" android:text="@string/TEXTproductorBtnSalir" android:layout_height="wrap_content"></Button>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_width="wrap_content" android:id="@+id/tableRow1" android:layout_height="wrap_content">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout3" android:layout_marginTop="20sp" android:orientation="vertical" android:layout_width="fill_parent">
+						<TextView android:id="@+id/textView2" android:layout_height="wrap_content" android:textColor="#704312" android:background="#dca76d" android:width="300sp" android:gravity="center" android:height="30sp" android:layout_width="wrap_content" android:text="Propiedades Inferidas"></TextView>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_width="wrap_content" android:id="@+id/tableRow4" android:layout_height="wrap_content" android:layout_marginTop="10sp">
+					<LinearLayout android:layout_width="wrap_content" android:id="@+id/linearLayout2" android:layout_height="wrap_content" android:orientation="horizontal">
+						<TextView android:id="@+id/textView3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:layout_marginRight="5sp" android:text="Lote número:" android:textSize="15sp" android:width="130sp" android:gravity="right"></TextView>
+						<EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:editable="false" android:id="@+id/Idmodrastahr2PropInferidasEdtLoteNro"></EditText>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_width="wrap_content" android:layout_marginTop="10sp" android:id="@+id/TableRow01" android:layout_height="wrap_content">
+					<LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_width="wrap_content">
+						<TextView android:textColor="#000000" android:id="@+id/TextView01" android:layout_height="wrap_content" android:layout_marginRight="5sp" android:layout_width="wrap_content" android:text="Cajuela número:" android:textSize="15sp" android:width="130sp" android:gravity="right"></TextView>
+						<EditText android:layout_height="wrap_content" android:layout_weight="1" android:layout_width="match_parent" android:inputType="number" android:id="@+id/Idmodrastahr2PropInferidasEdtCajuelaNumero"></EditText>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_width="wrap_content" android:layout_marginTop="10sp" android:id="@+id/TableRow02" android:layout_height="wrap_content">
+					<LinearLayout android:id="@+id/LinearLayout02" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_width="wrap_content">
+						<TextView android:textColor="#000000" android:id="@+id/TextView02" android:layout_height="wrap_content" android:layout_marginRight="5sp" android:layout_width="wrap_content" android:text="Nombre: (Persona que describe)" android:textSize="15sp" android:width="130sp" android:gravity="right"></TextView>
+						<EditText android:layout_height="wrap_content" android:layout_weight="1" android:layout_width="match_parent" android:inputType="text" android:editable="false" android:id="@+id/Idmodrastahr2PropInferidasEdtNombreUsuario"></EditText>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_width="wrap_content" android:layout_marginTop="10sp" android:id="@+id/TableRow04" android:layout_height="wrap_content">
+					<LinearLayout android:id="@+id/LinearLayout04" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_width="wrap_content">
+						<TextView android:textColor="#000000" android:id="@+id/TextView03" android:layout_height="wrap_content" android:layout_marginRight="5sp" android:layout_width="wrap_content" android:text="Uso actua del lote:" android:textSize="15sp" android:width="130sp" android:gravity="right"></TextView>
+						<EditText android:layout_height="wrap_content" android:layout_weight="1" android:layout_width="match_parent" android:inputType="textMultiLine" android:height="100sp" android:id="@+id/Idmodrastahr2PropInferidasEdtUsoActLote"></EditText>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_width="wrap_content" android:id="@+id/TableRow03" android:layout_height="wrap_content" android:layout_marginTop="10sp">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/LinearLayout03" android:layout_width="wrap_content" android:orientation="vertical">
+						<Button android:textSize="20sp" android:layout_width="wrap_content" android:text="Registrar" android:layout_height="wrap_content" android:id="@+id/Idmodrastahr2PropInferidasBtnRegistrar" android:onClick="OnModRastaHr2PropInferidasBtnRegistrar_Click"></Button>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:layout_width="wrap_content" android:id="@+id/tableRow2" android:layout_height="wrap_content" android:layout_marginRight="10sp">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout3" android:layout_marginTop="30sp" android:layout_width="wrap_content" android:layout_marginRight="10sp" android:layout_marginLeft="5sp" android:layout_marginBottom="10sp">
+						<ImageView android:layout_marginLeft="10sp" android:id="@+id/imageView2" android:src="@drawable/asohofrucol" android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageView>
+						<ImageView android:layout_marginLeft="10sp" android:id="@+id/imageView3" android:src="@drawable/um" android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageView>
+						<ImageView android:layout_marginLeft="10sp" android:id="@+id/imageView4" android:src="@drawable/fondo" android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageView>
+					</LinearLayout>
+				</TableRow>
+			</TableLayout>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
