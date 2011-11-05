@@ -25,6 +25,8 @@ public class productor extends Activity implements
 	String USU_ID = "";
 	String USU_NOMBRE = "";
 	String PRO_ID = "";
+	
+	private static final int REQUEST_CODE = 10;
 
 	int rows;
 	int columns;
@@ -48,6 +50,7 @@ public class productor extends Activity implements
 		Bundle bundle = getIntent().getExtras();
 
 		txvBienvenido = (TextView) findViewById(R.id.IdProductorTxvBienvenido);
+
 		gdvProductor = (GridView) findViewById(R.id.IdProductorGdvProductor);
 
 		txvBienvenido.setText("Bienvenido " + bundle.getString("USU_NOMBRE"));
@@ -67,30 +70,8 @@ public class productor extends Activity implements
 
 		gdvProductor.setOnItemClickListener(this);// .setOnItemSelectedListener(this);
 
-		/*
-		 * gdvProductor .setOnItemSelectedListener(new
-		 * AdapterView.OnItemSelectedListener() { public void
-		 * onItemSelected(AdapterView<?> parent, android.view.View v, int
-		 * position, long id) { Mensaje("Funciona", "Seleccionado: " +
-		 * productorID[position]); }
-		 * 
-		 * public void onNothingSelected(AdapterView<?> parent) { Mensaje("",
-		 * ""); } });
-		 */
+	
 
-		/*
-		 * gdvProductor.setAdapter(new FunnyLookingAdapter(this,
-		 * android.R.layout.simple_list_item_1, productorID));
-		 * 
-		 * gdvProductor.setOnItemSelectedListener(this);
-		 */
-		/*
-		 * ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,
-		 * android.R.layout.simple_list_item_1, productorID);
-		 */
-
-		gdvProductor.invalidate();
-		//gdvProductor.invalidateViews();
 
 	}
 
@@ -106,7 +87,19 @@ public class productor extends Activity implements
 	public void OnProductorInsertar_Click(View button) {
 		Intent iProductorNuevo = new Intent();
 		iProductorNuevo.setClass(this, ProductorNuevo.class);
-		startActivity(iProductorNuevo);
+		startActivityForResult(iProductorNuevo,REQUEST_CODE);
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
+			if (data.hasExtra("returnProductor")) {
+				llenarGridView();
+				gdvProductor.setAdapter(new FunnyLookingAdapter(this,
+						android.R.layout.simple_list_item_1, productorID));
+			}
+		}
 	}
 
 	// -Metodo para capturar el touch del gridview-//
@@ -172,11 +165,13 @@ public class productor extends Activity implements
 
 				c.moveToNext();
 			}
-			myDatabase.close();
-			// bdH.close();
+
 
 		} catch (Exception e) {
 			// Mensaje("Error", "Error 2 " + e.getMessage());
+		}
+		finally{
+			bdH.close();
 		}
 	}
 

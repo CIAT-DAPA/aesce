@@ -31,8 +31,8 @@ public class login extends Activity {
 		EdtId = (EditText) findViewById(R.id.IdLoginEdtId);
 		EdtPass = (EditText) findViewById(R.id.IdLoginEdtClave);
 
-		EdtId.setText("");
-		EdtPass.setText("");
+		CrearBBDD();
+
 	}
 
 	/*********************************************************************************
@@ -41,16 +41,19 @@ public class login extends Activity {
 
 	// -- Metodo para el boton principal --//
 	public void OnIdLoginBtnPrincipal_Click(View button) {
-		Intent iMain = new Intent();
-		iMain.setClass(this, main.class);
-		startActivity(iMain);
+		finish();
 	}
 
 	// -- Metodo para el boton ingresar --//
 	public void OnIdLoginBtnIngresar_Click(View buttton) {
 
-		CrearBBDD();
-		ingresar();
+		if (EdtId.getText().toString().equals("")
+				|| EdtPass.getText().toString().equals("")) {
+			Mensaje("Error", "Alguno o ambos campos se encuentra vacíos");
+			limpiar();
+		} else {
+			ingresar();
+		}
 	}
 
 	// -- Metodo para el boton salir --//
@@ -111,7 +114,6 @@ public class login extends Activity {
 		alert.show();
 	}
 
-	
 	// -- Mensaje--//
 	public void Mensaje(String titulo, String Mensaje) {
 		String squence = "" + Mensaje;
@@ -172,15 +174,16 @@ public class login extends Activity {
 						"No existe en la base de datos nadie registrado con este ID y clave");
 			}
 
-			myDatabase.close();
-
 		} catch (Exception e) {
 			Mensaje("Error", "Error: " + e.getMessage());
+		} finally {
+			bdH.close();
 		}
+
 	}
-	
-	//-- Metodo para lipiar los editTExt --//
-	public void limpiar(){
+
+	// -- Metodo para lipiar los editTExt --//
+	public void limpiar() {
 		EdtId.setText("");
 		EdtPass.setText("");
 	}

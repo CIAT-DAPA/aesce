@@ -190,4 +190,22 @@
 
 	<string name="TEXTmodRastaHrProcedimientosBtnSodicidad">Sodicidad</string>
 
+	<string name="TEXTfincaBtnModPlatano">Modulo Platano</string>
+
+	<string name="TEXTmenuFincaBtnModMango">Módulo Mango</string>
+
+	<string name="TEXTmenuFincaBtnHistoricoProduccion">Histórico de Producción</string>
+
+	<string name="TEXTmenuFincaBtnCalidadFruta">Calidad de Fruta</string>
+
+	<string name="TEXTRegresar">Regresar</string>
+
+	<string name="TEXTsalir">Salir</string>
+
+	<string name="TEXTlatitud">Latitud</string>
+
+	<string name="TEXTlongitud">Longitud</string>
+
+	<string name="TEXTtitulo">Sistema de captura de datos</string>
+
 </resources>

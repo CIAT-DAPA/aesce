@@ -72,5 +72,47 @@ public class menuFinca extends Activity {
 		iRasta.putExtra("USU_NOMBRE", USU_NOMBRE);
 		startActivity(iRasta);
 	}
+	
+	//--Boton modulo platano--//
+	public void OnMenuFincaBtnModPlatano_Click(View button){
+		Intent iModPlatano = new Intent();
+		iModPlatano.setClass(this, modPlatano.class);
+		iModPlatano.putExtra("PRO_ID", PRO_ID);
+		iModPlatano.putExtra("FIN_ID", FIN_ID);
+		startActivity(iModPlatano);
+	}
+	
+	//--Boton modulo mango--//
+	public void OnModMenuFincaBtnModMango_Click(View button){
+		Intent iModMango = new Intent();
+		iModMango.setClass(this, modMango.class);
+		iModMango.putExtra("PRO_ID", PRO_ID);
+		iModMango.putExtra("FIN_ID", FIN_ID);
+		iModMango.putExtra("USU_ID", USU_ID);
+		iModMango.putExtra("USU_NOMBRE", USU_NOMBRE);
+		startActivity(iModMango);
+	}
+	
+	//--Boton historico produccion--//
+	public void OnMenuFincaBtnHistoricoProduccion_Click(View button){
+		Intent iModHistoricoProd = new Intent();
+		iModHistoricoProd.setClass(this, modHistoricoProduccion.class);
+		iModHistoricoProd.putExtra("PRO_ID", PRO_ID);
+		iModHistoricoProd.putExtra("FIN_ID", FIN_ID);
+		iModHistoricoProd.putExtra("USU_ID", USU_ID);
+		iModHistoricoProd.putExtra("USU_NOMBRE", USU_NOMBRE);
+		startActivity(iModHistoricoProd);
+	}
+	
+	//--Boton calidad fruta--//
+	public void OnMenuFincaBtnCalidadFruta_Click(View button){
+		Intent iCalidadFruta = new Intent();
+		iCalidadFruta.setClass(this, calidadFruta.class);
+		iCalidadFruta.putExtra("PRO_ID", PRO_ID);
+		iCalidadFruta.putExtra("FIN_ID", FIN_ID);
+		iCalidadFruta.putExtra("USU_ID", USU_ID);
+		iCalidadFruta.putExtra("USU_NOMBRE", USU_NOMBRE);
+		startActivity(iCalidadFruta);
+	}
 
 }

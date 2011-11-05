@@ -55,6 +55,14 @@
 		<activity android:name="modrastahrprocedimientosmatorganica"></activity>
 		<activity android:name="modrastahrprocedimientossalinidad"></activity>
 		<activity android:name="modrastahrprocedimientossodicidad"></activity>
+		<activity android:name="modPlatano"></activity>
+		<activity android:name="modMango"></activity>
+		<activity android:name="modHistoricoProduccion"></activity>
+		<activity android:name="modHistoricoProdMenu"></activity>
+		<activity android:name="modHistoricoProdProduccion"></activity>
+		<activity android:name="modHistoricoProdCosechas"></activity>
+		<activity android:name=".calidadFrutaLote"></activity>
+		<activity android:name="calidadFruta"></activity>
 		
 	</application>
 </manifest>

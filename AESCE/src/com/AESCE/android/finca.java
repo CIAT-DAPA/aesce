@@ -166,6 +166,9 @@ public class finca extends Activity implements AdapterView.OnItemClickListener {
 		} catch (Exception e) {
 			// Mensaje("Error", "Error 2 " + e.getMessage());
 		}
+		finally{
+			bdH.close();
+		}
 	}
 
 	// --Metodo para imprimir mensajes--//
