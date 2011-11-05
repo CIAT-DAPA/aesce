@@ -2,8 +2,6 @@ package com.AESCE.android;
 
 import java.io.IOException;
 import java.util.Calendar;
-import java.util.regex.Pattern;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
