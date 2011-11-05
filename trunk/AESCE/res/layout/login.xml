@@ -13,58 +13,42 @@
 			android:text="@string/TEXTlogintxvTitulo" android:textSize="40sp"
 			android:width="500sp" android:gravity="center"></TextView>
 	</LinearLayout>
-	<LinearLayout android:id="@+id/linearLayout6"
-		android:layout_width="match_parent" android:layout_height="wrap_content"
-		android:layout_marginTop="20sp">
-		<Button android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:id="@+id/IdLoginBtnRegresar"
-			android:text="@string/TEXTloginBtnPrincipal" android:textSize="20sp"
-			android:onClick="OnIdLoginBtnPrincipal_Click"></Button>
-		<Button android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:text="@string/TextBtnMainSalir"
-			android:textSize="20sp" android:layout_marginLeft="20sp"
-			android:id="@+id/IdLoginBtnSalir" android:onClick="OnIdLoginBtnSalir_Click"></Button>
-	</LinearLayout>
-	<LinearLayout android:id="@+id/linearLayout1"
-		android:layout_width="match_parent" android:layout_height="wrap_content"
-		android:layout_marginTop="20sp" android:layout_marginLeft="10sp">
-		<TextView android:id="@+id/textView1" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:textColor="#000000"
-			android:textSize="20sp" android:text="@string/TEXTlogintxvID"
-			android:width="50sp"></TextView>
-		<EditText android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:id="@+id/IdLoginEdtId"
-			android:width="300sp"></EditText>
-	</LinearLayout>
-	<LinearLayout android:id="@+id/linearLayout3"
-		android:layout_width="match_parent" android:layout_height="wrap_content"
-		android:layout_marginTop="20sp" android:layout_marginLeft="10sp">
-		<TextView android:id="@+id/textView3" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:textColor="#000000"
-			android:textSize="20sp" android:text="@string/TEXTloginClave"
-			android:width="50sp"></TextView>
-		<EditText android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:id="@+id/IdLoginEdtClave"
-			android:width="300sp" android:inputType="textPassword"></EditText>
-	</LinearLayout>
-	<LinearLayout android:id="@+id/linearLayout4"
-		android:layout_width="match_parent" android:layout_height="wrap_content"
-		android:layout_marginTop="15sp">
-		<Button android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:id="@+id/IdLoginBtnIngresar"
-			android:text="@string/TEXTloginBtnIngresar" android:textSize="20sp" android:onClick="OnIdLoginBtnIngresar_Click"></Button>
-	</LinearLayout>
-	<LinearLayout android:id="@+id/linearLayout5"
-		android:layout_width="match_parent" android:layout_height="wrap_content"
-		android:layout_marginTop="20sp">
-		<ImageView android:id="@+id/imageView2"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:src="@drawable/asohofrucol" android:layout_marginLeft="10sp"></ImageView>
-		<ImageView android:id="@+id/imageView3"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:src="@drawable/um" android:layout_marginLeft="10sp"></ImageView>
-		<ImageView android:id="@+id/imageView4"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:src="@drawable/fondo" android:layout_marginLeft="10sp"></ImageView>
-	</LinearLayout>
+	<ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/scrollView1" android:layout_marginLeft="5sp" android:layout_marginRight="10sp">
+		<LinearLayout android:id="@+id/linearLayout7" android:layout_width="match_parent" android:layout_height="match_parent">
+			<TableLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:id="@+id/tableLayout1">
+				<TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+					<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20sp" android:id="@+id/linearLayout6">
+						<Button android:layout_width="wrap_content" android:onClick="OnIdLoginBtnPrincipal_Click" android:text="@string/TEXTloginBtnPrincipal" android:textSize="20sp" android:id="@+id/IdLoginBtnRegresar" android:layout_height="wrap_content"></Button>
+						<Button android:layout_width="wrap_content" android:onClick="OnIdLoginBtnSalir_Click" android:text="@string/TextBtnMainSalir" android:textSize="20sp" android:layout_marginLeft="20sp" android:id="@+id/IdLoginBtnSalir" android:layout_height="wrap_content"></Button>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:id="@+id/tableRow2" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="10sp">
+					<LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout1" android:layout_width="wrap_content">
+						<TextView android:width="50sp" android:text="@string/TEXTlogintxvID" android:id="@+id/textView1" android:layout_height="wrap_content" android:textSize="20sp" android:textColor="#000000" android:gravity="right" android:layout_width="wrap_content"></TextView>
+						<EditText android:layout_height="wrap_content" android:id="@+id/IdLoginEdtId" android:layout_width="wrap_content" android:layout_marginLeft="10sp" android:width="300sp">
+							<requestFocus></requestFocus>
+						</EditText>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content" android:layout_height="wrap_content">
+					<LinearLayout android:layout_height="wrap_content" android:layout_marginTop="20sp" android:id="@+id/linearLayout3" android:layout_width="wrap_content">
+						<TextView android:layout_width="wrap_content" android:width="50sp" android:gravity="right" android:text="@string/TEXTloginClave" android:id="@+id/textView3" android:layout_height="wrap_content" android:textSize="20sp" android:textColor="#000000"></TextView>
+						<EditText android:inputType="textPassword" android:layout_width="wrap_content" android:width="300sp" android:layout_height="wrap_content" android:id="@+id/IdLoginEdtClave" android:layout_marginLeft="10sp"></EditText>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:id="@+id/tableRow4" android:layout_width="wrap_content" android:layout_height="wrap_content">
+					<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15sp" android:id="@+id/linearLayout4">
+						<Button android:layout_width="wrap_content" android:onClick="OnIdLoginBtnIngresar_Click" android:text="@string/TEXTloginBtnIngresar" android:textSize="20sp" android:id="@+id/IdLoginBtnIngresar" android:layout_height="wrap_content"></Button>
+					</LinearLayout>
+				</TableRow>
+				<TableRow android:id="@+id/tableRow5" android:layout_width="wrap_content" android:layout_height="wrap_content">
+					<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20sp" android:id="@+id/linearLayout5">
+						<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/imageView2" android:src="@drawable/asohofrucol" android:layout_marginLeft="10sp"></ImageView>
+						<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/imageView3" android:src="@drawable/um" android:layout_marginLeft="10sp"></ImageView>
+						<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/imageView4" android:src="@drawable/fondo" android:layout_marginLeft="10sp"></ImageView>
+					</LinearLayout>
+				</TableRow>
+			</TableLayout>
+		</LinearLayout>
+	</ScrollView>
 </LinearLayout>

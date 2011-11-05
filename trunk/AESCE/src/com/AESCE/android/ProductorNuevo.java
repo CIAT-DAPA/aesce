@@ -2,6 +2,7 @@ package com.AESCE.android;
 
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.regex.Pattern;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,7 +11,6 @@ import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -46,8 +46,6 @@ public class ProductorNuevo extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.productornuevo);
-		
-		
 
 		CrearBBDD();
 
@@ -60,7 +58,7 @@ public class ProductorNuevo extends Activity {
 		edtEmail = (EditText) findViewById(R.id.IdProductorNuevoEdtNombre);
 		edtFijo = (EditText) findViewById(R.id.IdProductorNuevoEdtFijo);
 		edtEmail = (EditText) findViewById(R.id.IdProductorNuevoEdtEmail);
-		
+
 		// get the current date
 		final Calendar c = Calendar.getInstance();
 		mYear = c.get(Calendar.YEAR);
@@ -77,17 +75,32 @@ public class ProductorNuevo extends Activity {
 
 	// Metodo para el boton Registrar
 	public void OnProductorNuevoBtnRegistrar_Click(View button) {
-		registrarProductor();
+		if (edtCedula.getText().toString().equals("")
+				|| edtNombre.getText().toString().equals("")
+				|| edtApellido1.getText().toString().equals("")) {
+			Mensaje("Incompleto", "Alguno de los campos se encuentran vacios");
+		} else {
+			
+			registrarProductor();
+		}
+
 	}
 
 	// Metodo para el boton Fecha
 	public void OnProductorNuevoBtnFechaRegis_Click(View button) {
 		showDialog(DATE_DIALOG_ID);
 	}
-	
-	//Metodo para el boton regresar
-	public void OnProductorBtnRegresar_Click(View button){
+
+	// Metodo para el boton regresar
+	public void OnProductorBtnRegresar_Click(View button) {
 		finish();
+	}
+
+	public void finalizar() {
+		Intent iProductor = new Intent();
+		iProductor.putExtra("returnProductor", "1");
+		setResult(RESULT_OK, iProductor);
+		super.finish();
 	}
 
 	/*************************************************************************************
@@ -171,7 +184,7 @@ public class ProductorNuevo extends Activity {
 	}
 
 	// --Metodo para Regristar el productor--//
-	public void registrarProductor(){
+	public void registrarProductor() {
 		BaseDatosHelper bdH = new BaseDatosHelper(this);
 		try {
 			SQLiteDatabase myDatabase = bdH.getWritableDatabase();
@@ -206,19 +219,18 @@ public class ProductorNuevo extends Activity {
 			 * "','" + PRO_CELULAR + "'," + PRO_FIJO + ",'" + PRO_EMAIL + "')";
 			 */
 			myDatabase.insert("PRODUCTOR", null, cv);
-			myDatabase.close();
 
-			//Mensaje("Exito","El registro se hizo exitosamente");
+			// Mensaje("Exito","El registro se hizo exitosamente");
 			limpiar();
-			
 
-			finish();
-
+			finalizar();
 
 		} catch (NumberFormatException e) {
 			Mensaje("Error", "" + e.getMessage());
 		} catch (SQLException e) {
 			Mensaje("Error", "" + e.getMessage());
+		} finally {
+			bdH.close();
 		}
 	}
 

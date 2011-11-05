@@ -65,7 +65,7 @@ public class main extends Activity {
 	// -----------------------------------------GPS----------------------------
 	// ------------------------------------------------------------------------
 	private void comenzarLocalizacion() {
-
+		
 		// Obtenemos una referencia al LocationManager
 		locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
@@ -84,6 +84,9 @@ public class main extends Activity {
 				// TODO Auto-generated method stub
 				TxvLatitud.setText("Latitud: {GPS StatusChanged}");
 				TxvLongitud.setText("Longitud: {GPS StatusChanged}");
+				
+				findViewById(R.id.IdMainBtnVerMapa).setEnabled(true);
+				findViewById(R.id.IdMainBtnIniciar).setEnabled(true);
 			}
 
 			public void onProviderEnabled(String provider) {
@@ -91,6 +94,8 @@ public class main extends Activity {
 
 				TxvLatitud.setText("Latitud: {GPS Cargando...}");
 				TxvLongitud.setText("Longitud: {GPS Cargando...}");
+				findViewById(R.id.IdMainBtnVerMapa).setEnabled(true);
+				findViewById(R.id.IdMainBtnIniciar).setEnabled(true);
 			}
 
 			public void onProviderDisabled(String provider) {
@@ -100,12 +105,19 @@ public class main extends Activity {
 				Mensaje(titulo, mensaje);
 				TxvLatitud.setText("Latitud: {GPS Desactivado}");
 				TxvLongitud.setText("Longitud: {GPS Desactivado}");
+				
+				findViewById(R.id.IdMainBtnVerMapa).setEnabled(false);
+				findViewById(R.id.IdMainBtnIniciar).setEnabled(false);
+				Mensaje("Desactivado", "Favor habilitar el GPS para que la aplicacion pueda funcionar correctamente");
 			}
 
 			public void onLocationChanged(Location location) {
 				// TODO Auto-generated method stub
 				TxvLatitud.setText("Latitud: " + location.getLatitude());
 				TxvLongitud.setText("Longitud: " + location.getLongitude());
+				
+				findViewById(R.id.IdMainBtnVerMapa).setEnabled(true);
+				findViewById(R.id.IdMainBtnIniciar).setEnabled(true);
 
 				Log.i("",
 						String.valueOf("Latitud: " + location.getLatitude()
@@ -124,6 +136,9 @@ public class main extends Activity {
 			TxvLatitud.setText("Latitud: " + String.valueOf(loc.getLatitude()));
 			TxvLongitud.setText("Longitud: "
 					+ String.valueOf(loc.getLongitude()));
+			
+			findViewById(R.id.IdMainBtnVerMapa).setEnabled(true);
+			findViewById(R.id.IdMainBtnIniciar).setEnabled(true);
 
 			Log.i("",
 					String.valueOf(loc.getLatitude() + " - "
@@ -131,6 +146,10 @@ public class main extends Activity {
 		} else {
 			TxvLatitud.setText("Latitud: {sin datos}");
 			TxvLongitud.setText("Longitud: {sin datos}");
+			
+			findViewById(R.id.IdMainBtnVerMapa).setEnabled(false);
+			findViewById(R.id.IdMainBtnIniciar).setEnabled(false);
+			Mensaje("Desactivado", "Favor habilitar el GPS para que la aplicacion pueda funcionar correctamente");
 		}
 	}
 

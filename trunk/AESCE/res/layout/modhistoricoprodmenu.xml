@@ -14,7 +14,7 @@
 			android:gravity="center" android:width="500sp"></TextView>
 	</LinearLayout>
 	<LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="20sp" android:id="@+id/linearLayout5" android:layout_marginLeft="5sp">
-		<Button android:text="@string/TextProductorBtnRegresar" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:id="@+id/IdMenuFincaBtnRegresar" android:onClick="OnMenuFincaBtnRegresar_Click"></Button>
+		<Button android:text="@string/TextProductorBtnRegresar" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:id="@+id/IdModHistoricoProdMenuBtnRegresar" android:onClick="OnModHistoricoProdMenuBtnRegresar_Click"></Button>
 		<Button android:text="@string/TEXTproductorBtnSalir" android:layout_height="wrap_content" android:id="@+id/button2" android:layout_width="wrap_content" android:textSize="20sp"></Button>
 	</LinearLayout>
 	<ScrollView android:layout_height="match_parent" android:id="@+id/scrollView1" android:layout_width="match_parent">
@@ -22,14 +22,8 @@
 			<TableLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/tableLayout1">
 				<TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
 					<LinearLayout android:layout_marginTop="20sp" android:layout_marginLeft="5sp" android:orientation="vertical" android:layout_width="fill_parent" android:layout_marginRight="10sp" android:layout_height="wrap_content" android:id="@+id/linearLayout3">
-						<Button android:text="@string/TEXTmenuFincaBtnContactos" android:layout_height="wrap_content" android:onClick="OnMenuFincaBtnContactos_Click" android:id="@+id/IdMenuFincaBtnContactos" android:layout_width="wrap_content" android:textSize="20sp"></Button>
-						<Button android:text="@string/TEXTmenuFincaBtnCitricos" android:layout_height="wrap_content" android:onClick="OnMenuProductorBtnModCitricos_Click" android:id="@+id/IdMenuFincaBtnCitricos" android:layout_width="wrap_content" android:textSize="20sp"></Button>
-						<Button android:text="@string/TEXTmenuFincaBtnAguacate" android:layout_height="wrap_content" android:onClick="OnMenuFincaBtnModAguacate_Click" android:id="@+id/IdMenuFincaBtnAguacate" android:layout_width="wrap_content" android:textSize="20sp"></Button>
-						<Button android:layout_width="wrap_content" android:textSize="20sp" android:layout_height="wrap_content" android:id="@+id/IdMenuFincaBtnModPlatano" android:onClick="OnMenuFincaBtnModPlatano_Click" android:text="@string/TEXTfincaBtnModPlatano"></Button>
-						<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp" android:id="@+id/IdModMenuFincaBtnModMango" android:onClick="OnModMenuFincaBtnModMango_Click" android:text="@string/TEXTmenuFincaBtnModMango"></Button>
-						<Button android:id="@+id/IdMenuFincaBtnHistoricoProduccion" android:text="@string/TEXTmenuFincaBtnHistoricoProduccion" android:layout_width="wrap_content" android:textSize="20sp" android:layout_height="wrap_content" android:onClick="OnMenuFincaBtnHistoricoProduccion_Click"></Button>
-						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:text="@string/TEXTmenuFincaBtnCalidadFruta" android:id="@+id/IdMenuFincaBtnCalidadFruta" android:onClick="OnMenuFincaBtnCalidadFruta_Click"></Button>
-						<Button android:text="@string/TEXTmenuFincaBtnRasta" android:layout_height="wrap_content" android:onClick="OnMenuFincaBtnModRasta_Click" android:id="@+id/IdMenuFincaBtnRasta" android:layout_width="wrap_content" android:textSize="20sp"></Button>
+						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:text="Producción" android:id="@+id/IdModHistoricoProdMenuBtnProduccion" android:onClick="OnModHistoricoProdMenuBtnProduccion_Click"></Button>
+						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:text="Información de cosechas" android:id="@+id/IdModHistoricoProdMenuBtnCosechas" android:onClick="OnModHistoricoProdMenuBtnCosechas_Click"></Button>
 					</LinearLayout>
 				</TableRow>
 				<TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content" android:layout_height="wrap_content">

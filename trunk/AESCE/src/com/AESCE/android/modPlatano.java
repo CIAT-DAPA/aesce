@@ -11,7 +11,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
 import android.location.LocationListener;
@@ -28,7 +27,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class modCitricos extends Activity implements
+public class modPlatano extends Activity implements
 		AdapterView.OnItemSelectedListener, RadioGroup.OnCheckedChangeListener {
 
 	// Variables para el GPS
@@ -44,7 +43,7 @@ public class modCitricos extends Activity implements
 	// Campos que estan en el formulario modcitricos
 	TextView txvFecha;
 	EditText EdtLoteNo;
-	EditText EdtNArboles;
+	EditText EdtNSitios;
 	EditText EdtAreaLote;
 	EditText EdtAltitud;
 	EditText EdtLatitud;
@@ -54,9 +53,9 @@ public class modCitricos extends Activity implements
 	EditText EdtCulAso;
 	RadioGroup RdgAnaQuimico;
 	Button BtnAnaQuimico;
-	RadioGroup RdgUInjerto;
+	RadioGroup RdgPermInt;
+	RadioGroup RdgInvitro;
 	EditText EdtNPatron;
-	EditText EdtVariedad;
 	EditText EdtEdad;
 	EditText EdtResiembra;
 	EditText EdtProdAnio;
@@ -64,11 +63,12 @@ public class modCitricos extends Activity implements
 
 	// Variables para almacenar e insertar en LoteDefinido
 	int cuareg = 1;
-	int tresbolillo = 1;
-	int AnaQuimico = 1;
-	int UInjerto = 1;
+	int tresbolillo = 0;
+	int permint = 0;
+	int anaQuimico = 1;
+	int invitro = 1;
 
-	// Variables que se emplean para almacenar los valores del spinner Unidades
+	// Variables qeu se emplean para almacenar los valores del spinner Unidades
 	String[] unidades;
 	int[] arrayUniCod;
 	int[] arrayUniTipo;
@@ -84,16 +84,11 @@ public class modCitricos extends Activity implements
 	// Variable para almacenar el UMA_DI
 	int UMA_ID = 1;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
-	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.modcitricos);
+		setContentView(R.layout.modplatano);
 
 		Bundle bundle = getIntent().getExtras();
 		USU_ID = "" + bundle.getString("USU_ID");
@@ -101,50 +96,49 @@ public class modCitricos extends Activity implements
 		PRO_ID = "" + bundle.getString("PRO_ID");
 		FIN_ID = "" + bundle.getString("FIN_ID");
 
-		// -Seleccionar el UMA_ID MAXIMO-//
-		UMA_ID = selectUmaId();
-		
-		Mensaje("Funciona",""+UMA_ID);
-
-		// -Crear la base de datos-//
-		CrearBBDD();
-
-		// Instanciar los campos del formulario modcitricos
-		txvFecha = (TextView) findViewById(R.id.IdModCitricosTxvFecha);
-		EdtLoteNo = (EditText) findViewById(R.id.IdModCitricosEdtLoteNo);
-		EdtNArboles = (EditText) findViewById(R.id.IdModCitricosEdtNArboles);
-		EdtAreaLote = (EditText) findViewById(R.id.IdModCitricosEdtAreaLote);
-		EdtAltitud = (EditText) findViewById(R.id.IdModCitricosEdtAltitud);
-		EdtLatitud = (EditText) findViewById(R.id.IdModCitricosEdtLatitud);
-		EdtLongitud = (EditText) findViewById(R.id.IdModCitricosEdtLongitud);
-		EdtDistSiembra = (EditText) findViewById(R.id.IdModCitricosEdtDistSiembra);
-		RdgLoteDefinido = (RadioGroup) findViewById(R.id.IdModCitricosRdgLoteDefinido);
-		EdtCulAso = (EditText) findViewById(R.id.IdModCitricosEdtCulAso);
-		RdgAnaQuimico = (RadioGroup) findViewById(R.id.IdModCitricosRdgAnaQuimico);
-		BtnAnaQuimico = (Button) findViewById(R.id.IdModCitricosBtnAnaQuimicos);
-		RdgUInjerto = (RadioGroup) findViewById(R.id.IdModCitricosRdgUInjerto);
-		EdtNPatron = (EditText) findViewById(R.id.IdModCitricosEdtNPatron);
-		EdtVariedad = (EditText) findViewById(R.id.IdModCitricosEdtVariedad);
-		EdtEdad = (EditText) findViewById(R.id.IdModCitricosEdtEdad);
-		EdtResiembra = (EditText) findViewById(R.id.IdModCitricosEdtResiembra);
-		EdtProdAnio = (EditText) findViewById(R.id.IdModCitricosEdtProAnio);
-		SpnProAnioUnidades = (Spinner) findViewById(R.id.IdModCitricosSpnProAnioUnidades);
-
 		// get the current date
 		final Calendar c = Calendar.getInstance();
 		mYear = c.get(Calendar.YEAR);
 		mMonth = c.get(Calendar.MONTH);
 		mDay = c.get(Calendar.DAY_OF_MONTH);
 
-		updateDisplay();
+		// -Crear la base de datos-//
+		CrearBBDD();
 
-		// Invocar metodo del GPS
-		comenzarLocalizacion();
+		// -Instanciar elementos del formulario-//
+		txvFecha = (TextView) findViewById(R.id.IdModPlatanoTxvFecha);
+		EdtLoteNo = (EditText) findViewById(R.id.IdModPlatanoEdtLoteNo);
+		EdtNSitios = (EditText) findViewById(R.id.IdModPlatanoEdtNArboles);
+		EdtAreaLote = (EditText) findViewById(R.id.IdModPlatanoEdtAreaLote);
+		EdtAltitud = (EditText) findViewById(R.id.IdModPlatanoEdtAltitud);
+		EdtLatitud = (EditText) findViewById(R.id.IdModPlatanoEdtLatitud);
+		EdtLongitud = (EditText) findViewById(R.id.IdModPlatanoEdtLongitud);
+		EdtDistSiembra = (EditText) findViewById(R.id.IdModPlatanoEdtDistSiembra);
+		RdgLoteDefinido = (RadioGroup) findViewById(R.id.IdModPlatanoRdgLoteDefinido);
+		EdtCulAso = (EditText) findViewById(R.id.IdModPlatanoEdtCulAso);
+		RdgAnaQuimico = (RadioGroup) findViewById(R.id.IdModPlatanoRdgAnaQuimico);
+		BtnAnaQuimico = (Button) findViewById(R.id.IdModPlatanoBtnAnaQuimicos);
+		RdgPermInt = (RadioGroup) findViewById(R.id.IdModPlatanoRdgPermInten);
+		RdgInvitro = (RadioGroup) findViewById(R.id.IdModPlatanoRdgInVitroCormo);
+		EdtNPatron = (EditText) findViewById(R.id.IdModPlatanoEdtNPatron);
+		EdtEdad = (EditText) findViewById(R.id.IdModPlatanoEdtEdad);
+		EdtResiembra = (EditText) findViewById(R.id.IdModPlatanoEdtResiembra);
+		EdtProdAnio = (EditText) findViewById(R.id.IdModPlatanoEdtProAnio);
+		SpnProAnioUnidades = (Spinner) findViewById(R.id.IdModPlatanoSpnProAnioUnidades);
+
+		// -Seleccionar el UMA_ID MAXIMO-//
+		UMA_ID = selectUmaId();
 
 		// Asignar los CheckedListener a los RadioGroup
 		RdgAnaQuimico.setOnCheckedChangeListener(this);
 		RdgLoteDefinido.setOnCheckedChangeListener(this);
-		RdgUInjerto.setOnCheckedChangeListener(this);
+		RdgPermInt.setOnCheckedChangeListener(this);
+		RdgInvitro.setOnCheckedChangeListener(this);
+		
+		updateDisplay();
+
+		// Invocar metodo del GPS
+		comenzarLocalizacion();
 
 		// -Llenar y adaptadores para las unidades-//
 		llenarSpinnerUnidades();
@@ -158,65 +152,54 @@ public class modCitricos extends Activity implements
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 		SpnProAnioUnidades.setAdapter(adaptadorUnidades);
+
 	}
 
-	/***************************************************************************************
-	 *************************************** METODOS PARA LOS BOTONES************************
-	 ***************************************************************************************/
+	/*******************************************************************
+	 *********************** METODOS DE LOS BOTONES**********************
+	 *******************************************************************/
 
-	// --Metodo para el boton seleccionar fecha--//
-	public void OnModCitricosBtnFechaRegis_Click(View button) {
-		showDialog(DATE_DIALOG_ID);
-	}
-
-	
-	//--Metodo para el boton regresar--//
-	public void OnModCitricosBtnRegresar_Click(View button){
-		finish();
-		
-	}
-	
-	// --Metodo para el boton registrar--//
-	public void OnModCitricosBtnRegistrar_Click(View button) {
-		registarModCitricos();
-	}
-
-	// --Metodo para los RadioGroup--//
 	public void onCheckedChanged(RadioGroup arg0, int arg1) {
 		// TODO Auto-generated method stub
 		if (arg0 == RdgLoteDefinido) {
-			if (arg1 == R.id.IdModCitricosRdbCuaReg) {
+			if (arg1 == R.id.IdModPlatanoRdoCuaReg) {
 				cuareg = 1;
 				tresbolillo = 0;
-			} else if (arg1 == R.id.IdModCitricosRdbTresbolillo) {
-				tresbolillo = 1;
+			} else if (arg1 == R.id.IdModPlatanoRdoTresbolillo) {
 				cuareg = 0;
+				tresbolillo = 1;
 			}
 		}
 
 		if (arg0 == RdgAnaQuimico) {
-			if (arg1 == R.id.IdModCitricosRdbAnaQuimicoSI) {
-				AnaQuimico = 1;
-				BtnAnaQuimico.setEnabled(true);
-			} else if (arg1 == R.id.IdModCitricosRdbAnaQuimicosNO) {
-				AnaQuimico = 2;
+			if (arg1 == R.id.IdModPlatanoRdoAnaQuimicoSI) {
+				anaQuimico = 1;
+			} else if (arg1 == R.id.IdModPlatanoRdoAnaQuimicosNO) {
+				anaQuimico = 0;
 			}
 		}
 
-		if (arg0 == RdgUInjerto) {
-			if (arg1 == R.id.IdModCitricosRdbUInjertoSI) {
-				UInjerto = 1;
-			} else if (arg1 == R.id.IdModCitricosRdbUInjertoNO) {
-				UInjerto = 2;
+		if (arg0 == RdgPermInt) {
+			if (arg1 == R.id.IdModPlatanoRdoPermanente) {
+				permint = 1;
+			} else if (arg1 == R.id.IdModPlatanoRdoIntensivo) {
+				permint = 0;
 			}
 		}
+
+		if (arg0 == RdgInvitro) {
+			if (arg1 == R.id.IdModPlatanoRdoInVitroCormoInvitro) {
+				invitro = 1;
+			} else if (arg1 == R.id.IdModPlatanoRdoInVitroCormoColino) {
+				invitro = 0;
+			}
+		}
+
 	}
 
-	// --Metodo para el spinner--//
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3) {
 		// TODO Auto-generated method stub
-
 		if (arg0 == SpnProAnioUnidades) {
 			UNI_COD = arrayUniCod[arg2];
 			UNI_TIPO = arrayUniTipo[arg2];
@@ -229,10 +212,24 @@ public class modCitricos extends Activity implements
 
 	}
 
-	/*************************************************************************************
-	 ************************************* METODOS DE LA CLASE*****************************
-	 *************************************************************************************/
+	// --Boton para la fecha--//
+	public void OnModPlatanoBtnFechaRegis_Click(View button) {
+		showDialog(DATE_DIALOG_ID);
+	}
 
+	// --Boton registrar--//
+	public void OnModPlatanoBtnRegistrar_Click(View button) {
+		registarModPlatano();
+	}
+	
+	//--Boton regresar--//
+	public void OnModPlatanoBtnRegresar_Click(View button){
+		finish();
+	}
+
+	/*********************************************************************
+	 ************************** METODOS DE LA CLASE************************
+	 *********************************************************************/
 	// METODO PARA IMPRIMIR MENSAJES
 	public void Mensaje(String titulo, String Mensaje) {
 
@@ -258,7 +255,6 @@ public class modCitricos extends Activity implements
 
 		AlertDialog alert = builder.create();
 		alert.show();
-
 	}
 
 	// -- METODO PARA MOSTRAR EL DATEPICKER--//
@@ -426,10 +422,10 @@ public class modCitricos extends Activity implements
 	}
 
 	// --Insertar los campos en la base de datos--//
-	public void registarModCitricos() {
+	public void registarModPlatano() {
 		BaseDatosHelper bdH = new BaseDatosHelper(this);
 		try {
-			
+
 			SQLiteDatabase myDatabase = bdH.getWritableDatabase();
 			bdH.abrirBaseDatos();
 
@@ -437,7 +433,7 @@ public class modCitricos extends Activity implements
 			int UMA_ID = this.UMA_ID;
 			int UMA_FINID = Integer.parseInt(FIN_ID);
 			int UMA_LOTENRO = Integer.parseInt(EdtLoteNo.getText().toString());
-			int UMA_PRUID = 1;
+			int UMA_PRUID = 3;
 			String UMA_DIA = "" + mDay;
 			String UMA_MES = "" + mMonth;
 			String UMA_ANIO = "" + mYear;
@@ -447,14 +443,14 @@ public class modCitricos extends Activity implements
 					.toString());
 			float UMA_ALTITUD = Float.parseFloat(EdtAltitud.getText()
 					.toString());
-			int UMA_NARBOLES = Integer.parseInt(EdtNArboles.getText()
-					.toString());
+			int UMA_NARBOLES = Integer
+					.parseInt(EdtNSitios.getText().toString());
 			float UMA_AREA = Float.parseFloat(EdtAreaLote.getText().toString());
 			String UMA_TRAZADO = "";
-			int UMA_TASUELO = AnaQuimico;
-			int UMA_UINJERTO = UInjerto;
+			int UMA_TASUELO = anaQuimico;
+			int UMA_UINJERTO = 0;
 			String UMA_NPATRON = EdtNPatron.getText().toString();
-			String UMA_VARIEDAD = EdtVariedad.getText().toString();
+			String UMA_VARIEDAD = "";
 			String UMA_EDAD = EdtEdad.getText().toString();
 			float UMA_RESIEMBRA = Float.parseFloat(EdtResiembra.getText()
 					.toString());
@@ -462,8 +458,8 @@ public class modCitricos extends Activity implements
 					.toString());
 			int UMA_UNICOD = UNI_COD;
 			int UMA_UNITIPO = UNI_TIPO;
-			int UMA_PERINT = 0;
-			int UMA_INVITRO = 0;
+			int UMA_PERINT = this.permint;
+			int UMA_INVITRO = this.invitro;
 			float UMA_PENDIENTE = 0;
 			float UMA_CAPAS = 0;
 			float UMA_PROEFEC = 0;
@@ -538,7 +534,7 @@ public class modCitricos extends Activity implements
 
 		} catch (Exception e) {
 			Mensaje("Error", "" + e.getMessage());
-			
+
 		} finally {
 			bdH.close();
 		}
@@ -554,11 +550,10 @@ public class modCitricos extends Activity implements
 		EdtLatitud.setText("");
 		EdtLongitud.setText("");
 		EdtLoteNo.setText("");
-		EdtNArboles.setText("");
+		EdtNSitios.setText("");
 		EdtNPatron.setText("");
 		EdtProdAnio.setText("");
 		EdtResiembra.setText("");
-		EdtVariedad.setText("");
 	}
 
 	// --Determinar el UMA_ID--//
@@ -578,9 +573,8 @@ public class modCitricos extends Activity implements
 
 			if (c.isAfterLast() == false) {
 				UId = c.getInt(0);
-			}
-			else{
-				UId=1;
+			} else {
+				UId = 1;
 			}
 
 		} catch (Exception e) {

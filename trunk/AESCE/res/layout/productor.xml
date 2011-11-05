@@ -3,48 +3,46 @@
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:scrollbarAlwaysDrawHorizontalTrack="true" android:background="#FFFFFF"
 	android:orientation="vertical">
-	<LinearLayout android:layout_width="match_parent"
-		android:layout_height="wrap_content" android:id="@+id/linearLayout1"
-		android:layout_marginTop="20sp">
-		<ImageView android:id="@+id/imageView1"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:src="@drawable/title"></ImageView>
-		<TextView android:textColor="#000000" android:id="@+id/textView1"
-			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:text="@string/TextMainTitulo" android:textSize="20sp"
-			android:gravity="center" android:width="500sp"></TextView>
-	</LinearLayout>
-	<LinearLayout android:id="@+id/linearLayout5"
-		android:layout_height="wrap_content" android:layout_marginTop="20sp"
-		android:layout_width="match_parent">
-		<Button android:layout_height="wrap_content"
-			android:layout_width="wrap_content" android:id="@+id/IdProductorBtnRegresar"
-			android:text="@string/TextProductorBtnRegresar" android:textSize="20sp" android:onClick="OnProductorBtnRegresar_Click"></Button>
-		<Button android:id="@+id/button2" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:text="@string/TEXTproductorBtnSalir"
-			android:textSize="20sp"></Button>
-	</LinearLayout>
-	<LinearLayout android:layout_height="wrap_content"
-		android:id="@+id/linearLayout2" android:layout_width="match_parent" android:layout_marginTop="10sp">
-		<TextView android:layout_height="wrap_content"
-			android:layout_width="wrap_content" android:textColor="#000000"
-			android:text="Bienvenido" android:id="@+id/IdProductorTxvBienvenido"></TextView>
-	</LinearLayout>
-	<LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout4" android:layout_width="wrap_content">
-		<GridView android:verticalSpacing="1sp" android:fadeScrollbars="true" android:stretchMode="columnWidth" android:focusable="true" android:scrollbars="vertical" android:numColumns="3" android:focusableInTouchMode="true" android:layout_marginLeft="2sp" android:scrollbarAlwaysDrawVerticalTrack="true" android:transcriptMode="alwaysScroll" android:id="@+id/IdProductorGdvProductor" android:background="#000000" android:isScrollContainer="true" android:columnWidth="80sp" android:horizontalSpacing="1sp" android:textFilterEnabled="true" android:smoothScrollbar="true" android:layout_height="200sp" android:layout_width="wrap_content" android:layout_marginRight="2sp" android:scrollbarSize="10sp"></GridView>
-	</LinearLayout>
-	<ScrollView android:layout_height="wrap_content" android:id="@+id/scrollView1" android:layout_width="match_parent" android:layout_marginTop="10sp">
-		<TableLayout android:layout_width="match_parent" android:id="@+id/tableLayout1" android:layout_height="match_parent" android:layout_marginTop="20sp">
-			<TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content" android:layout_height="wrap_content">
-				<LinearLayout android:id="@+id/linearLayout6" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="10sp">
-					<Button android:onClick="OnProductorInsertar_Click" android:layout_width="wrap_content" android:id="@+id/IdProductorBtnNuevo" android:text="@string/TEXTproductorBtnNuevo" android:layout_height="wrap_content"></Button>
+	<ScrollView android:layout_height="wrap_content" android:id="@+id/scrollView1"
+		android:layout_width="match_parent" android:layout_marginTop="10sp">
+		<TableLayout android:layout_width="match_parent"
+			android:id="@+id/tableLayout1" android:layout_height="match_parent"
+			android:layout_marginTop="20sp" android:layout_marginLeft="5sp" android:layout_marginRight="5sp">
+			<TableRow android:layout_width="wrap_content" android:id="@+id/tableRow1" android:layout_height="wrap_content" android:layout_marginLeft="5sp">
+				<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20sp" android:id="@+id/linearLayout5">
+					<Button android:layout_width="wrap_content" android:onClick="OnProductorBtnRegresar_Click" android:text="@string/TextProductorBtnRegresar" android:textSize="20sp" android:id="@+id/IdProductorBtnRegresar" android:layout_height="wrap_content"></Button>
+					<Button android:layout_width="wrap_content" android:text="@string/TEXTproductorBtnSalir" android:textSize="20sp" android:id="@+id/button2" android:layout_height="wrap_content"></Button>
 				</LinearLayout>
 			</TableRow>
-			<TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content" android:layout_height="wrap_content">
-				<LinearLayout android:id="@+id/linearLayout3" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="30sp">
-					<ImageView android:src="@drawable/asohofrucol" android:layout_marginLeft="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/imageView2"></ImageView>
-					<ImageView android:src="@drawable/um" android:layout_marginLeft="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/imageView3"></ImageView>
-					<ImageView android:src="@drawable/fondo" android:layout_marginLeft="10sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/imageView4"></ImageView>
+			<TableRow android:layout_width="wrap_content" android:id="@+id/tableRow4" android:layout_height="wrap_content" android:layout_marginLeft="5sp" android:layout_marginRight="10sp">
+				<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10sp" android:id="@+id/linearLayout2" android:layout_marginLeft="5sp">
+					<TextView android:layout_width="wrap_content" android:text="Bienvenido" android:id="@+id/IdProductorTxvBienvenido" android:layout_height="wrap_content" android:textColor="#000000"></TextView>
+				</LinearLayout>
+			</TableRow>
+			<TableRow android:layout_width="wrap_content" android:id="@+id/tableRow5" android:layout_height="wrap_content" android:layout_marginLeft="5sp" android:layout_marginRight="10sp">
+				<LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout4" android:layout_width="wrap_content">
+					<GridView android:horizontalSpacing="1sp" android:layout_height="200sp" android:transcriptMode="alwaysScroll" android:fadeScrollbars="true" android:focusable="true" android:textFilterEnabled="true" android:scrollbarAlwaysDrawVerticalTrack="true" android:isScrollContainer="true" android:scrollbarSize="10sp" android:smoothScrollbar="true" android:numColumns="3" android:scrollbars="vertical" android:stretchMode="columnWidth" android:background="#000000" android:focusableInTouchMode="true" android:verticalSpacing="1sp" android:id="@+id/IdProductorGdvProductor" android:columnWidth="65sp" android:layout_width="280sp"></GridView>
+				</LinearLayout>
+			</TableRow>
+			<TableRow android:layout_width="wrap_content" android:id="@+id/tableRow2" android:layout_height="wrap_content" android:layout_marginLeft="5sp" android:layout_marginRight="10sp">
+				<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10sp" android:id="@+id/linearLayout6">
+					<Button android:layout_width="wrap_content" android:onClick="OnProductorInsertar_Click" android:text="@string/TEXTproductorBtnNuevo" android:id="@+id/IdProductorBtnNuevo" android:layout_height="wrap_content"></Button>
+				</LinearLayout>
+			</TableRow>
+			<TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_marginLeft="5sp" android:layout_marginRight="10sp">
+				<LinearLayout android:id="@+id/linearLayout3"
+					android:layout_height="wrap_content" android:layout_width="match_parent"
+					android:layout_marginTop="30sp">
+					<ImageView android:src="@drawable/asohofrucol"
+						android:layout_marginLeft="10sp" android:layout_height="wrap_content"
+						android:layout_width="wrap_content" android:id="@+id/imageView2"></ImageView>
+					<ImageView android:src="@drawable/um"
+						android:layout_marginLeft="10sp" android:layout_height="wrap_content"
+						android:layout_width="wrap_content" android:id="@+id/imageView3"></ImageView>
+					<ImageView android:src="@drawable/fondo"
+						android:layout_marginLeft="10sp" android:layout_height="wrap_content"
+						android:layout_width="wrap_content" android:id="@+id/imageView4"></ImageView>
 				</LinearLayout>
 			</TableRow>
 		</TableLayout>
