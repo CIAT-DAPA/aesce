@@ -23,7 +23,7 @@
 			<TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content" android:layout_height="wrap_content">
 				<LinearLayout android:layout_height="wrap_content" android:layout_marginTop="20sp" android:orientation="vertical" android:id="@+id/linearLayout3" android:layout_width="match_parent">
 					<Button android:layout_width="wrap_content" android:onClick="OnMenuBtnProductor_Click" android:text="@string/TEXTmenuBtnProductor" android:textSize="20sp" android:id="@+id/IdMenuBtnProductor" android:layout_height="wrap_content"></Button>
-					<Button android:layout_width="wrap_content" android:onClick="OnMenuBtnSincronizar_Click" android:text="@string/TEXTmenuBtnSincronizar" android:textSize="20sp" android:id="@+id/IdMenuBtnSincronizar" android:layout_height="wrap_content" android:enabled="false"></Button>
+					<Button android:layout_width="wrap_content" android:onClick="OnMenuBtnSincronizar_Click" android:text="@string/TEXTmenuBtnSincronizar" android:textSize="20sp" android:id="@+id/IdMenuBtnSincronizar" android:layout_height="wrap_content"></Button>
 				</LinearLayout>
 			</TableRow>
 			<TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content" android:layout_height="wrap_content">
