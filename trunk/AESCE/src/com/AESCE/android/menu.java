@@ -56,7 +56,9 @@ public class menu extends Activity {
 	
 	//Metodo para el boton sincronizar
 	public void OnMenuBtnSincronizar_Click(View button){
-		
+		Intent iSincronizacion=new Intent();
+		iSincronizacion.setClass(this, sincronizacionMenu.class);
+		startActivity(iSincronizacion);
 	}
 
 }

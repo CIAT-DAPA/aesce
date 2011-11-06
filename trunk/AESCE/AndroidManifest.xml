@@ -63,6 +63,7 @@
 		<activity android:name="modHistoricoProdCosechas"></activity>
 		<activity android:name=".calidadFrutaLote"></activity>
 		<activity android:name="calidadFruta"></activity>
+		<activity android:name="sincronizacionMenu"></activity>
 		
 	</application>
 </manifest>
