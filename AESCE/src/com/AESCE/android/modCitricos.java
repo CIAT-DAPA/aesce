@@ -103,8 +103,6 @@ public class modCitricos extends Activity implements
 
 		// -Seleccionar el UMA_ID MAXIMO-//
 		UMA_ID = selectUmaId();
-		
-		Mensaje("Funciona",""+UMA_ID);
 
 		// -Crear la base de datos-//
 		CrearBBDD();
@@ -129,6 +127,8 @@ public class modCitricos extends Activity implements
 		EdtResiembra = (EditText) findViewById(R.id.IdModCitricosEdtResiembra);
 		EdtProdAnio = (EditText) findViewById(R.id.IdModCitricosEdtProAnio);
 		SpnProAnioUnidades = (Spinner) findViewById(R.id.IdModCitricosSpnProAnioUnidades);
+
+		limpiar();
 
 		// get the current date
 		final Calendar c = Calendar.getInstance();
@@ -169,16 +169,26 @@ public class modCitricos extends Activity implements
 		showDialog(DATE_DIALOG_ID);
 	}
 
-	
-	//--Metodo para el boton regresar--//
-	public void OnModCitricosBtnRegresar_Click(View button){
+	// --Metodo para el boton regresar--//
+	public void OnModCitricosBtnRegresar_Click(View button) {
 		finish();
-		
+
 	}
-	
+
 	// --Metodo para el boton registrar--//
 	public void OnModCitricosBtnRegistrar_Click(View button) {
-		registarModCitricos();
+		if (EdtLoteNo.getText().toString().equals("")
+				|| EdtCulAso.getText().toString().equals("")
+				|| EdtLatitud.getText().toString().equals("")
+				|| EdtLongitud.getText().toString().equals("")
+				|| EdtNArboles.getText().toString().equals("")
+				|| EdtEdad.getText().toString().equals("")
+				|| EdtResiembra.getText().toString().equals("")
+				|| EdtProdAnio.getText().toString().equals("")) {
+			Mensaje("incompleto", "Alguno de los campos se encuentra vacío");
+		} else {
+			registarModCitricos();
+		}
 	}
 
 	// --Metodo para los RadioGroup--//
@@ -429,7 +439,7 @@ public class modCitricos extends Activity implements
 	public void registarModCitricos() {
 		BaseDatosHelper bdH = new BaseDatosHelper(this);
 		try {
-			
+
 			SQLiteDatabase myDatabase = bdH.getWritableDatabase();
 			bdH.abrirBaseDatos();
 
@@ -538,7 +548,7 @@ public class modCitricos extends Activity implements
 
 		} catch (Exception e) {
 			Mensaje("Error", "" + e.getMessage());
-			
+
 		} finally {
 			bdH.close();
 		}
@@ -578,9 +588,8 @@ public class modCitricos extends Activity implements
 
 			if (c.isAfterLast() == false) {
 				UId = c.getInt(0);
-			}
-			else{
-				UId=1;
+			} else {
+				UId = 1;
 			}
 
 		} catch (Exception e) {

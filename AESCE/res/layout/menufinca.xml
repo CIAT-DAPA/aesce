@@ -10,8 +10,8 @@
 			android:src="@drawable/title"></ImageView>
 		<TextView android:textColor="#000000" android:id="@+id/textView1"
 			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:text="@string/TextMainTitulo" android:textSize="20sp"
-			android:gravity="center" android:width="500sp"></TextView>
+			android:textSize="20sp"
+			android:gravity="center" android:width="500sp" android:text="@string/TEXTtitulo"></TextView>
 	</LinearLayout>
 	<ScrollView android:layout_height="match_parent" android:id="@+id/scrollView1" android:layout_width="match_parent">
 		<LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/linearLayout4">
