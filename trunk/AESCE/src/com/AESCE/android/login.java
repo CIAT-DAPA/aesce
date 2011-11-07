@@ -49,8 +49,7 @@ public class login extends Activity {
 
 		if (EdtId.getText().toString().equals("")
 				|| EdtPass.getText().toString().equals("")) {
-			Mensaje("Error", "Alguno o ambos campos se encuentra vacíos");
-			limpiar();
+			Mensaje("Error", "Alguno o ambos campos se encuentran vacíos");
 		} else {
 			ingresar();
 		}

@@ -85,12 +85,14 @@ public class fincaNuevo extends Activity implements
 		spnUnidadesFinca = (Spinner) findViewById(R.id.IdFincaNuevoSpnUnidadesFinca);
 		rdgRegManejo = (RadioGroup) findViewById(R.id.IdFincaNuevoRdgRegManejo);
 		rdgRegClima = (RadioGroup) findViewById(R.id.IdFincaNuevoRdgRegClima);
-		rdgRegProd=(RadioGroup)findViewById(R.id.IdFincaNuevoRdgRegProd);
+		rdgRegProd = (RadioGroup) findViewById(R.id.IdFincaNuevoRdgRegProd);
 		spnDepId = (Spinner) findViewById(R.id.IdFincaNuevoSpnDepId);
 		spnMunId = (Spinner) findViewById(R.id.IdFincaNuevoSpnMunId);
 		edtCorregimiento = (EditText) findViewById(R.id.IdFincaNuevoEdtCorregimiento);
 		edtVereda = (EditText) findViewById(R.id.IdFincaNuevoEdtVereda);
 		edtUsuId = (EditText) findViewById(R.id.IdFincaNuevoEdtUsuId);
+
+		limpiar();
 
 		// -llenar y Adaptadores para el departamento-//
 		llenarSpinnerDepartamento();
@@ -109,7 +111,7 @@ public class fincaNuevo extends Activity implements
 		llenarSpinnerUnidades();
 
 		spnUnidadesFinca.setOnItemSelectedListener(this);
-		
+
 		ArrayAdapter<String> adaptadorUnidades = new ArrayAdapter<String>(this,
 				android.R.layout.test_list_item, unidades);
 
@@ -124,7 +126,6 @@ public class fincaNuevo extends Activity implements
 		rdgRegClima.setOnCheckedChangeListener(this);
 		rdgRegManejo.setOnCheckedChangeListener(this);
 		rdgRegProd.setOnCheckedChangeListener(this);
-		
 
 		// -Capturar el bundle y los valores de este-//
 		Bundle bundle = getIntent().getExtras();
@@ -137,8 +138,7 @@ public class fincaNuevo extends Activity implements
 
 		// -Imprimir el usuario-//
 		edtUsuId.setText(USU_NOMBRE);
-		
-		
+
 	}
 
 	/****************************************************************
@@ -160,7 +160,13 @@ public class fincaNuevo extends Activity implements
 
 	// --Metodo para el boton registrar finca--//
 	public void OnFincaNuevoBtnRegistrar_Click(View button) {
-		registarFinca();
+		if (edtCedProd.getText().toString().equals("")
+				|| edtNombreFinca.getText().toString().equals("")) {
+			Mensaje("Incompleto", "El nombre de la finca no puede ser vacío");
+		} else {
+			registarFinca();
+			
+		}
 	}
 
 	// --Metodo para los radioGroup--//
@@ -373,7 +379,7 @@ public class fincaNuevo extends Activity implements
 			unidades = new String[row];
 			arrayUniCod = new int[row];
 			arrayUniTipo = new int[row];
-			
+
 			c.moveToFirst();
 
 			int i = 0;
@@ -419,7 +425,7 @@ public class fincaNuevo extends Activity implements
 			String FIN_USUID = USU_ID;
 
 			ContentValues cv = new ContentValues();
-			//cv.put("FIN_ID", 1);
+			// cv.put("FIN_ID", 1);
 			cv.put("FIN_NOMBRE", FIN_NOMBRE);
 			cv.put("FIN_PROID", FIN_PROID);
 			cv.put("FIN_GEOREFERENCIA", FIN_GEOREFERENCIA);
@@ -443,11 +449,22 @@ public class fincaNuevo extends Activity implements
 
 			limpiar();
 
-			finish();
+			finalizar();
 
 		} catch (SQLException e) {
 			Mensaje("Error", "" + e.getMessage());
 		}
+		finally{
+			bdH.close();
+		}
+	}
+	
+	//--Finalizar--//
+	public void finalizar() {
+		Intent iFinca = new Intent();
+		iFinca.putExtra("returnFinca", "1");
+		setResult(RESULT_OK, iFinca);
+		super.finish();
 	}
 
 	// --Metodo para limpiar--//

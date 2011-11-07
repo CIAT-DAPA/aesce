@@ -2,6 +2,8 @@ package com.AESCE.android;
 
 import java.io.IOException;
 
+import com.AESCE.android.productor.FunnyLookingAdapter;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -30,6 +32,8 @@ public class finca extends Activity implements AdapterView.OnItemClickListener {
 	int columns;
 
 	private String[] arrayFinca;
+
+	private static final int REQUEST_CODE = 10;
 
 	TextView txvBienvenido;
 	GridView gdvFinca;
@@ -83,16 +87,16 @@ public class finca extends Activity implements AdapterView.OnItemClickListener {
 
 			// Mensaje("Seleccion ", " " +
 			// productorID[arg2]+" id "+productorID[cedula]);
-			
-			 Intent iMenuFinca = new Intent();
-			 iMenuFinca.setClass(this, menuFinca.class);
-			 iMenuFinca.putExtra("USU_ID", USU_ID);
-			 iMenuFinca.putExtra("USU_NOMBRE", USU_NOMBRE);
-			 iMenuFinca.putExtra("PRO_ID", PRO_ID);
-			 iMenuFinca.putExtra("FIN_ID", FIN_ID);
-			 startActivity(iMenuFinca);
-			 
-			//Mensaje("Bien", "" + FIN_ID);
+
+			Intent iMenuFinca = new Intent();
+			iMenuFinca.setClass(this, menuFinca.class);
+			iMenuFinca.putExtra("USU_ID", USU_ID);
+			iMenuFinca.putExtra("USU_NOMBRE", USU_NOMBRE);
+			iMenuFinca.putExtra("PRO_ID", PRO_ID);
+			iMenuFinca.putExtra("FIN_ID", FIN_ID);
+			startActivity(iMenuFinca);
+
+			// Mensaje("Bien", "" + FIN_ID);
 
 		}
 
@@ -110,7 +114,20 @@ public class finca extends Activity implements AdapterView.OnItemClickListener {
 		iFincaNuevo.putExtra("USU_ID", USU_ID);
 		iFincaNuevo.putExtra("USU_NOMBRE", USU_NOMBRE);
 		iFincaNuevo.putExtra("PRO_ID", PRO_ID);
-		startActivity(iFincaNuevo);
+		startActivityForResult(iFincaNuevo,REQUEST_CODE);
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
+			if (data.hasExtra("returnFinca")) {
+				llenarGridView();
+
+				gdvFinca.setAdapter(new FunnyLookingAdapter(this,
+						android.R.layout.simple_list_item_1, arrayFinca));
+			}
+		}
 	}
 
 	/*******************************************************************************
@@ -165,8 +182,7 @@ public class finca extends Activity implements AdapterView.OnItemClickListener {
 
 		} catch (Exception e) {
 			// Mensaje("Error", "Error 2 " + e.getMessage());
-		}
-		finally{
+		} finally {
 			bdH.close();
 		}
 	}

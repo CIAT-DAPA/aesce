@@ -62,6 +62,8 @@ public class contactos extends Activity {
 		edtNomAgriLider = (EditText) findViewById(R.id.IdContactosEdtNomAgriLider);
 		edtTelAgriLider = (EditText) findViewById(R.id.IdContactosEdtTelAgriLider);
 		txvFecha = (TextView) findViewById(R.id.IdContactosTxvFecha);
+		
+		limpiar();
 
 		// -Capturar los bundles-//
 		Bundle bundle = getIntent().getExtras();
@@ -214,24 +216,21 @@ public class contactos extends Activity {
 			cv.put("CON_TELREPFUN", CON_TELREPFUN);
 			cv.put("CON_LIDER", CON_LIDER);
 			cv.put("CON_TELLIDER", CON_TELLIDER);
-			/*
-			 * String SQL = "INSERT INTO PRODUCTOR " + "VALUES(" + PRO_ID + ",'"
-			 * + PRO_DIA + "','" + PRO_MES + "','" + PRO_ANIO + "','" +
-			 * PRO_NOMBRE + "','" + PRO_APELLIDO1 + "','" + PRO_APELLIDO2 +
-			 * "','" + PRO_CELULAR + "'," + PRO_FIJO + ",'" + PRO_EMAIL + "')";
-			 */
+			
 			myDatabase.insert("CONTACTOS", null, cv);
-			myDatabase.close();
-
-			// Mensaje("Exito","El registro se hizo exitosamente");
+			
 			limpiar();
-
+			myDatabase.close();
+			
 			finish();
 
 		} catch (NumberFormatException e) {
 			Mensaje("Error", "" + e.getMessage());
 		} catch (SQLException e) {
 			Mensaje("Error", "" + e.getMessage());
+		}
+		finally{
+			bdH.close();
 		}
 	}
 

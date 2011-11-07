@@ -34,6 +34,11 @@ public class menuFinca extends Activity {
 	/**************************************************************
 	 ******************* METODOS DE LOS BOTONES*********************
 	 **************************************************************/
+	
+	//--Boton regresar--//
+	public void OnMenuFincaBtnRegresar_Click(View button){
+		finish();
+	}
 
 	// --Boton contactos--//
 	public void OnMenuFincaBtnContactos_Click(View button) {
