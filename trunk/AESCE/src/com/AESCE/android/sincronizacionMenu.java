@@ -37,6 +37,8 @@ public class sincronizacionMenu extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sincronizacionmenu);
+		
+		CrearBBDD();
 	}
 
 	/*****************************************************
@@ -44,6 +46,7 @@ public class sincronizacionMenu extends Activity {
 	 *****************************************************/
 	// --Metodo para el boton usuarios--//
 	public void OnSincronizacionMenuBtnUsuarios_Click(View button) {
+		/*
 		String result = "";
 		ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 		nameValuePairs.add(new BasicNameValuePair("n1", "bienvenido"));
@@ -86,6 +89,8 @@ public class sincronizacionMenu extends Activity {
 		} catch (JSONException e) {
 			Mensaje("error", e.getMessage());
 		}
+		*/
+		sincronizacion("USUARIO");
 
 	}
 
@@ -133,15 +138,15 @@ public class sincronizacionMenu extends Activity {
 
 	// --Metodo para sincronizar--//
 	public void sincronizacion(String miTabla) {
-		if (miTabla.equals("USUARIOS")) {
-			String sql = "SELECT USU_ID, USU_PASS, USU_NOMBRE, USU_PERID, USU_EMAIL FROM USUARIOS";
+		if (miTabla.equals("USUARIO")) {
+			String sql = "SELECT USU_ID, USU_PASS, USU_NOMBRE, USU_PERID, USU_EMAIL FROM USUARIO";
 			sincronizarTablas(miTabla, sql);
 		}
 	}
 
 	public void sincronizarTablas(String tabla, String sql) {
 		BaseDatosHelper bdH = new BaseDatosHelper(this);
-		Cursor c = null;
+		
 		ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 
 		try {
@@ -150,16 +155,17 @@ public class sincronizacionMenu extends Activity {
 
 			// bdH.onCreate(myDataBase);
 
-			c = myDatabase.rawQuery(sql, null);
+			Cursor c = myDatabase.rawQuery(sql, null);
 			// Iteramos atraves de los registros del cursor
 			c.moveToFirst();
 
-			if (tabla.equals("USUARIOS")) {
+			if (tabla.equals("USUARIO")) {
 				nameValuePairs.add(new BasicNameValuePair("TABLA", "USUARIOS"));
-				while (c.isAfterLast() == false) {
+				
+				if (c.isAfterLast() == false) {
 					nameValuePairs.add(new BasicNameValuePair("USU_ID", c
 							.getString(0)));
-					nameValuePairs.add(new BasicNameValuePair("USU_PASSS", c
+					nameValuePairs.add(new BasicNameValuePair("USU_PASS", c
 							.getString(1)));
 					nameValuePairs.add(new BasicNameValuePair("USU_NOMBRE", c
 							.getString(2)));
@@ -170,21 +176,20 @@ public class sincronizacionMenu extends Activity {
 
 					sincronizacionPHP(nameValuePairs);
 				}
+				c.close();
+			
 			}
 
 		} catch (Exception e) {
 			Mensaje("Error", "Error: " + e.getMessage());
 		} finally {
 			bdH.close();
-			c.close();
 		}
 
 	}
 
-	public void sincronizacionPHP(ArrayList<NameValuePair> nameValuePair) {
+	public void sincronizacionPHP(ArrayList<NameValuePair> nameValuePairs) {
 		String result = "";
-
-		ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 		InputStream is = null;
 
 		try {
@@ -219,7 +224,7 @@ public class sincronizacionMenu extends Activity {
 		try {
 
 			JSONObject jArray = new JSONObject(result);
-			// Mensaje("aacca", "aca" + jArray.get("n1"));
+			 Mensaje("TABLA", ""+jArray.get("TABLA"));
 
 		} catch (JSONException e) {
 			Mensaje("error", e.getMessage());
