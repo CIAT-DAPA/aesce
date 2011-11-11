@@ -63,13 +63,10 @@
 			<TableRow android:id="@+id/tableRow6" android:layout_height="wrap_content"
 				android:layout_width="wrap_content" android:layout_marginTop="10sp">
 				<LinearLayout android:id="@+id/linearLayout10"
-					android:layout_height="wrap_content" android:layout_width="match_parent"
-					android:orientation="vertical" android:layout_marginLeft="5sp"
-					android:layout_marginRight="10sp">
+					android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginRight="10sp" android:layout_marginLeft="5sp" android:layout_width="wrap_content">
 					<LinearLayout android:id="@+id/linearLayout7"
 						android:background="#FFFFFF" android:layout_height="fill_parent"
-						android:layout_width="match_parent" android:layout_marginTop="5sp"
-						android:orientation="vertical">
+						android:layout_width="match_parent" android:orientation="vertical">
 						<LinearLayout android:layout_height="wrap_content"
 							android:id="@+id/LinearLayout02" android:layout_width="match_parent">
 							<TextView android:layout_height="wrap_content"
@@ -78,9 +75,8 @@
 								android:textColor="#000000" android:gravity="right"
 								android:text="@string/TEXTmodCitricosTxvLoteNo" android:width="140sp"></TextView>
 							<EditText android:layout_height="wrap_content"
-								android:inputType="number" android:layout_width="wrap_content"
-								android:layout_marginLeft="5sp" android:layout_marginRight="10sp"
-								android:width="160sp" android:id="@+id/IdModPlatanoEdtLoteNo"></EditText>
+								android:inputType="number" android:layout_marginLeft="5sp" android:layout_marginRight="10sp"
+								android:id="@+id/IdModPlatanoEdtLoteNo" android:layout_width="match_parent"></EditText>
 						</LinearLayout>
 						<LinearLayout android:layout_height="wrap_content"
 							android:id="@+id/LinearLayout06" android:layout_width="match_parent">
@@ -89,9 +85,8 @@
 								android:textSize="15sp" android:id="@+id/TextView07"
 								android:textColor="#000000" android:width="140sp" android:gravity="right" android:text="Número de Sitios"></TextView>
 							<EditText android:layout_height="wrap_content"
-								android:layout_width="wrap_content" android:layout_marginLeft="5sp"
-								android:layout_marginRight="10sp" android:width="160sp"
-								android:inputType="number" android:id="@+id/IdModPlatanoEdtNArboles"></EditText>
+								android:layout_marginLeft="5sp"
+								android:layout_marginRight="10sp" android:inputType="number" android:id="@+id/IdModPlatanoEdtNArboles" android:layout_width="match_parent"></EditText>
 						</LinearLayout>
 						<LinearLayout android:layout_height="wrap_content"
 							android:layout_width="match_parent" android:id="@+id/LinearLayout01">
@@ -100,10 +95,8 @@
 								android:text="Area del lote en hectareas"
 								android:layout_marginTop="5sp" android:layout_width="wrap_content"
 								android:gravity="right" android:width="180sp"></TextView>
-							<EditText android:width="160sp"
-								android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
-								android:layout_height="wrap_content" android:layout_width="wrap_content"
-								android:inputType="numberDecimal" android:id="@+id/IdModPlatanoEdtAreaLote"></EditText>
+							<EditText android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
+								android:layout_height="wrap_content" android:inputType="numberDecimal" android:id="@+id/IdModPlatanoEdtAreaLote" android:layout_width="match_parent"></EditText>
 						</LinearLayout>
 						<LinearLayout android:layout_height="wrap_content"
 							android:layout_width="match_parent" android:id="@+id/LinearLayout03">
@@ -122,8 +115,7 @@
 								android:width="140sp"></TextView>
 							<EditText android:width="160sp"
 								android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
-								android:layout_height="wrap_content" android:layout_width="wrap_content"
-								android:editable="false" android:id="@+id/IdModPlatanoEdtAltitud"></EditText>
+								android:layout_height="wrap_content" android:editable="false" android:id="@+id/IdModPlatanoEdtAltitud" android:layout_width="match_parent"></EditText>
 						</LinearLayout>
 						<LinearLayout android:layout_height="wrap_content"
 							android:layout_width="match_parent" android:id="@+id/LinearLayout05">
@@ -132,10 +124,8 @@
 								android:text="Latitud" android:layout_marginTop="5sp"
 								android:layout_width="wrap_content" android:gravity="right"
 								android:width="140sp"></TextView>
-							<EditText android:width="160sp"
-								android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
-								android:layout_height="wrap_content" android:layout_width="wrap_content"
-								android:editable="false" android:id="@+id/IdModPlatanoEdtLatitud"></EditText>
+							<EditText android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
+								android:layout_height="wrap_content" android:editable="false" android:id="@+id/IdModPlatanoEdtLatitud" android:layout_width="match_parent"></EditText>
 						</LinearLayout>
 						<LinearLayout android:layout_height="wrap_content"
 							android:layout_width="match_parent" android:id="@+id/LinearLayout07">
@@ -146,8 +136,7 @@
 								android:width="140sp"></TextView>
 							<EditText android:width="160sp"
 								android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
-								android:layout_height="wrap_content" android:layout_width="wrap_content"
-								android:editable="false" android:id="@+id/IdModPlatanoEdtLongitud"></EditText>
+								android:layout_height="wrap_content" android:editable="false" android:id="@+id/IdModPlatanoEdtLongitud" android:layout_width="match_parent"></EditText>
 						</LinearLayout>
 						<LinearLayout android:layout_height="wrap_content"
 							android:layout_width="match_parent" android:id="@+id/LinearLayout08">
@@ -158,8 +147,7 @@
 								android:gravity="right" android:width="170sp"></TextView>
 							<EditText android:width="160sp"
 								android:layout_marginRight="10sp" android:layout_marginLeft="5sp"
-								android:layout_height="wrap_content" android:layout_width="wrap_content"
-								android:inputType="numberDecimal" android:id="@+id/IdModPlatanoEdtDistSiembra"></EditText>
+								android:layout_height="wrap_content" android:inputType="numberDecimal" android:id="@+id/IdModPlatanoEdtDistSiembra" android:layout_width="match_parent"></EditText>
 						</LinearLayout>
 						<LinearLayout android:layout_height="wrap_content"
 							android:layout_width="match_parent" android:id="@+id/LinearLayout09">
@@ -189,8 +177,7 @@
 								android:layout_width="match_parent" android:id="@+id/LinearLayout10"
 								android:orientation="horizontal">
 								<EditText android:layout_height="wrap_content"
-									android:width="500sp" android:layout_width="wrap_content"
-									android:inputType="textMultiLine" android:id="@+id/IdModPlatanoEdtCulAso"></EditText>
+									android:width="500sp" android:inputType="textMultiLine" android:id="@+id/IdModPlatanoEdtCulAso" android:layout_width="match_parent"></EditText>
 							</LinearLayout>
 						</LinearLayout>
 						<LinearLayout android:layout_height="wrap_content"
@@ -307,8 +294,8 @@
 								android:gravity="left|right" android:width="300sp"></TextView>
 							<EditText android:width="160sp"
 								android:layout_marginRight="10sp" android:layout_height="wrap_content"
-								android:layout_width="wrap_content" android:inputType="numberDecimal"
-								android:id="@+id/IdModPlatanoEdtNPatron"></EditText>
+								android:inputType="numberDecimal"
+								android:id="@+id/IdModPlatanoEdtNPatron" android:layout_width="match_parent"></EditText>
 						</LinearLayout>
 						<LinearLayout android:layout_height="wrap_content"
 							android:layout_width="match_parent" android:id="@+id/LinearLayout22"
@@ -320,8 +307,8 @@
 								android:gravity="left|right" android:width="300sp"></TextView>
 							<EditText android:width="160sp"
 								android:layout_marginRight="10sp" android:layout_height="wrap_content"
-								android:layout_width="wrap_content" android:inputType="numberDecimal"
-								android:id="@+id/IdModPlatanoEdtEdad"></EditText>
+								android:inputType="numberDecimal"
+								android:id="@+id/IdModPlatanoEdtEdad" android:layout_width="match_parent"></EditText>
 						</LinearLayout>
 						<LinearLayout android:layout_height="wrap_content"
 							android:layout_width="match_parent" android:id="@+id/LinearLayout21"
@@ -333,8 +320,8 @@
 								android:width="140sp"></TextView>
 							<EditText android:width="160sp"
 								android:layout_marginRight="10sp" android:layout_height="wrap_content"
-								android:layout_width="wrap_content" android:inputType="numberDecimal"
-								android:id="@+id/IdModPlatanoEdtResiembra"></EditText>
+								android:inputType="numberDecimal"
+								android:id="@+id/IdModPlatanoEdtResiembra" android:layout_width="match_parent"></EditText>
 						</LinearLayout>
 						<LinearLayout android:layout_height="wrap_content"
 							android:layout_width="match_parent" android:id="@+id/LinearLayout23"
