@@ -219,7 +219,19 @@ public class modPlatano extends Activity implements
 
 	// --Boton registrar--//
 	public void OnModPlatanoBtnRegistrar_Click(View button) {
+		if (EdtLoteNo.getText().toString().equals("")
+				|| EdtCulAso.getText().toString().equals("")
+				|| EdtLatitud.getText().toString().equals("")
+				|| EdtLongitud.getText().toString().equals("")
+				|| EdtAltitud.getText().toString().equals("")
+				|| EdtNSitios.getText().toString().equals("")
+				|| EdtEdad.getText().toString().equals("")
+				|| EdtResiembra.getText().toString().equals("")
+				|| EdtProdAnio.getText().toString().equals("")) {
+			Mensaje("Error", "Algunos de los campos se encuentra vacíos ");
+		} else {
 		registarModPlatano();
+		}
 	}
 	
 	//--Boton regresar--//
