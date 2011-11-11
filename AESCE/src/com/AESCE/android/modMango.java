@@ -15,7 +15,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,10 +24,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TableRow;
 import android.widget.TextView;
 
 public class modMango extends Activity implements
@@ -100,7 +97,6 @@ public class modMango extends Activity implements
 	// Variable para almacenar el UMA_ID
 	int UMA_ID = 1;
 
-	@SuppressWarnings("static-access")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -148,10 +144,9 @@ public class modMango extends Activity implements
 		mYear = c.get(Calendar.YEAR);
 		mMonth = c.get(Calendar.MONTH);
 		mDay = c.get(Calendar.DAY_OF_MONTH);
-		
-		linearLayout01=(LinearLayout)findViewById(R.id.LinearLayout08);
-		linearLayout02=(LinearLayout)findViewById(R.id.LinearLayout25);
-		
+
+		linearLayout01 = (LinearLayout) findViewById(R.id.LinearLayout08);
+		linearLayout02 = (LinearLayout) findViewById(R.id.LinearLayout25);
 
 		updateDisplay();
 
@@ -164,7 +159,6 @@ public class modMango extends Activity implements
 		rdgDispersosLtdDefinido.setOnCheckedChangeListener(this);
 		rdgLoteDefinido.setOnCheckedChangeListener(this);
 		rdgUInjerto.setOnCheckedChangeListener(this);
-		
 
 		// -Llenar y adaptadores para las unidades-//
 		llenarSpinnerUnidades();
@@ -178,7 +172,7 @@ public class modMango extends Activity implements
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 		spnProAnioUnidades.setAdapter(adaptadorUnidades);
-		
+
 		edtOtraForma.setEnabled(false);
 		findViewById(R.id.IdModMangoRdoCerca).setEnabled(false);
 		findViewById(R.id.IdModMangoRdoVia).setEnabled(false);
@@ -252,7 +246,7 @@ public class modMango extends Activity implements
 				findViewById(R.id.IdModMangoRdoVivienda).setEnabled(true);
 				findViewById(R.id.IdModMangoRdoPotrero).setEnabled(true);
 				edtCulAso.setEnabled(false);
-				
+
 			} else if (arg1 == R.id.IdModMangoRdoLtdDefinido) {
 				dispersosLtdDefinido = 0;
 				edtOtraForma.setEnabled(false);
@@ -265,7 +259,7 @@ public class modMango extends Activity implements
 				findViewById(R.id.IdModMangoRdoTresbolillo).setEnabled(true);
 				edtDistSiembra.setEnabled(true);
 				edtCulAso.setEnabled(true);
-				
+
 			}
 		}
 
@@ -311,8 +305,20 @@ public class modMango extends Activity implements
 
 	// Boton registrar
 	public void OnModMangoBtnRegistrar_Click(View button) {
-		if(dispersosLtdDefinido!=-1)
-		registarModMango();
+		// if(dispersosLtdDefinido!=-1)
+		if (edtLoteNo.getText().toString().equals("")
+				|| edtCulAso.getText().toString().equals("")
+				|| edtLatitud.getText().toString().equals("")
+				|| edtLongitud.getText().toString().equals("")
+				|| edtAltitud.getText().toString().equals("")
+				|| edtNArboles.getText().toString().equals("")
+				|| edtEdad.getText().toString().equals("")
+				|| edtRSiembra.getText().toString().equals("")
+				|| edtProAnio.getText().toString().equals("")) {
+			Mensaje("Error", "Algunos de los campos se encuentra vacíos ");
+		} else {
+			registarModMango();
+		}
 	}
 
 	// Boton regresar

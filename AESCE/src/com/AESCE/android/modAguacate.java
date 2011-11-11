@@ -163,15 +163,25 @@ public class modAguacate extends Activity implements
 
 	// --Metodo para el boton registrar--//
 	public void OnModAguacateBtnRegistrar_Click(View button) {
-		registarModAguacate();
+		if (EdtLoteNo.getText().toString().equals("")
+				|| EdtCulAso.getText().toString().equals("")
+				|| EdtLatitud.getText().toString().equals("")
+				|| EdtLongitud.getText().toString().equals("")
+				|| EdtAltitud.getText().toString().equals("")
+				|| EdtNArboles.getText().toString().equals("")
+				|| EdtEdad.getText().toString().equals("")
+				|| EdtResiembra.getText().toString().equals("")
+				|| EdtProdAnio.getText().toString().equals("")) {
+			Mensaje("Error", "Algunos de los campos se encuentra vacíos ");
+		} else {
+			registarModAguacate();
+		}
 	}
 
 	// --Metodo para el boton regresar--//
 	public void OnModAguacateBtnRegresar_Click(View button) {
 		finish();
 	}
-
-
 
 	public void onCheckedChanged(RadioGroup arg0, int arg1) {
 		// TODO Auto-generated method stub
@@ -570,9 +580,8 @@ public class modAguacate extends Activity implements
 
 			if (c.isAfterLast() == false) {
 				UId = c.getInt(0);
-			}
-			else{
-				UId=1;
+			} else {
+				UId = 1;
 			}
 
 		} catch (Exception e) {
