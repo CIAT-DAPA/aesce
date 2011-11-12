@@ -84,7 +84,7 @@ public class modHistoricoProduccion extends Activity implements
 	}
 	
 	//--Boton regresar--//
-	public void OnFincarBtnRegresar_Click(View button){
+	public void OnModHistoricoProduccionBtnRegresar_Click(View button){
 		finish();
 	}
 

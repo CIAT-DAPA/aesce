@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -90,6 +91,13 @@ public class insertarNuevoLote extends Activity implements
 	// --Metodo para el boton insertar--//
 	public void OnInsertarNuevoLoteBtnInsertar_Click(View button) {
 		registarNroLote();
+	}
+	
+	public void finalizar() {
+		Intent iRasta = new Intent();
+		iRasta.putExtra("returnRasta", "1");
+		setResult(RESULT_OK, iRasta);
+		super.finish();
 	}
 
 	/*************************************************************************************
@@ -185,7 +193,7 @@ public class insertarNuevoLote extends Activity implements
 
 			myDatabase.insert("Rasta", null, cv);
 
-			finish();
+			finalizar();
 
 		} catch (SQLException e) {
 			Mensaje("Error", "" + e.getMessage());
