@@ -156,7 +156,7 @@ public class sincronizacionMenu extends Activity {
 			if (tabla.equals("USUARIO")) {
 				nameValuePairs.add(new BasicNameValuePair("TABLA", "USUARIOS"));
 				
-				if (c.isAfterLast() == false) {
+				while (c.isAfterLast() == false) {
 					nameValuePairs.add(new BasicNameValuePair("USU_ID", c
 							.getString(0)));
 					nameValuePairs.add(new BasicNameValuePair("USU_PASS", c
@@ -169,6 +169,8 @@ public class sincronizacionMenu extends Activity {
 							.getString(4)));
 
 					sincronizacionPHP(nameValuePairs);
+					
+					c.moveToNext();
 				}
 				c.close();
 			
