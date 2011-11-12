@@ -63,6 +63,12 @@ public class calidadFruta extends Activity implements
 	/***************************************************************************
 	 ************************** METODOS DE LOS BOTONES***************************
 	 ***************************************************************************/
+	
+	//--Boton regresar--//
+	public void OnCalidadFrutaBtnRegresar_Click(View button){
+		finish();
+	}
+	
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
 		if (arg2 > 2) {

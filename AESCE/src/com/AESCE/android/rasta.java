@@ -20,6 +20,8 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 public class rasta extends Activity implements AdapterView.OnItemClickListener {
+	
+	private static final int REQUEST_CODE = 10;
 
 	// Variables para capturar los bundles
 	String USU_ID = "";
@@ -72,9 +74,6 @@ public class rasta extends Activity implements AdapterView.OnItemClickListener {
 
 		gdvRasta.setOnItemClickListener(this);// .setOnItemSelectedListener(this);
 
-		gdvRasta.invalidate();
-		// gdvProductor.invalidateViews();
-
 	}
 
 	/********************************************************************************
@@ -116,6 +115,22 @@ public class rasta extends Activity implements AdapterView.OnItemClickListener {
 			
 
 		}
+	}
+	
+	
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
+			if (data.hasExtra("returnRasta")) {
+				llenarGridView();
+
+				gdvRasta.setAdapter(new FunnyLookingAdapter(this,
+						android.R.layout.simple_list_item_1, rastaID));
+			}
+		}
+		
 	}
 
 	/********************************************************************************

@@ -123,7 +123,7 @@ public class modHistoricoProdCosechas extends Activity implements
 	}
 	
 	//--Boton regresar--//
-	public void OnModHistoricoProdProduccionBtnRegresar_Click(View button){
+	public void OnModHistoricoProdCosechaBtnRegresar_Click(View button){
 		finish();
 	}
 
