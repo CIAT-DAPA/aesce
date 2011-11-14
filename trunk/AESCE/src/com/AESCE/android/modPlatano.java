@@ -458,11 +458,11 @@ public class modPlatano extends Activity implements
 			int UMA_NARBOLES = Integer
 					.parseInt(EdtNSitios.getText().toString());
 			float UMA_AREA = Float.parseFloat(EdtAreaLote.getText().toString());
-			String UMA_TRAZADO = "";
+			String UMA_TRAZADO = "null";
 			int UMA_TASUELO = anaQuimico;
 			int UMA_UINJERTO = 0;
 			String UMA_NPATRON = EdtNPatron.getText().toString();
-			String UMA_VARIEDAD = "";
+			String UMA_VARIEDAD = "null";
 			String UMA_EDAD = EdtEdad.getText().toString();
 			float UMA_RESIEMBRA = Float.parseFloat(EdtResiembra.getText()
 					.toString());

@@ -452,7 +452,7 @@ public class modAguacate extends Activity implements
 			int UMA_NARBOLES = Integer.parseInt(EdtNArboles.getText()
 					.toString());
 			float UMA_AREA = Float.parseFloat(EdtAreaLote.getText().toString());
-			String UMA_TRAZADO = "";
+			String UMA_TRAZADO = "null";
 			int UMA_TASUELO = AnaQuimico;
 			int UMA_UINJERTO = UInjerto;
 			String UMA_NPATRON = EdtNPatron.getText().toString();
