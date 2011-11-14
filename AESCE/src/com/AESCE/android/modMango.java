@@ -546,7 +546,7 @@ public class modMango extends Activity implements
 			int UMA_NARBOLES = Integer.parseInt(edtNArboles.getText()
 					.toString());
 			float UMA_AREA = Float.parseFloat(edtAreaLote.getText().toString());
-			String UMA_TRAZADO = "";
+			String UMA_TRAZADO = "null";
 			int UMA_TASUELO = this.anaQuimico;
 			int UMA_UINJERTO = this.uInjerto;
 			String UMA_NPATRON = edtNPatron.getText().toString();

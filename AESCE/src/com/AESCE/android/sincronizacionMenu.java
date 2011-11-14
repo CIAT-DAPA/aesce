@@ -22,6 +22,7 @@ import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class sincronizacionMenu extends Activity {
@@ -71,10 +72,18 @@ public class sincronizacionMenu extends Activity {
 		sincronizacion("USUARIO");
 
 	}
-	
-	public void OnSincronizacionMenuBtnUnidades_Click(View button){
+
+	//--Boton unidades--//
+	public void OnSincronizacionMenuBtnUnidades_Click(View button) {
 		sincronizacion("UNIDADES");
 	}
+	
+	//--Boton unidades de manejo--//
+	public void OnSincronizacionMenuBtnUmanejo_Click(View button){
+		sincronizacion("UMANEJO");
+	}
+	
+	
 
 	/*****************************************************
 	 ******************* METODOS DE LA CLASE***************
@@ -125,6 +134,9 @@ public class sincronizacionMenu extends Activity {
 			sincronizarTablas(miTabla, sql);
 		} else if (miTabla.equals("UNIDADES")) {
 			String sql = "SELECT UNI_COD, UNI_TIPO, UNI_DESC FROM UNIDADES";
+			sincronizarTablas(miTabla, sql);
+		} else if (miTabla.equals("UMANEJO")) {
+			String sql = "SELECT * FROM UMANEJO";
 			sincronizarTablas(miTabla, sql);
 		}
 	}
@@ -180,6 +192,73 @@ public class sincronizacionMenu extends Activity {
 					c.moveToNext();
 				}
 			}
+
+			else if (tabla.equals("UMANEJO")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "UMANEJO"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("UMA_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_LOTENRO", c
+							.getString(1)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_FINID", c
+							.getString(2)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_PRUID", c
+							.getString(3)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_DIA", c
+							.getString(4)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_MES", c
+							.getString(5)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_ANIO", c
+							.getString(6)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_LATITUD", c
+							.getString(7)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_LONGITUD", c
+							.getString(8)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_ALTITUD", c
+							.getString(9)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_NARBOLES", c
+							.getString(10)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_AREA", c
+							.getString(11)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_TRAZADO", c
+							.getString(12)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_TASUELO", c
+							.getString(13)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_UINJERTO", c
+							.getString(14)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_NPATRON", c
+							.getString(15)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_VARIEDAD", c
+							.getString(16)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_EDAD", c
+							.getString(17)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_RESIEMBRA", c
+							.getString(18)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_PRODANIO", c
+							.getString(19)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_UNICOD", c
+							.getString(20)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_UNITIPO", c
+							.getString(21)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_PERINT", c
+							.getString(22)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_INVITRO", c
+							.getString(23)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_PENDIENTE", c
+							.getString(24)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_CAPAS", c
+							.getString(25)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_PROEFEC", c
+							.getString(26)));
+					nameValuePairs.add(new BasicNameValuePair("UMA_PH", c
+							.getString(27)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
 			c.close();
 
 		} catch (Exception e) {
@@ -226,6 +305,7 @@ public class sincronizacionMenu extends Activity {
 		try {
 
 			JSONObject jArray = new JSONObject(result);
+			Log.i("pRUEBA",jArray.get("TABLA").toString());
 			Mensaje("TABLA", "" + jArray.get("TABLA"));
 
 		} catch (JSONException e) {
