@@ -31,7 +31,7 @@ public class sincronizacionMenu extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sincronizacionmenu);
-		
+
 		CrearBBDD();
 	}
 
@@ -41,51 +41,39 @@ public class sincronizacionMenu extends Activity {
 	// --Metodo para el boton usuarios--//
 	public void OnSincronizacionMenuBtnUsuarios_Click(View button) {
 		/*
-		String result = "";
-		ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-		nameValuePairs.add(new BasicNameValuePair("n1", "bienvenido"));
-		InputStream is = null;
-
-		try {
-			HttpClient httpclient = new DefaultHttpClient();
-			HttpPost httppost = new HttpPost(
-					"http://pruebaaesce.freetzi.com/index.php");
-			httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-			HttpResponse response = httpclient.execute(httppost);
-			HttpEntity entity = response.getEntity();
-			is = entity.getContent();
-		} catch (Exception e) {
-			Mensaje("Error http", e.getMessage());
-		}
-
-		// convert response to string
-		try {
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					is, "iso-8859-1"), 8);
-			StringBuilder sb = new StringBuilder();
-			String line = null;
-			while ((line = reader.readLine()) != null) {
-				sb.append(line + "\n");
-			}
-			is.close();
-
-			result = sb.toString();
-		} catch (Exception e) {
-			Mensaje("Error convercion", e.getMessage());
-		}
-
-		// parse json data
-		try {
-
-			JSONObject jArray = new JSONObject(result);
-			Mensaje("aacca", "aca" + jArray.get("n1"));
-
-		} catch (JSONException e) {
-			Mensaje("error", e.getMessage());
-		}
-		*/
+		 * String result = ""; ArrayList<NameValuePair> nameValuePairs = new
+		 * ArrayList<NameValuePair>(); nameValuePairs.add(new
+		 * BasicNameValuePair("n1", "bienvenido")); InputStream is = null;
+		 * 
+		 * try { HttpClient httpclient = new DefaultHttpClient(); HttpPost
+		 * httppost = new HttpPost( "http://pruebaaesce.freetzi.com/index.php");
+		 * httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+		 * HttpResponse response = httpclient.execute(httppost); HttpEntity
+		 * entity = response.getEntity(); is = entity.getContent(); } catch
+		 * (Exception e) { Mensaje("Error http", e.getMessage()); }
+		 * 
+		 * // convert response to string try { BufferedReader reader = new
+		 * BufferedReader(new InputStreamReader( is, "iso-8859-1"), 8);
+		 * StringBuilder sb = new StringBuilder(); String line = null; while
+		 * ((line = reader.readLine()) != null) { sb.append(line + "\n"); }
+		 * is.close();
+		 * 
+		 * result = sb.toString(); } catch (Exception e) {
+		 * Mensaje("Error convercion", e.getMessage()); }
+		 * 
+		 * // parse json data try {
+		 * 
+		 * JSONObject jArray = new JSONObject(result); Mensaje("aacca", "aca" +
+		 * jArray.get("n1"));
+		 * 
+		 * } catch (JSONException e) { Mensaje("error", e.getMessage()); }
+		 */
 		sincronizacion("USUARIO");
 
+	}
+	
+	public void OnSincronizacionMenuBtnUnidades_Click(View button){
+		sincronizacion("UNIDADES");
 	}
 
 	/*****************************************************
@@ -135,12 +123,15 @@ public class sincronizacionMenu extends Activity {
 		if (miTabla.equals("USUARIO")) {
 			String sql = "SELECT USU_ID, USU_PASS, USU_NOMBRE, USU_PERID, USU_EMAIL FROM USUARIO";
 			sincronizarTablas(miTabla, sql);
+		} else if (miTabla.equals("UNIDADES")) {
+			String sql = "SELECT UNI_COD, UNI_TIPO, UNI_DESC FROM UNIDADES";
+			sincronizarTablas(miTabla, sql);
 		}
 	}
 
 	public void sincronizarTablas(String tabla, String sql) {
 		BaseDatosHelper bdH = new BaseDatosHelper(this);
-		
+
 		ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 
 		try {
@@ -155,7 +146,7 @@ public class sincronizacionMenu extends Activity {
 
 			if (tabla.equals("USUARIO")) {
 				nameValuePairs.add(new BasicNameValuePair("TABLA", "USUARIOS"));
-				
+
 				while (c.isAfterLast() == false) {
 					nameValuePairs.add(new BasicNameValuePair("USU_ID", c
 							.getString(0)));
@@ -169,12 +160,27 @@ public class sincronizacionMenu extends Activity {
 							.getString(4)));
 
 					sincronizacionPHP(nameValuePairs);
-					
+
 					c.moveToNext();
 				}
-				c.close();
-			
+
+			} else if (tabla.equals("UNIDADES")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "UNIDADES"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("UNI_COD", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("UNI_TIPO", c
+							.getString(1)));
+					nameValuePairs.add(new BasicNameValuePair("UNI_DESC", c
+							.getString(2)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
 			}
+			c.close();
 
 		} catch (Exception e) {
 			Mensaje("Error", "Error: " + e.getMessage());
@@ -220,7 +226,7 @@ public class sincronizacionMenu extends Activity {
 		try {
 
 			JSONObject jArray = new JSONObject(result);
-			 Mensaje("TABLA", ""+jArray.get("TABLA"));
+			Mensaje("TABLA", "" + jArray.get("TABLA"));
 
 		} catch (JSONException e) {
 			Mensaje("error", e.getMessage());
