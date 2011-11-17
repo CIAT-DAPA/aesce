@@ -32,6 +32,10 @@
 						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:text="Usuarios" android:id="@+id/IdSincronizacionMenuBtnUsuarios" android:onClick="OnSincronizacionMenuBtnUsuarios_Click"></Button>
 						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:id="@+id/IdSincronizacionMenuBtnUnidades" android:text="Unidades" android:onClick="OnSincronizacionMenuBtnUnidades_Click"></Button>
 						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:id="@+id/IdSincronizacionMenuBtnUmanejo" android:text="Unidades de manejo" android:onClick="OnSincronizacionMenuBtnUmanejo_Click"></Button>
+						<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:id="@+id/IdSincronizacionMenuBtnTipoCalidad" android:text="Tipo Calidad" android:onClick="OnSincronizacionMenuBtnTipoCalidad_Click"></Button>
+						<Button android:layout_height="wrap_content" android:textSize="20sp" android:layout_width="wrap_content" android:id="@+id/IdSincronizacionMenuBtnTic" android:text="TIC" android:onClick="OnSincronizacionMenuBtnTic_Click"></Button>
+						<Button android:layout_height="wrap_content" android:textSize="20sp" android:layout_width="wrap_content" android:id="@+id/IdSincronizacionMenuBtnTexturas" android:text="Texturas" android:onClick="OnSincronizacionMenuBtnTexturas_Click"></Button>
+						<Button android:layout_height="wrap_content" android:textSize="20sp" android:layout_width="wrap_content" android:id="@+id/IdSincronizacionMenuBtnTerreno" android:text="Terreno" android:onClick="OnSincronizacionMenuBtnTerreno_Click"></Button>
 					</LinearLayout>
 				</TableRow>
 				<TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content" android:layout_height="wrap_content">
