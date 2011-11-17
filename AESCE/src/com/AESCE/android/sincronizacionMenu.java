@@ -83,7 +83,26 @@ public class sincronizacionMenu extends Activity {
 		sincronizacion("UMANEJO");
 	}
 	
+	//--Boton tipo calidad--//
+	public void OnSincronizacionMenuBtnTipoCalidad_Click(View button){
+		sincronizacion("TIPOCALIDAD");
+	}
 	
+	//--Boton TIC--//
+	public void OnSincronizacionMenuBtnTic_Click(View button){
+		sincronizacion("TIC");
+	}
+	
+	//--Boton Texturas--//
+	public void OnSincronizacionMenuBtnTexturas_Click(View button){
+		sincronizacion("TEXTURAS");
+		sincronizacion("TEXTURA");
+	}
+	
+	//--Boton Terreno--//
+	public void OnSincronizacionMenuBtnTerreno_Click(View button){
+		sincronizacion("TERRENO");
+	}
 
 	/*****************************************************
 	 ******************* METODOS DE LA CLASE***************
@@ -137,6 +156,26 @@ public class sincronizacionMenu extends Activity {
 			sincronizarTablas(miTabla, sql);
 		} else if (miTabla.equals("UMANEJO")) {
 			String sql = "SELECT * FROM UMANEJO";
+			sincronizarTablas(miTabla, sql);
+		}
+		else if(miTabla.equals("TIC")){
+			String sql="SELECT *FROM TIC";
+			sincronizarTablas(miTabla, sql);
+		}
+		else if(miTabla.equals("TEXTURAS")){
+			String sql="SELECT TEX_ID, TEX_DESC FROM TEXTURAS";
+			sincronizarTablas(miTabla, sql);
+		}
+		else if(miTabla.equals("TEXTURA")){
+			String sql="SELECT TEX_UMAID, TEX_RASID, TEX_RASCAT FROM TEXTURA";
+			sincronizarTablas(miTabla, sql);
+		}
+		else if(miTabla.equals("TERRENO")){
+			String sql="SELECT TER_ID, TER_DESC FROM TERRENO";
+			sincronizarTablas(miTabla, sql);
+		}
+		else if(miTabla.equals("RESROMPIMIENTO")){
+			String sql="SELECT RES_ID, RES_DESC FROM RESROMPIMIENTO";
 			sincronizarTablas(miTabla, sql);
 		}
 	}
@@ -253,6 +292,120 @@ public class sincronizacionMenu extends Activity {
 							.getString(26)));
 					nameValuePairs.add(new BasicNameValuePair("UMA_PH", c
 							.getString(27)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("TIPOCALIDAD")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "TIPOCALIDAD"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("TPC_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("TPC_DESC", c
+							.getString(1)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("TIC")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "TIC"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("TIC_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_PROID", c
+							.getString(1)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_CEL2010", c
+							.getString(2)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_CELACTUAL", c
+							.getString(3)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_PLANDATOS", c
+							.getString(4)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_ADQPLANDATOS", c
+							.getString(5)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_INTERNETC", c
+							.getString(6)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_FRECUSO", c
+							.getString(7)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_INTPUBLICO", c
+							.getString(8)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_FRECUSOP", c
+							.getString(9)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_TELECENTROS", c
+							.getString(10)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_FRECUSOT", c
+							.getString(11)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_PORTATIL", c
+							.getString(12)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_CAMARA", c
+							.getString(13)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_INFOMETEREO", c
+							.getString(14)));
+					nameValuePairs.add(new BasicNameValuePair("TIC_FRECUSO", c
+							.getString(15)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("TEXTURAS")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "TEXTURAS"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("TEX_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("TEX_DESC", c
+							.getString(1)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("TEXTURA")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "TEXTURA"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("TEX_UMAID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("TEX_RASID", c
+							.getString(1)));
+					nameValuePairs.add(new BasicNameValuePair("TEX_RASCAT", c
+							.getString(2)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("TERRENO")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "TERRENO"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("TER_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("TER_DESC", c
+							.getString(1)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("RESROMPIMIENTO")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "RESROMPIMIENTO"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("RES_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("RES_DESC", c
+							.getString(1)));
 
 					sincronizacionPHP(nameValuePairs);
 
