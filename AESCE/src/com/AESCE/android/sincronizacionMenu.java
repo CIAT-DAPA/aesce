@@ -178,6 +178,54 @@ public class sincronizacionMenu extends Activity {
 			String sql="SELECT RES_ID, RES_DESC FROM RESROMPIMIENTO";
 			sincronizarTablas(miTabla, sql);
 		}
+		else if(miTabla.equals("RASTA")){
+			String sql="SELECT *FROM RASTA";
+			sincronizarTablas(miTabla, sql);
+		}
+		else if(miTabla.equals("RASPREGUNTAS")){
+			String sql="SELECT *FROM RASPREGUNTAS";
+			sincronizarTablas(miTabla, sql);
+		}
+		else if(miTabla.equals("RASMATORGANICA")){
+			String sql="SELECT *FROM RASMATORGANICA";
+			sincronizarTablas(miTabla, sql);
+		}
+		else if(miTabla.equals("PRODUCTOS")){
+			String sql="SELECT PRU_COD, PRU_DESC FROM PRODUCTOS";
+			sincronizarTablas(miTabla,sql);
+		}
+		else if(miTabla.equals("PRODUCTOR")){
+			String sql="SELECT *FROM PRODUCTOR";
+			sincronizarTablas(miTabla,sql);
+		}
+		else if(miTabla.equals("PRODUCCION")){
+			String sql="SELECT PRC_ID, PRC_LOTE, PRC_UMAID, PRC_ANIO, PRC_PRODUCCION FRO PRODUCCION";
+			sincronizarTablas(miTabla,sql);
+		}
+		else if(miTabla.equals("PROCEDIMIENTOSPROF")){
+			String sql="SELECT PRF_RASID, PRF_RASUMAID, PRF_ID, PRF_IDPREG, PRF_PROF FROM PROCEDIMIENTOSPROF";
+			sincronizarTablas(miTabla,sql);
+		}
+		else if(miTabla.equals("PROCEDIMIENTOS")){
+			String sql="SELECT PRC_RASID, PRC_RASUMAID, PRC_ID, PRC_IDPREG, PRC_RES FROM PROCEDIMIENTOS";
+			sincronizarTablas(miTabla,sql);
+		}
+		else if(miTabla.equals("PREGUNTAS")){
+			String sql="SELECT PRE_ID, PRE_DESC FROM PREGUNTAS";
+			sincronizarTablas(miTabla,sql);
+		}
+		else if(miTabla.equals("POSPERFIL")){
+			String sql="SELECT POS_ID, POS_DESC FROM POSPERFIL";
+			sincronizarTablas(miTabla,sql);
+		}
+		else if(miTabla.equals("PERFIL")){
+			String sql="SELECT *FROM PERFIL";
+			sincronizarTablas(miTabla,sql);
+		}
+		else if(miTabla.equals("PEDREGOSIDAD")){
+			String sql="SELECT PED_ID, PED_DESC FROM PEDREGOSIDAD";
+			sincronizarTablas(miTabla,sql);
+		}
 	}
 
 	public void sincronizarTablas(String tabla, String sql) {
@@ -405,6 +453,270 @@ public class sincronizacionMenu extends Activity {
 					nameValuePairs.add(new BasicNameValuePair("RES_ID", c
 							.getString(0)));
 					nameValuePairs.add(new BasicNameValuePair("RES_DESC", c
+							.getString(1)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("RASTA")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "RASTA"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("RAS_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_UMAID", c
+							.getString(1)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_TERID", c
+							.getString(2)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_POSID", c
+							.getString(3)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_PENDIENTE", c
+							.getString(4)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_PH", c
+							.getString(5)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_CARID", c
+							.getString(6)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_PROFCARBONATOS", c
+							.getString(7)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_PEDSUPID", c
+							.getString(8)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_PEDPERID", c
+							.getString(9)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_HORPEDROC", c
+							.getString(10)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_HORPEDROCPROF", c
+							.getString(11)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_HORPEDROCESP", c
+							.getString(12)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_PROFPRIROCPIED", c
+							.getString(13)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_MOTEADOSSINO", c
+							.getString(14)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_MOTEADOSPROF", c
+							.getString(15)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_MOTEADOS70CM", c
+							.getString(16)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_ESTID", c
+							.getString(17)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_ANOTACIONESPECIALES", c
+							.getString(18)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_CAJUELANRO", c
+							.getString(19)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_USUID", c
+							.getString(20)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_USOACTLOTE", c
+							.getString(21)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_PROEFECTIVA", c
+							.getString(22)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_SLOORGANICO", c
+							.getString(23)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_DRENINTERNO", c
+							.getString(24)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_DRENEXTERNO", c
+							.getString(25)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_SALINIDAD", c
+							.getString(26)));
+					nameValuePairs.add(new BasicNameValuePair("RAS_SODICIDAD", c
+							.getString(27)));
+					
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("RASPREGUNTAS")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "RASPREGUNTAS"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("RSP_RASID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("RSP_RASUMAID", c
+							.getString(1)));
+					nameValuePairs.add(new BasicNameValuePair("RSP_PREID", c
+							.getString(2)));
+					nameValuePairs.add(new BasicNameValuePair("RSP_PRERES", c
+							.getString(3)));
+					nameValuePairs.add(new BasicNameValuePair("RSP_PROF", c
+							.getString(4)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("RASMATORGANICA")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "RASMATORGANICA"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("RMO_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("RMO_RASID", c
+							.getString(1)));
+					nameValuePairs.add(new BasicNameValuePair("RMO_RASUMAID", c
+							.getString(2)));
+					nameValuePairs.add(new BasicNameValuePair("RMO_MATORGANICA", c
+							.getString(3)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("PRODUCTOS")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "PRODUCTOS"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("PRU_COD", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("PRU_DESC", c
+							.getString(1)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("PRODUCTOR")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "PRODUCTOR"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("PRO_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("PRO_DIA", c
+							.getString(1)));
+					nameValuePairs.add(new BasicNameValuePair("PRO_MES", c
+							.getString(2)));
+					nameValuePairs.add(new BasicNameValuePair("PRO_ANIO", c
+							.getString(3)));
+					nameValuePairs.add(new BasicNameValuePair("PRO_NOMBRE", c
+							.getString(4)));
+					nameValuePairs.add(new BasicNameValuePair("PRO_APELLIDO1", c
+							.getString(5)));
+					nameValuePairs.add(new BasicNameValuePair("PRO_APELLIDO2", c
+							.getString(6)));
+					nameValuePairs.add(new BasicNameValuePair("PRO_CELULAR", c
+							.getString(7)));
+					nameValuePairs.add(new BasicNameValuePair("PRO_FIJO", c
+							.getString(8)));
+					nameValuePairs.add(new BasicNameValuePair("PRO_EMAIL", c
+							.getString(9)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("PRODUCCION")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "PRODUCCION"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("PRC_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("PRC_LOTE", c
+							.getString(1)));
+					nameValuePairs.add(new BasicNameValuePair("PRC_UMAID", c
+							.getString(2)));
+					nameValuePairs.add(new BasicNameValuePair("PRC_ANIO", c
+							.getString(3)));
+					nameValuePairs.add(new BasicNameValuePair("PRC_PRODUCCION", c
+							.getString(4)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("PROCEDIMIENTOSPROF")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "PROCEDIMIENTOSPROF"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("PRF_RASID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("PRF_RASUMAID", c
+							.getString(1)));
+					nameValuePairs.add(new BasicNameValuePair("PRF_ID", c
+							.getString(2)));
+					nameValuePairs.add(new BasicNameValuePair("PRF_IDPREG", c
+							.getString(3)));
+					nameValuePairs.add(new BasicNameValuePair("PRF_PROF", c
+							.getString(4)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("PROCEDIMIENTOS")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "PROCEDIMIENTOS"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("PRC_RASID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("PRC_RASUMAID", c
+							.getString(1)));
+					nameValuePairs.add(new BasicNameValuePair("PRC_ID", c
+							.getString(2)));
+					nameValuePairs.add(new BasicNameValuePair("PRC_IDPREG", c
+							.getString(3)));
+					nameValuePairs.add(new BasicNameValuePair("PRC_RES", c
+							.getString(4)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("PREGUNTAS")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "PREGUNTAS"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("PRE_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("PRE_DESC", c
+							.getString(1)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("POSPERFIL")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "POSPERFIL"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("POS_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("POS_DESC", c
+							.getString(1)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("PERFIL")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "PERFIL"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("PER_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("PER_DESC", c
+							.getString(1)));
+
+					sincronizacionPHP(nameValuePairs);
+
+					c.moveToNext();
+				}
+			}
+			else if (tabla.equals("PEDREGOSIDAD")) {
+				nameValuePairs.add(new BasicNameValuePair("TABLA", "PEDREGOSIDAD"));
+
+				while (c.isAfterLast() == false) {
+					nameValuePairs.add(new BasicNameValuePair("PED_ID", c
+							.getString(0)));
+					nameValuePairs.add(new BasicNameValuePair("PED_DESC", c
 							.getString(1)));
 
 					sincronizacionPHP(nameValuePairs);
