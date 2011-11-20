@@ -306,19 +306,9 @@ public class modMango extends Activity implements
 	// Boton registrar
 	public void OnModMangoBtnRegistrar_Click(View button) {
 		// if(dispersosLtdDefinido!=-1)
-		if (edtLoteNo.getText().toString().equals("")
-				|| edtCulAso.getText().toString().equals("")
-				|| edtLatitud.getText().toString().equals("")
-				|| edtLongitud.getText().toString().equals("")
-				|| edtAltitud.getText().toString().equals("")
-				|| edtNArboles.getText().toString().equals("")
-				|| edtEdad.getText().toString().equals("")
-				|| edtRSiembra.getText().toString().equals("")
-				|| edtProAnio.getText().toString().equals("")) {
-			Mensaje("Error", "Algunos de los campos se encuentra vacíos ");
-		} else {
+		
 			registarModMango();
-		}
+		
 	}
 
 	// Boton regresar

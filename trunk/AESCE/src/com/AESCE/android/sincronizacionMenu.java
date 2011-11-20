@@ -70,38 +70,50 @@ public class sincronizacionMenu extends Activity {
 		 * } catch (JSONException e) { Mensaje("error", e.getMessage()); }
 		 */
 		sincronizacion("USUARIO");
+		sincronizacion("PERFIL");
 
+	}
+	
+	//--Boton productor--//
+	public void OnSincronizacionMenuBtnProductor_Click(View button){
+		sincronizacion("PRODUCTOR");
+		sincronizacion("UNIDADES");
 	}
 
 	// --Boton unidades--//
-	public void OnSincronizacionMenuBtnUnidades_Click(View button) {
+	public void OnSincronizacionMenuBtnFinca_Click(View button) {
+		sincronizacion("FINCA");
 		sincronizacion("UNIDADES");
+	}
+	
+	//--Boton TIC--//
+	public void OnSincronizacionMenuBtnTic_Click(View button){
+		sincronizacion("TIC");
 	}
 
 	// --Boton unidades de manejo--//
 	public void OnSincronizacionMenuBtnUmanejo_Click(View button) {
 		sincronizacion("UMANEJO");
+		sincronizacion("CULASOCIADO");
+		sincronizacion("LOTEDEFINIDO");
+		sincronizacion("DISPERSOS");
+	}
+	
+	//--Boton contactos--//
+	public void OnSincronizacionMenuBtnContactos_Click(View button){
+		sincronizacion("CONTACTOS");
 	}
 
-	// --Boton tipo calidad--//
-	public void OnSincronizacionMenuBtnTipoCalidad_Click(View button) {
+	//--Boton Historico produccion--//
+	public void OnSincronizacionMenuBtnHistProduccion_Click(View button){
+		sincronizacion("PRODUCCION");
+		sincronizacion("COSECHA");
+		sincronizacion("PREGUNTAS");
+	}
+	//--Boton Calidad--//
+	public void OnSincronizacionMenuBtnCalidad_Click(View button){
+		sincronizacion("CALIDAD");
 		sincronizacion("TIPOCALIDAD");
-	}
-
-	// --Boton TIC--//
-	public void OnSincronizacionMenuBtnTic_Click(View button) {
-		sincronizacion("TIC");
-	}
-
-	// --Boton Texturas--//
-	public void OnSincronizacionMenuBtnTexturas_Click(View button) {
-		sincronizacion("TEXTURAS");
-		sincronizacion("TEXTURA");
-	}
-
-	// --Boton Terreno--//
-	public void OnSincronizacionMenuBtnTerreno_Click(View button) {
-		sincronizacion("TERRENO");
 	}
 
 	/*****************************************************
@@ -188,7 +200,7 @@ public class sincronizacionMenu extends Activity {
 			String sql = "SELECT *FROM PRODUCTOR";
 			sincronizarTablas(miTabla, sql);
 		} else if (miTabla.equals("PRODUCCION")) {
-			String sql = "SELECT PRC_ID, PRC_LOTE, PRC_UMAID, PRC_ANIO, PRC_PRODUCCION FRO PRODUCCION";
+			String sql = "SELECT PRC_ID, PRC_LOTE, PRC_UMAID, PRC_ANIO, PRC_PRODUCCION FROM PRODUCCION";
 			sincronizarTablas(miTabla, sql);
 		} else if (miTabla.equals("PROCEDIMIENTOSPROF")) {
 			String sql = "SELECT PRF_RASID, PRF_RASUMAID, PRF_ID, PRF_IDPREG, PRF_PROF FROM PROCEDIMIENTOSPROF";
@@ -247,7 +259,12 @@ public class sincronizacionMenu extends Activity {
 		} else if (miTabla.equals("CALIDAD")) {
 			String sql = "SELECT *FROM CALIDAD";
 			sincronizarTablas(miTabla, sql);
-		} else if (miTabla.equals("ANAQUIMICO")) {
+		}else if(miTabla.equals("TIPOCALIDAD")){
+			String sql="SELECT *FROM TIPOCALIDAD";
+			sincronizarTablas(miTabla,sql);
+		} 
+		
+		else if (miTabla.equals("ANAQUIMICO")) {
 			String sql = "SELECT *FROM ANAQUIMICO";
 			sincronizarTablas(miTabla, sql);
 		}
@@ -418,8 +435,8 @@ public class sincronizacionMenu extends Activity {
 							.getString(13)));
 					nameValuePairs.add(new BasicNameValuePair(
 							"TIC_INFOMETEREO", c.getString(14)));
-					nameValuePairs.add(new BasicNameValuePair("TIC_FRECUSO", c
-							.getString(15)));
+					
+					
 
 					sincronizacionPHP(nameValuePairs);
 
@@ -723,6 +740,8 @@ public class sincronizacionMenu extends Activity {
 							.getString(0)));
 					nameValuePairs.add(new BasicNameValuePair("PER_DESC", c
 							.getString(1)));
+					
+					Mensaje(c.getString(0),c.getString(1));
 
 					sincronizacionPHP(nameValuePairs);
 
@@ -944,7 +963,7 @@ public class sincronizacionMenu extends Activity {
 							.getString(11)));
 					nameValuePairs.add(new BasicNameValuePair("CON_TELLIDER", c
 							.getString(12)));
-
+					
 					sincronizacionPHP(nameValuePairs);
 
 					c.moveToNext();
@@ -1013,28 +1032,29 @@ public class sincronizacionMenu extends Activity {
 				}
 
 			} else if (tabla.equals("CALIDAD")) {
-				nameValuePairs.add(new BasicNameValuePair("TABLA", "CALIDAD"));
+				nameValuePairs
+				.add(new BasicNameValuePair("TABLA", "CALIDAD"));
 
-				while (c.isAfterLast() == false) {
-					nameValuePairs.add(new BasicNameValuePair("CAL_ID", c
-							.getString(0)));
-					nameValuePairs.add(new BasicNameValuePair("CAL_UMAID", c
-							.getString(1)));
-					nameValuePairs.add(new BasicNameValuePair("CAL_TPCID", c
-							.getString(2)));
-					nameValuePairs.add(new BasicNameValuePair("CAL_LOTE", c
-							.getString(3)));
-					nameValuePairs.add(new BasicNameValuePair("CAL_ANIO", c
-							.getString(4)));
-					nameValuePairs.add(new BasicNameValuePair("CAL_PORCENTAJE",
-							c.getString(5)));
+		while (c.isAfterLast() == false) {
+			nameValuePairs.add(new BasicNameValuePair("CAL_ID", c
+					.getString(0)));
+			nameValuePairs.add(new BasicNameValuePair("CAL_UMAID", c
+					.getString(1)));
+			nameValuePairs.add(new BasicNameValuePair("CAL_TPCID", c
+					.getString(2)));
+			nameValuePairs.add(new BasicNameValuePair("CAL_LOTE", c
+					.getString(3)));
+			nameValuePairs.add(new BasicNameValuePair("CAL_ANIO", c
+					.getString(4)));
+			nameValuePairs.add(new BasicNameValuePair("CAL_PORCENTAJE", c
+					.getString(5)));
+			
+			sincronizacionPHP(nameValuePairs);
 
-					sincronizacionPHP(nameValuePairs);
+			c.moveToNext();
+		}
 
-					c.moveToNext();
-				}
-
-			} else if (tabla.equals("ANAQUIMICO")) {
+	} else if (tabla.equals("ANAQUIMICO")) {
 				nameValuePairs
 						.add(new BasicNameValuePair("TABLA", "ANAQUIMICO"));
 
