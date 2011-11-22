@@ -115,6 +115,26 @@ public class sincronizacionMenu extends Activity {
 		sincronizacion("CALIDAD");
 		sincronizacion("TIPOCALIDAD");
 	}
+	//--Boton Rasta--//
+	public void OnSincronizacionMenuBtnRasta_Click(View button){
+		sincronizacion("RASTA");
+	}
+	
+	//--Boton Preguntas Rasta--//
+	public void OnSincronizacionMenuBtnRasPreguntas_Click(View button){
+		sincronizacion("RASPREGUNTAS");
+	}
+	
+	//--Boton capas Rasta--//
+	public void OnSincronizacionMenuBtnRastaCapas_Click(View button){
+		sincronizacion("CAPAS");
+		sincronizacion("CAPASENDURECIDAS");
+	}
+	
+	//--Boton Rasta Materia organica--//
+	public void OnSincronizacionMenuBtnRastaMatOrganica_Click(View button){
+		sincronizacion("RASMATORGANICA");
+	}
 
 	/*****************************************************
 	 ******************* METODOS DE LA CLASE***************
@@ -993,18 +1013,12 @@ public class sincronizacionMenu extends Activity {
 							.getString(0)));
 					nameValuePairs.add(new BasicNameValuePair("CAP_RASID", c
 							.getString(1)));
-					nameValuePairs.add(new BasicNameValuePair("CAP_RASUMAID", c
+					nameValuePairs.add(new BasicNameValuePair("CAP_SINO", c
 							.getString(2)));
-					nameValuePairs.add(new BasicNameValuePair("CAP_ESPESOR", c
+					nameValuePairs.add(new BasicNameValuePair("CAP_PROF", c
 							.getString(3)));
-					nameValuePairs.add(new BasicNameValuePair("CAP_COLORSECO",
+					nameValuePairs.add(new BasicNameValuePair("CAP_ESP",
 							c.getString(4)));
-					nameValuePairs.add(new BasicNameValuePair(
-							"CAP_COLORHUMEDO", c.getString(5)));
-					nameValuePairs.add(new BasicNameValuePair("CAP_TEXID", c
-							.getString(6)));
-					nameValuePairs.add(new BasicNameValuePair("CAP_RESID", c
-							.getString(7)));
 
 					sincronizacionPHP(nameValuePairs);
 
@@ -1019,12 +1033,19 @@ public class sincronizacionMenu extends Activity {
 							.getString(0)));
 					nameValuePairs.add(new BasicNameValuePair("CAP_RASID", c
 							.getString(1)));
-					nameValuePairs.add(new BasicNameValuePair("CAP_SINO", c
+					nameValuePairs.add(new BasicNameValuePair("CAP_RASUMAID", c
 							.getString(2)));
-					nameValuePairs.add(new BasicNameValuePair("CAP_PROF", c
+					nameValuePairs.add(new BasicNameValuePair("CAP_ESPESOR", c
 							.getString(3)));
-					nameValuePairs.add(new BasicNameValuePair("CAP_ESP", c
+					nameValuePairs.add(new BasicNameValuePair("CAP_COLORSECO", c
 							.getString(4)));
+					nameValuePairs.add(new BasicNameValuePair("CAP_COLORHUMEDO", c
+							.getString(5)));
+					nameValuePairs.add(new BasicNameValuePair("CAP_TEXID", c
+							.getString(4)));
+					nameValuePairs.add(new BasicNameValuePair("CAP_RESID", c
+							.getString(5)));
+					
 
 					sincronizacionPHP(nameValuePairs);
 
@@ -1139,10 +1160,10 @@ public class sincronizacionMenu extends Activity {
 
 			JSONObject jArray = new JSONObject(result);
 			Log.i("pRUEBA", jArray.get("TABLA").toString());
-			Mensaje("TABLA", "" + jArray.get("TABLA"));
+			//Mensaje("TABLA", "" + jArray.get("TABLA"));
 
 		} catch (JSONException e) {
-			Mensaje("error", e.getMessage());
+			//Mensaje("error", e.getMessage());
 		}
 	}
 
