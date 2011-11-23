@@ -38,6 +38,13 @@ public class login extends Activity {
 	/*********************************************************************************
 	 ************************************** METODOS DE LOS BOTONES*********************
 	 *********************************************************************************/
+	
+	//--Boton salir--//
+	public void OnLoginBtnSalir_Click(View button){
+		System.exit(0);
+		//android.os.Process.killProcess(android.os.Process.myPid());
+		
+	}
 
 	// -- Metodo para el boton principal --//
 	public void OnIdLoginBtnPrincipal_Click(View button) {

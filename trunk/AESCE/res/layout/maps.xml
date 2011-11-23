@@ -22,8 +22,7 @@
 		android:layout_width="match_parent" android:layout_height="wrap_content">
 		<com.google.android.maps.MapView
 			android:id="@+id/mapa" android:layout_width="fill_parent"
-			android:layout_height="fill_parent" android:apiKey="01WyaRw59DC-I0erMYCip7iX4RHv_8_tCjVCdAw"
-			android:clickable="true" />
+			android:layout_height="fill_parent" android:clickable="true" android:apiKey="01WyaRw59DC8eLsfh9iVNLGCbZ09osKe1aJQqeA"/>
 	</LinearLayout>
 	<LinearLayout android:layout_width="match_parent"
 		android:layout_height="wrap_content" android:id="@+id/linearLayout3" android:layout_marginTop="20sp">

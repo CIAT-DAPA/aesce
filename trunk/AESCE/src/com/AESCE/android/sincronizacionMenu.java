@@ -39,6 +39,11 @@ public class sincronizacionMenu extends Activity {
 	/*****************************************************
 	 ****************** METODOS DE LOS BOTONES*************
 	 *****************************************************/
+	//--Boton regresar--//
+	public void OnSincronizacionMenuBtnRegresar_Click(View button){
+		finish();
+	}
+	
 	// --Metodo para el boton usuarios--//
 	public void OnSincronizacionMenuBtnUsuarios_Click(View button) {
 		/*
