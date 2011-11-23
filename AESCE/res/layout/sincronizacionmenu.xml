@@ -7,7 +7,7 @@
 			<TableLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/tableLayout1">
 				<TableRow android:layout_width="wrap_content" android:layout_height="match_parent" android:id="@+id/tableRow3">
 					<LinearLayout android:layout_marginLeft="5sp" android:id="@+id/linearLayout5" android:layout_width="match_parent" android:layout_marginTop="20sp" android:layout_height="wrap_content">
-						<Button android:onClick="OnMenuFincaBtnRegresar_Click" android:textSize="20sp" android:text="@string/TextProductorBtnRegresar" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/IdSincronizacionMenuBtnRegresar"></Button>
+						<Button android:textSize="20sp" android:text="@string/TextProductorBtnRegresar" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/IdSincronizacionMenuBtnRegresar" android:onClick="OnSincronizacionMenuBtnRegresar_Click"></Button>
 						<Button android:textSize="20sp" android:text="@string/TEXTproductorBtnSalir" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/button2"></Button>
 					</LinearLayout>
 				</TableRow>

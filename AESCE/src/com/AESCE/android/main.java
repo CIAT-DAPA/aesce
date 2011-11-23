@@ -39,8 +39,10 @@ public class main extends Activity {
 	 *********************************************************************/
 
 	// Metodo del boton salir
-	public void OnBtnMainSalir_Click(View button) {
-		salir();
+	public void OnMainBtnSalir_Click(View button) {
+		//salir();
+		//System.exit(0);
+		android.os.Process.killProcess(android.os.Process.myPid());
 	}
 
 	// Metodo para el boton Iniciar
